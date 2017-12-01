@@ -103,14 +103,12 @@ div{
 .Thriller a:hover{
 	background-image:url("../Img/ThrillerAction.jpg") ;
 	background-size:100% 100%;
-/*	rgba(102, 51, 51,0.7);*/
+	
 
 }
 .Poliziesco a:hover{
 	background-image:url("../Img/PoliziescoAction.jpg") ;
 	background-size:100% 100%;
-/*	rgba(102, 51, 51,0.7);*/
-
 }
 #footer{
 	clear:both;}
@@ -127,6 +125,7 @@ div{
 .Avventura{
 	background-image:url("../Img/lol.jpg") ;
 	background-size:100% 100%;
+	background-repeat:no-repeat;
 	}
 .Fantastico{
 	background-image:url("../Img/lol.jpg") ;
