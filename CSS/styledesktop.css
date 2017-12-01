@@ -103,14 +103,23 @@ div{
 .Thriller a:hover{
 	background-image:url("../Img/ThrillerAction.jpg") ;
 	background-size:100% 100%;
-/*	rgba(102, 51, 51,0.7);*/
+	
 
 }
 .Poliziesco a:hover{
 	background-image:url("../Img/PoliziescoAction.jpg") ;
 	background-size:100% 100%;
-/*	rgba(102, 51, 51,0.7);*/
-
+}
+.Commedia a:hover{
+	background-image:url("../Img/CommediaAction.jpg") ;
+	background-size:100% 100%;
+}
+.Fantasy a:hover{
+	background-image:url("../Img/FantasyAction.jpg") ;
+	background-size:100% 100%;
+}.Fantascienza a:hover{
+	background-image:url("../Img/FantascienzaAction.jpg") ;
+	background-size:100% 100%;
 }
 #footer{
 	clear:both;}
@@ -124,16 +133,17 @@ div{
 	background-image:url("../Img/lol.jpg") ;
 	background-size:100% 100%;
 	}
-.Avventura{
-	background-image:url("../Img/lol.jpg") ;
+.Fantascienza{
+	background-image:url("../Img/Fantascienza.jpg") ;
 	background-size:100% 100%;
+	background-repeat:no-repeat;
 	}
-.Fantastico{
-	background-image:url("../Img/lol.jpg") ;
+.Fantasy{
+	background-image:url("../Img/Fantasy.jpg") ;
 	background-size:100% 100%;
 	}
 .Commedia{
-	background-image:url("../Img/lol.jpg") ;
+	background-image:url("../Img/Commedia.jpg") ;
 	background-size:100% 100%;
 	}
 .Poliziesco{
