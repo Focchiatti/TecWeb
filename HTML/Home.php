@@ -23,9 +23,15 @@
 </div>
 
 <div id="menu">
+<ul>
+		<li><p>Home</p></li>
+		<!--<li>Generi</li>-->
+		<li><a href=\"news.php\">News</a></li>
+		
 	<?php
 	include "menu.php"
 	?>
+</ul>
 </div>
 
 <div id="content">
