@@ -3,6 +3,8 @@
 
 <body>
 <?php 
+	
+	if(!isset($_POST["Name"])){
 	if(isset($_POST["URL"])){
 		$URL=$_POST["URL"];
 	}
@@ -10,18 +12,23 @@
 	{	
 		$URL="http://localhost:81/TecWeb/TecWeb/HTML/Home.php";
 	}
-	if(!isset($_SESSION) || session_id()==''){
-		session_start();
-		$_SESSION["Name"]="Serve DB";
-		header("location:".$URL);
+		echo "
+		<form method=\"POST\"action=".$_SERVER['PHP_SELF'].">
+		<input type=\"submit\"\>
+		<input type=\"hidden\" name=\"URL\" value=\"".$URL."\"\>
+		<input type=\"text\" name=\"Name\" value=\"Serve DB\"\>
+		</form>";
 	}
-	else {
-		session_start();
-		$_SESSION["Name"]="Serve DB";
-		header("location:".$URL);
+	else{
+		if(!isset($_SESSION) || session_id()==''){
+			session_start();
+			$_SESSION["Name"]=$_POST["Name"];
+			header("location:".$_POST["URL"]);
+		}
+		else {
+			header("location:".$_POST["URL"]);
+		}
 	}
 	?>
 	
 </body>
-
-</html>

@@ -12,6 +12,7 @@ echo "
 		<div id=\"login\">
 		<li>
 		<form action=\"Login.php\" method=\"POST\">
+		
 		<input type=\"hidden\" name=\"URL\" value=\"".$_SERVER['REQUEST_URI']."\" />
 		<input id=\"TastoLogIn\" type=\"submit\" value=\"Login\" />
 		</form>
