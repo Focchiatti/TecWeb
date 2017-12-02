@@ -157,3 +157,47 @@ body{border-left: 1px solid #DDD;
 	background-image:url("../Img/Poliziesco.jpg") ;
 	background-size:100% 100%;
 	}
+
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 0.5em 1em;
+    margin: 0.4em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+button {
+    background-color: #cc3333;
+    color: white;
+    padding: 1em 0.5em;
+    margin: 0.4em 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 1em;
+    background-color: #663333;
+}
+
+
+.container {
+    padding: 1em;
+}
+
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
