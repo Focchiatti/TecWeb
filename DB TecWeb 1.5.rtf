@@ -1,0 +1,305 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29420\viewh18300\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /*Table structure for table `SerieTv` */\
+ \
+DROP TABLE IF EXISTS `SerieTv`;\
+ \
+CREATE TABLE `SerieTv` (\
+  `Titolo` varchar(30) NOT NULL,\
+  `Genere` varchar(20) NOT NULL,\
+  `DataInizio` date NOT NULL,\
+  `DataFine`  date,\
+  `Stagioni` smallint NOT NULL DEFAULT 1,\
+  `Trama` text(1500),\
+  `Valutazione` decimal(5,2), /*media?*/\
+  PRIMARY KEY (`Titolo`)\
+);\
+ \
+/*Data for the table `SerieTv` */\
+ \
+insert into `SerieTv`(`Titolo`,`Genere`,`DataInizio`,`DataFine`,`Stagioni`,`Trama`,`Valutazione`) values\
+('MrRobot','thriller','2015-06-24',NULL,'2','Elliot Alderson \'e8 un giovane tecnico informatico di New York che lavora come esperto di sicurezza informatica alla ditta Allsafe. Sociofobico, schizofrenico, la mente di Elliot \'e8 pesantemente influenzata dai deliri paranoici e dalle allucinazioni che gli causano grossi problemi nel relazionarsi con le persone e lo fanno vivere in un costante stato di ansia e paranoia. Nella vita privata Elliot \'e8 uno stalker informatico che tratta le persone come computer da hackerare per scoprirne i segreti pi\'f9 intimi e spesso agendo come una sorta di giustiziere informatico. Elliot viene avvicinato da Mr. Robot, un misterioso anarchico-insurrezionalista, che intende introdurlo in un gruppo di hacktivisti conosciuti con il nome di fsociety. Il manifesto di fsociety \'e8 liberare l''umanit\'e0 dai debiti con le banche e smascherare i corruttori che stanno distruggendo il mondo. Per convincere il giovane a unirsi alla causa, Mr. Robot dichiara di voler causare il fallimento della potente multinazionale E Corp, ritenuta responsabile di un disastro ambientale che ha causato la morte del padre di Elliot e di altre centinaia di persone. La E Corp, percepita come "Evil Corp" (multinazionale malvagia) dal protagonista, \'e8 il cliente principale della Allsafe e per il quale Elliot sar\'e0 nominato supervisore della sicurezza informatica.',NULL),\
+('How to get away with a murder','thriller','2014-09-26',NULL,'4','La serie segue la vita professionale e privata della carismatica Annalise Keating, stimata avvocato e preziosa docente di diritto penale presso una prestigiosa Universit\'e0 di Filadelfia, la fittizia "Middleton University". Con la collaborazione dei "Keating Five", ovvero i 5 studenti scelti per assisterla nei casi giudiziari, e ai suoi associati Bonnie e Frank, Annalise si trover\'e0 a dover affrontare vari processi e, soprattutto, il caso di omicidio di una studentessa, che legher\'e0 lei, il suo amante e tutti gli altri all''incombente morte del marito Sam.',NULL),\
+('Narcos','biografico','2015-08-08',NULL,'3','La serie racconta la storia vera della dilagante diffusione della cocaina tra Stati Uniti ed Europa negli anni ottanta. Le prime due stagioni sono incentrate sulla lotta delle autorit\'e0 colombiane e della DEA contro il narcotrafficante Pablo Escobar e il cartello di Medell\'edn. La terza stagione \'e8 incentrata sulla lotta al cartello di Cali, guidato dai fratelli Gilberto e Miguel Rodr\'edguez Orejuela. La quarta stagione \'e8 ambientata in Messico \'e8 incentrata sull''origine del cartello di Ju\'e1rez.', NULL),\
+('Breaking Bad','drammatico','2008-01-20','2013-09-29','5','Walter White \'e8 un professore di chimica di Albuquerque. Vive con la moglie Skyler, incinta della loro secondogenita, e il figlio Walter "Flynn" Junior, affetto da una paralisi cerebrale, un disturbo che gli causa problemi di linguaggio e lo costringe a servirsi di stampelle per muoversi. Alla soglia del compimento dei cinquant''anni, Walter \'e8 costretto a svolgere un secondo lavoro come dipendente di un autolavaggio, per far fronte alle difficolt\'e0 economiche della famiglia. A tutto questo si aggiunge il profondo senso di insoddisfazione di Walter, che deve sopportare le angherie del suo titolare, dei suoi amici e familiari, i quali lo vedono come un uomo debole e remissivo. In particolare suo cognato Hank, agente della DEA, con cui peraltro ha un buon rapporto, non perde occasione per mettere a confronto la sua vita avventurosa con quella di Walter, totalmente priva di soddisfazioni. Quando a Walter viene diagnosticato un cancro ai polmoni, i suoi problemi sembrano precipitare. Tuttavia, in seguito al casuale incontro con Jesse Pinkman, un suo ex studente diventato uno spacciatore di poco conto, Walter decide di cucinare i cristalli di metanfetamina. Il prodotto di Walter si rivela per\'f2 di qualit\'e0 nettamente superiore rispetto alla concorrenza, con una purezza del 99,1%, derivante dalle sue conoscenze chimiche. Decide quindi di sfruttare le sue capacit\'e0 per prendere il controllo del mercato della droga.',NULL),\
+('Greys Anatomy','medical drama','2005-03-27',NULL,'13','Meredith Grey \'e8 una giovane ragazza di Boston che, dopo la laurea in medicina, riesce ad entrare nel gruppo di tirocinanti di chirurgia del Seattle Grace Hospital. Si trasferisce cos\'ec a Seattle, nella vecchia casa appartenuta alla madre. Qui si trova a condividere la nuova esperienza insieme ad un gruppo di giovani coetanei, tutti alle prese con i pi\'f9 svariati problemi, sentimentali e non. Meredith \'e8 figlia di Ellis Grey, una dottoressa di fama mondiale specialista in chirurgia generale, cosa che le fa sentire molto il peso del suo cognome. La sera prima di iniziare il tirocinio, in un pub Meredith incontra Derek, un affascinante uomo con cui passa la notte; il giorno dopo scopre che in realt\'e0 lui \'e8 Derek Shepherd, neurochirurgo del Seattle Grace, nonch\'e9 suo supervisore. Meredith deve cos\'ec districarsi tra lo studio e il lavoro per poter diventare un chirurgo e i sentimenti che prova per Derek.',NULL);\
+\
+/*Table structure for table `Notizie` */ \
+ \
+DROP TABLE IF EXISTS `Notizie`;\
+ \
+CREATE TABLE `Notizie` (\
+    `Titolo` varchar(30) NOT NULL,\
+    `Data` date,\
+    `Contenuto` text (30) NOT NULL,\
+    `SerieTv` varchar(30) NOT NULL,\
+    PRIMARY KEY (`Titolo`),\
+    FOREIGN KEY(`SerieTv`) REFERENCES `SerieTv`(`Titolo`) \
+    ON DELETE CASCADE\
+    ON UPDATE CASCADE\
+);\
+ \
+/*Data for the table `Notizie` */\
+ \
+insert into `Notizie`(`Titolo`,`Data`,`Contenuto`,`SerieTv`)values\
+('Annunciata la terza stagione della serie','2017-07-24','\'c8 fissato per l''11 ottobre l''esordio della terza stagione della pluripremiata serie cult firmata da Sam Esmail, con Rami Malek nel ruolo dell''hacker sociopatico Elliot Alderson. Ripartiamo dunque dai colpi di scena e dai cliffhanger del finale della stagione 2 per provare a riflettere su cosa aspettarci da Mr. Robot per il prossimo autunno.','MrRobot'),\
+('Cranston, pianto per stop Breaking Bad','2017-10-20','Ironico, trascinantee: Bryan Cranston, che ha dato vita per cinque stagioni a Walter White, il professore di chimica malato terminale nella serie cult Breaking Bad, al Giffoni Film Festival ha conquistato i ragazzi, regalando anche un esilarante mini monologo improvvisato in grammelot italiano/napoletano. Non nasconde con quanta emozione abbia detto addio al personaggio. ''Ho pianto alla fine di ''Breaking Bad'', ma penso che l''autore Vince Gilligan, abbia creato la perfetta fine per la storia". L''attore 61 enne, ha raggiunto il successo dopo oltre 20 anni di gavetta, con oltre 150 ruoli all''attivo, vincitore di 6 Emmy e un Golden Globe, e ha ottenuto nel 2016 la prima nomination all''Oscar per Trumbo. Ha ora in uscita l''atteso Last Flag Flying di Richard Linklater, seguito ideale di L''ultima corv\'e9 di Hal Ashby; ha da poco finito Untouchable, il remake Usa di Quasi Amici, con Nicole Kidman e Kevin Hart e sar\'e0 tra le voci del nuovo film animato di Wes Anderson, Isle of dogs.','Breaking Bad'),\
+('Messico, ucciso assistente di produzione: cercava location per la quarta stagione della serie','2017-14-10','Il suo era un ruolo fondamentale, trovava le location migliori per poter girare un film, o una serie tv, in un territorio difficile come quello messicano. Un lavoro che gli \'e8 costato la vita: Carlos Mu\'f1oz Portal \'e8 stato trovato morto proprio mentre cercava i luoghi in cui girare la prossima, la quarta, stagione della serie di Netflix Narcos. Trentasette anni, assistente di produzione, Mu\'f1oz Portal \'e8 stato ucciso in un''area vicina al confine con lo stato dell''Hidalgo, nel comune di Temascalapa. Beffa del destino, \'e8 stato assassinato esattamente come potrebbe accadere in una scena di Narcos: il corpo crivellato di colpi, poi nascosto nel bagagliaio della sua auto. In una zona che vanta il tragico primato del numero pi\'f9 alto di omicidi in tutto il Messico: solo nel mese di luglio ne sono stati registrati 182.','Narcos'),\
+('Ultima puntata vicina?','2017-11-11','Grey''s Anatomy ha da poco raggiunto il grande traguardo delle 300 puntate e sembra procedere spedito verso nuove stagioni ma, secondo alcune ipotesi che circolano ultimamente, sembra che la serie ci stia mandando dei segnali per indirizzarci vero la conclusione. Grey\'92s Anatomy ultima puntata: ecco cosa potrebbe succedere! Shonda Rhimes \'e8 recentemente passata a Netflix, firmando un contratto per la realizzazione di nuove serie tv e, anche se questo non implica che le sue serie verranno automaticamente chiuse, \'e8 un elemento da tenere in considerazione. Il fatto che lei indirizzi i suoi interessi altrove, potrebbe portarla a decidere di chiudere Grey\'92s Anatomy, cos\'ec come sta accadendo per un\'92altra delle sue serie, Scandal? Shonda Rhimes, comunque, ha garantito in pi\'f9 di un\'92occasione che non sa quando Grey\'92s Anatomy finir\'e0 e che, per il momento, il suo obiettivo \'e8 quello di battere il record delle 15 stagioni di E.R. \'96 Medici in prima linea.','Greys Anatomy'),\
+('Mr Robot va a una festa di hacker nella prima foto della stagione 3','2017-17-11','A ottobre l''acclamata serie tv Mr. Robot far\'e0 ritorno per una terza stagione. oggi Entertainment Weekly ha diffuso la prima foto ufficiale dei nuovi episodi che mostra Elliot (Rami Malek) sorprendentemente sociale a un incontro di hacker. A quanto pare la comunit\'e0 di hacher sembra piuttosto positiva di fronte allo stato del mondo. "La seconda stagione vedr\'e0 Elliot pronto a riprendere in mano la propria esistenza e a combattere contro le persone che lo stanno usando" ha spiegato il creatore della serie Sam Esmail, svelando che il team al centro dei dieci nuovi episodi sar\'e0 la disintegrazione. "Elliot non si lascer\'e0 pi\'f9 andare e non permetter\'e0 che questo accada."','MrRobot');\
+\
+/*Table structure for table `Attore` */ \
+ \
+DROP TABLE IF EXISTS `Attore`;\
+ \
+CREATE TABLE `Attore` (\
+    `Nome` varchar(30) NOT NULL,\
+    `Cognome` varchar(30) NOT NULL,\
+    `CF` varchar(30) NOT NULL,\
+    PRIMARY KEY (`CF`)\
+);\
+ \
+/*Data for the table `Attore` */\
+ \
+insert into `Attore`(`Nome`,`Cognome`,`CF`)values('Rami','Malek','RM120581'),\
+('Carly','Chaikin','CC230390'),\
+('Portia','Doubleday','PD220688'),\
+('Martin','Wallstrom','MW070783'),\
+('Christian','Slater','CS180869'),\
+('Michael','Gill','MG160460'),\
+('Viola','Davis','VD110865'),\
+('Alfred','Enoch','AE020288'),\
+('Jack','Falahee','JF200289'),\
+('Karla','Souza','KS111285'),\
+('Katie','Findlay','KF280890'),\
+('Tom','Verica','TV130564'),\
+('Wagner','Moura','WM260776'),\
+('Boyol','Holbrook','BH010981'),\
+('Pedro','Pascal','PP020475'),\
+('Paulina','Gaitan','PG190292'),\
+('Raul','Mendez','RM110475'),\
+('Bryan','Cranston','BC070356'),\
+('Aaron','Paul','AP270879'),\
+('Anna','Gunn','AG110868'),\
+('Dean','Norris','DN080463'),\
+('Krysten','Ritten','KR161281'),\
+('Ellen','Pompeo','EP101169'),\
+('Patrick','Dempsey','PD130166'),\
+('Sandra','Oh','SO200771'),\
+('Katherine','Heigl','KH241178'),\
+('Jesse','Williams','JW050881');\
+ \
+/*Table structure for table `Ruolo` */\
+ \
+DROP TABLE IF EXISTS `Ruolo`;\
+ \
+CREATE TABLE `Ruolo` (\
+    `CFAttore` varchar(30) NOT NULL ,\
+    `NomePersonaggio` varchar(30),\
+    `SerieTv` varchar(30) NOT NULL,\
+    PRIMARY KEY(`NomePersonaggio`,`SerieTv`),\
+    FOREIGN KEY(`CFAttore`) REFERENCES `Attore`(`CF`) \
+    ON DELETE CASCADE\
+    ON UPDATE CASCADE,\
+    FOREIGN KEY(`SerieTv`) REFERENCES `SerieTv`(`Titolo`) \
+    ON DELETE CASCADE\
+    ON UPDATE CASCADE\
+);\
+ \
+/*Data for the table `Ruolo` */\
+insert into `Ruolo`(`CFAttore`,`NomePersonaggio`,`SerieTv`)values\
+('RM120581','Elliot Alderson','MrRobot'),\
+('CC230390','Darlen Alderson','MrRobot'),\
+('PD220688','Angela Moss','MrRobot'),\
+('MW070783','Tyrell Wellick','MrRobot'),\
+('CS180869','MrRobot','MrRobot'),\
+('MG160460','Gideon Goddard','MrRobot'),\
+('VD110865','Annalise Keating','How to get away with a murder'),\
+('AE020288','Wes Gibbins','How to get away with a murder'),\
+('JF200289','Connor Walsh','How to get away with a murder'),\
+('KS111285','Laurel Castillo','How to get away with a murder'),\
+('TV130564','Rebecca Sutter','How to get away with a murder'),\
+('KF280890','Sam Keating','How to get away with a murder'),\
+('WM260776','Pablo Escobar','Narcos'),\
+('BH010981','Steve Murphy','Narcos'),\
+('PP020475','Javier Pena','Narcos'),\
+('PG190292','Tata Escobar','Narcos'),\
+('RM110475','C\'e9sar Gaviria','Narcos'),\
+('BC070356','Walter White','Breaking Bad'),\
+('AP270879','Jesse Pinkman','Breaking Bad'),\
+('AG110868','Skyler White','Breaking Bad'),\
+('DN080463','Hank Schrader','Breaking Bad'),\
+('KR161281','Jane Margolis','Breaking Bad'),\
+('EP101169','Meredith Grey','Greys Anatomy'),\
+('PD130166','Derek Shepherd','Greys Anatomy'),\
+('SO200771','Cristina Yang','Greys Anatomy'),\
+('KH241178','Izzie Stevens','Greys Anatomy'),\
+('JW050881','Jackson Avery','Greys Anatomy');\
+ \
+/*Table structure for table `Appartenenza`*/\
+ \
+DROP TABLE IF EXISTS `Appartenenza`;\
+ \
+CREATE TABLE `Appartenenza` (\
+        `SerieTv` int NOT NULL,\
+    `CFAttore` varchar(30) NOT NULL,\
+    PRIMARY KEY (`SerieTv`,`CFAttore`),\
+    FOREIGN KEY (`SerieTv`) REFERENCES `SerieTv`(`Titolo`) \
+    ON DELETE CASCADE\
+    ON UPDATE CASCADE,\
+    FOREIGN KEY (`CFAttore`) REFERENCES `Attore`(`CF`) \
+    ON DELETE CASCADE\
+    ON UPDATE CASCADE\
+);\
+ \
+/*Data for the table `Appartenenza`*/\
+ \
+insert into `Appartenenza`(`SerieTv`,`CFAttore`)values\
+('MrRobot','RM120581'),\
+('MrRobot','CC230390'),\
+('MrRobot','PD220688'),\
+('MrRobot','MW070783'),\
+('MrRobot','CS180869'),\
+('MrRobot','MG160460'),\
+('How to get away with a murder','VD110865'),\
+('How to get away with a murder','AE020288'),\
+('How to get away with a murder','JF200289'),\
+('How to get away with a murder','KS111285'),\
+('How to get away with a murder','KF280890'),\
+('How to get away with a murder','TV130564'),\
+('Narcos','WM260776'),\
+('Narcos','BH010981'),\
+('Narcos','PP020475'),\
+('Narcos','PG190292'),\
+('Narcos','RM110475'),\
+('Breaking Bad','BC070356'),\
+('Breaking Bad','AP270879'),\
+('Breaking Bad','AG110868'),\
+('Breaking Bad','DN080463'),\
+('Breaking Bad','KR161281'),\
+('Greys Anatomy','EP101169'),\
+('Greys Anatomy','PD130166'),\
+('Greys Anatomy','SO200771'),\
+('Greys Anatomy','KH241178'),\
+('Greys Anatomy','JW050881');\
+ \
+/*Table structure for table `Regista` */\
+ \
+DROP TABLE IF EXISTS `Regista`;\
+ \
+CREATE TABLE `Regista` (\
+    `Nome` varchar(30) NOT NULL,\
+    `Cognome` varchar(30) NOT NULL,\
+    `CF` varchar(30) NOT NULL,\
+    PRIMARY KEY (`CF`)\
+);\
+ \
+/*Data for the table `Regista` */\
+ \
+insert into `Regista`(`Nome`,`Cognome`,`CF`)values\
+('Sam','Esmail','SE170977'),\
+('Shonda','Rhimes','SR100170'),\
+('Chris','Brancato','CB240762'),\
+('Vince','Gilligan','VG100267');\
+ \
+/*Table structure for table `Direzione` */\
+ \
+DROP TABLE IF EXISTS `Direzione`;\
+ \
+CREATE TABLE `Direzione` (\
+        `SerieTv` int NOT NULL,\
+    `CFRegista` varchar(30) NOT NULL,\
+    PRIMARY KEY(`SerieTv`,`CFRegista`),\
+    FOREIGN KEY (`SerieTv`) REFERENCES `SerieTv`(`Titolo`) \
+    ON DELETE CASCADE\
+    ON UPDATE CASCADE,\
+    FOREIGN KEY (`CFRegista`) REFERENCES `Regista`(`CF`) \
+    ON DELETE CASCADE\
+    ON UPDATE CASCADE\
+);\
+ \
+/*Data for the table `Direzione` */\
+ \
+insert into `Direzione`(`SerieTv`,`CFRegista`)values\
+('MrRobot','SE170977'),\
+('How to get away with a murder','SR100170'),\
+('Narcos','CB240762'),\
+('Breaking Bad','VG100267'),\
+('Greys Anatomy','SR100170');\
+ \
+/*Table structure for table `Utente` */\
+ \
+DROP TABLE IF EXISTS `Utente`;\
+ \
+CREATE TABLE `Utente` (\
+    `NickName` varchar(30) NOT NULL,\
+    `Password` varchar(20) NOT NULL,\
+     PRIMARY KEY (`NickName`)\
+);\
+ \
+/*Data for the table `Utente` */\
+ \
+insert into `Utente`(`NickName`,`Password`)values\
+('ElenaGi','748539'),\
+('MatteoSi','453543'),\
+('Carla89','687365'),\
+('DavideSe','786239'),\
+('NicolaT1','678987'),\
+('LorenzoMi','976923');\
+ \
+/*Table structure for table `Valutazione` */\
+ \
+DROP TABLE IF EXISTS `Valutazione`;\
+ \
+CREATE TABLE `Valutazione`(\
+        `Titoloserie` varchar(30) NOT NULL,\
+    `Voto` smallint,\
+    `NickName` varchar(30) NOT NULL,\
+    PRIMARY KEY (`Titoloserie`,`NickName`),\
+    FOREIGN KEY (`Titoloserie`) REFERENCES `SerieTv`(`Titolo`) \
+    ON DELETE CASCADE\
+    ON UPDATE CASCADE, \
+    FOREIGN KEY (`NickName`) REFERENCES `Utente`(`NickName`) \
+    ON DELETE CASCADE\
+    ON UPDATE CASCADE\
+);\
+ \
+/*Data for the table `Valutazione` */\
+ \
+insert into `Valutazione`(`Titoloserie`,`Voto`,`NickName`)values\
+('MrRobot',4,'MatteoSi'),\
+('MrRobot',3,'ElenaGi'),\
+('How to get away with a murder',3,'NicolaT1'),\
+('How to get away with a murder',3,'Carla89'),\
+('Narcos',4,'LorenzoMi'),\
+('Narcos',3,'MatteoSi'),\
+('Narcos',4,'ElenaGi'),\
+('Breaking Bad',5,'NicolaT1'),\
+('Breaking Bad',4,'Carla89'),\
+('Breaking Bad',5,'ElenaGi'),\
+('Breaking Bad',5,'MatteoSi'),\
+('Breaking Bad',1,'DavideSe'),\
+('Breaking Bad',1,'LorenzoMi'),\
+('Greys Anatomy',4,'DavideSe'),\
+('Greys Anatomy',5,'LorenzoMi'),\
+('Greys Anatomy',3,'Carla89'),\
+('Greys Anatomy',2,'ElenaGi');\
+ \
+ select * from SerieTv;\
+ select * from Notizie;\
+ select * from Utente;\
+ select * from Valutazione;\
+ select * from Regista;\
+ select * from Attore;\
+ select * from Direzione;\
+ select * from Ruolo;\
+ select * from Appartenenza;\
+/* DROP TABLE Episodio; DROP TABLE Stagione; DROP TABLE Appartenenza; DROP TABLE Ruolo; DROP TABLE Direzione;\
+DROP TABLE Attore; DROP TABLE Regista; DROP TABLE Cast;\
+DROP TABLE Valutazione; DROP TABLE Utente;\
+DROP TABLE SerieTv; */}
