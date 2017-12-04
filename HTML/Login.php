@@ -1,3 +1,6 @@
+<?php
+require_once ".\MyLib.php"
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
@@ -40,7 +43,10 @@
 			echo "
 				<div id=\"content\">
 
-					<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\">
+					<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\">";
+					if(isset($_GET['error']))
+						echo "<p>Username o password sbagliati</p>";
+					echo "
 						<label for=\"Name\">
 							<b>Username</b>
 						</label>
@@ -59,9 +65,11 @@
 	}
 	else{
 		if(!isset($_SESSION) || session_id()==''){
-			session_start();
-			$_SESSION["Name"]=$_POST["Name"];
-			header("location:".$_POST["URL"]);
+
+			if(LogInUtente($_POST['Name'],$_POST['Password']))
+				header("location:".$_POST["URL"]);
+			else 
+				header("location:./Login.php?error");
 		}
 		else {
 			header("location:".$_POST["URL"]);

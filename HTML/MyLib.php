@@ -19,9 +19,10 @@ session_start();
 	}
 	else
 	{
+		if($_SESSION["Admin"]==true)echo "Cacca";
 		echo "
 		<li><a href=\"Mypage.php\">Le mie serie</a></li>
-		<li><p>Benvenuto ".$_SESSION["Name"]." </p></li>
+		<li><p>Benvenuto ".$_SESSION["Name"]."</p></li>
 		<div id=\"login\"><li><a href=\"logout.php\">Logout</a></li></div>";
 	}
 
@@ -39,6 +40,7 @@ function LoadCachedFile($G)
 	if(file_exists ($G))
 	{
 		$myfile=fopen($G,"r") or die("<p>Errore: la ricerca è fallita<\p>");
+		
 		if(fgets($myfile)>=(time()-600))
 			printCache($myfile,$G);
 		else
@@ -58,5 +60,28 @@ function printCache($file,$path)
 }
 
 function RegenerateCache($file){echo "to do";}
+function LogInUtente($User,$Password)
+{
+	$hostname = "localhost";
+	$dbname = "TecWeb";
+	$user ="root";
+	$pass ="";
+	try{
+$db = new PDO ("mysql:host=".$hostname.";dbname=".$dbname,$user,$pass);
+}catch(PDOException $e){
+echo "Errore:".$e->getMessage();
+}
+$runnable=$db->prepare("SELECT Admin FROM utente WHERE NickName=? AND Password=?");
+$runnable->execute(array($User,$Password));
 
+if($runnable->rowCount()==1)
+{
+	$data=$runnable->fetch();
+	session_start();
+	$_SESSION["Name"]=$User;
+	$_SESSION["Admin"]=$data["Admin"];
+	return true;
+}
+return false;
+}
 ?>
