@@ -32,12 +32,20 @@ require_once ".\MyLib.php"
 		
 	<?php
 		LogInButton();
+<<<<<<< HEAD
+		$_SESSION["UltimaRicerca"]=null;
+=======
+>>>>>>> 3efeb538890bb197817ac1484fd4b978ebb52042
 	?>
 </ul>
 </div>
 
 <div id="content">
+<<<<<<< HEAD
+<div id="barraricerca"><form action="Ricerca.php" method="GET"><input type="text" name="Ricerca" required="required"/><input type="submit" value="Cerca"/></form></div>
+=======
 <div id="barraricerca"><form action="Ricerca.php" method="POST"><input type="text" name="Ricerca"/><input type="submit" value="Cerca"/></form></div>
+>>>>>>> 3efeb538890bb197817ac1484fd4b978ebb52042
 	<h2>Generi</h2>
 	<div class="Genere Thriller">
 		<a href="Thriller.php"><span xml:lang="en">Thriller</span></a>

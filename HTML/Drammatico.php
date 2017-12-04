@@ -32,13 +32,21 @@ require_once ".\MyLib.php"
 		
 	<?php
 		LogInButton();
+<<<<<<< HEAD
+		$_SESSION["UltimaRicerca"]=null;
+=======
+>>>>>>> 3efeb538890bb197817ac1484fd4b978ebb52042
 	?>
 </ul>
 </div>
 
 <div id="content">
      <?php
+<<<<<<< HEAD
+     	LoadCachedFile("Drammatico")
+=======
      	LoadCachedFile("DrammaticoCache.txt")
+>>>>>>> 3efeb538890bb197817ac1484fd4b978ebb52042
 
 
      ?>	

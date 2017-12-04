@@ -21,7 +21,11 @@ require_once ".\MyLib.php"
 
 
 <div id="breadcrumbs">
+<<<<<<< HEAD
+	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Fantascienza </p>
+=======
 	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Drammatico </p>
+>>>>>>> 3efeb538890bb197817ac1484fd4b978ebb52042
 </div>
 
 <div id="menu">
@@ -32,13 +36,22 @@ require_once ".\MyLib.php"
 		
 	<?php
 		LogInButton();
+<<<<<<< HEAD
+		
+		$_SESSION["UltimaRicerca"]=null;
+=======
+>>>>>>> 3efeb538890bb197817ac1484fd4b978ebb52042
 	?>
 </ul>
 </div>
 
 <div id="content">
      <?php
+<<<<<<< HEAD
+     	LoadCachedFile("Fantascienza")
+=======
      	LoadCachedFile("FantascienzaCache.txt")
+>>>>>>> 3efeb538890bb197817ac1484fd4b978ebb52042
 
 
      ?>	
