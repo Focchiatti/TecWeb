@@ -9,11 +9,11 @@ html, body {
     margin: auto;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
-	height:100%;
+    min-height: 100%;
 
 }
 
-body{border-left: 1px solid #DDD;
+html{border-left: 1px solid #DDD;
 	border-right: 1px solid #DDD;
 	background-color:#333;
 }
@@ -74,23 +74,19 @@ body{border-left: 1px solid #DDD;
 	display:block;
 	float:right;
 }
-#login input{
-	margin-top:0.1em;
-	margin-right:1em;
-}
-#loginText
-{
-	display:block;
-	width:7em;
-	float:left;
-}#loginText input
-{
-	width:7em;
-}
 
-#TastoLogIn
+#TastoLogIn{
+	text-decoration: underline;
+	font-weight: normal;
+	border:none;
+	margin-top:0em;
+	font-size: 1em;
+	padding: 0.95em 1em 0.9em 1em;
+}
+input[type=submit]:hover
 {	
-	padding: 1em 0.8em 0.8em 1em;
+	background-color: #663333;
+
 }
 #content {	
 	float:right;
@@ -100,7 +96,7 @@ body{border-left: 1px solid #DDD;
 }
 
 
-#content h3{
+#content h2{
 	color: #cc3333;
 	font-weight: bold;
 	padding:0.5em;
@@ -108,7 +104,8 @@ body{border-left: 1px solid #DDD;
 
 
 #barraricerca{
-/* In caso */
+ width: 80%;
+ margin-left: 10%;
 }
 
 
@@ -188,36 +185,44 @@ body{border-left: 1px solid #DDD;
 	background-size:100% 100%;
 	}
 
-
+label{
+	width: 100%;
+	display: inline-block;
+	margin: 0.5em;
+}
 
 input[type=text], input[type=password] {
-    width: 100%;
+	width: 80%;
     padding: 0.5em 1em;
-    margin: 0.4em;
-    display: inline-block;
+    margin-left: 10%;
+    margin-top: 0.5em;
+    clear: both;
+    display: block;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
-
-button {
+input[type=submit]{
+	display: inline;
+	border: 1px solid #ccc;
+	color: #fff;
+	font-weight: bold;
+    padding: 1em;
     background-color: #cc3333;
-    color: white;
-    padding: 1em 0.5em;
-    margin: 0.4em 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
 
-
-button:hover {
-    opacity: 0.8;
+    margin-top: 0.5em;
 }
 
 .cancelbtn {
-    width: auto;
+	display: block;
+	border: 1px solid #ccc;
+	color: #fff;
+	font-weight: bold;
     padding: 1em;
+    background-color: #cc3333;
+    float: left;
+}
+.cancelbtn:hover{
     background-color: #663333;
 }
 
@@ -226,8 +231,3 @@ button:hover {
     padding: 1em;
 }
 
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}

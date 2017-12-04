@@ -21,44 +21,29 @@ require_once ".\MyLib.php"
 
 
 <div id="breadcrumbs">
-	<p>Ti trovi in: <span xml:lang="en">Home</span></p>
+	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Fantascienza </p>
 </div>
 
 <div id="menu">
 <ul>
-		<li><p>Home</p></li>
+		<li><a href=Home.php>Home</a></li>
 		<!--<li>Generi</li>-->
 		<li><a href=\"news.php\">News</a></li>
 		
 	<?php
 		LogInButton();
+		
 		$_SESSION["UltimaRicerca"]=null;
 	?>
 </ul>
 </div>
 
 <div id="content">
-<div id="barraricerca"><form action="Ricerca.php" method="GET"><input type="text" name="Ricerca" required="required"/><input type="submit" value="Cerca"/></form></div>
-	<h2>Generi</h2>
-	<div class="Genere Thriller">
-		<a href="Thriller.php"><span xml:lang="en">Thriller</span></a>
-	</div>
-		<div class="Genere Drammatico">
-		<a href="Drammatico.php"> Drammatico</a>
-	</div>
-		<div class="Genere Commedia">
-		<a href="Commedia.php">Commedia</a>
-	</div>
-		<div class="Genere Fantasy">
-		<a href="Fantasy.php"><span xml:lang="en">Fantasy</span></a>
-	</div>
-		<div class="Genere Fantascienza">
-		<a href="Fantascienza.php">Fantascienza</a>
-	</div>
-	<div class="Genere Poliziesco">
-		<a href="Poliziesco.php">Poliziesco</a>
-	</div>
-	
+     <?php
+     	LoadCachedFile("Fantascienza")
+
+
+     ?>	
 </div>
 
 <div id="footer">

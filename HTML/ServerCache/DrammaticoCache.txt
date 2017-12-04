@@ -1,0 +1,4 @@
+1512418388
+ <div class="ListaSerie"><a href="Serie.php?name=Breaking Bad">Breaking Bad</a><p>/5</p>
+ <div class="ListaSerie"><a href="Serie.php?name=Greys Anatomy">Greys Anatomy</a><p>/5</p>
+ <div class="ListaSerie"><a href="Serie.php?name=Narcos">Narcos</a><p>/5</p>
