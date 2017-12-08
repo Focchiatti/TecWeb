@@ -17,7 +17,7 @@
 	<h1>Serie-a-mente</h1>
 </div>
 <?php
-require_once ".\MyLib.php";
+require_once "./MyLib.php";
 
 
 echo "
@@ -35,7 +35,6 @@ echo "
 	echo "
 </ul>
 </div>
-
 <div id=\"content\">";
 if(isset($_GET["Ricerca"])&&$_GET["Ricerca"]!=""){
 	
@@ -52,3 +51,4 @@ echo "
 </div>
 </body>
 </html>";
+?>

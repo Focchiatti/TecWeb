@@ -29,26 +29,30 @@ $db = new PDO ("mysql:host=".$hostname.";dbname=".$dbname,$user,$pass,array(PDO:
 	echo "Errore:".$e->getMessage();
 	die();
 }
-$runnable=$db->prepare("SELECT Titolo,Genere,Trama FROM SerieTV WHERE Titolo=?");
-$runnable->execute(array($_GET["name"]));
+$runnable=$db->prepare("SELECT Titolo,Data,Contenuto,SerieTv FROM Notizie");
+$runnable->execute(array());
 $i=0;
-$series = $runnable->fetchAll();
-foreach ($series as $serie) {
-	$i=$i+1;
-	$Titolo=$serie["Titolo"];
-	$Genere=$serie["Genere"];
-	$Trama=$serie["Trama"];
+$notizie = $runnable->fetchAll();
+$Titoli=array();
+$Date=array();
+$Contenuti=array();
+$Serie=array();
+foreach ($notizie as $notizia) {
+	$Titoli[$i]=$notizia["Titolo"];
+	$Date[$i]=$notizia["Data"];
+	$Contenuti[$i]=$notizia["Contenuto"];
+    $Serie[$i]=$notizia["SerieTv"];
+    $i=$i+1;
 }
 $db=null;
 $runnable=null;
-if ($i==2){
-	header("location:./Home.php");
+if ($i==0){
+	echo "<p>Non ci sono notize</p>";
 }
 echo "
 <div id=\"breadcrumbs\">
-	<p>Ti trovi in: <span xml:lang=\"en\">Home >> 
-			".$Genere." >> ".$Titolo.
-		"
+	<p>Ti trovi in: <span xml:lang=\"en\">Home >>
+    <span xml:lang=\"en\">News>
 		</span>
 	</p>
 </div>
@@ -56,24 +60,22 @@ echo "
 <div id=\"menu\">
 <ul>
 		<li><a href=\"Home.php\">Home</a></li>
-		<li><a href=\"news.php\">News</a></li>";
+		<li><p>News</p></li>";
 	LogInButton();
 	echo "
 </ul>
 </div>
 
-<div id=\"content\">
-<h1>".$Titolo."</h1><h3>Genere ".$Genere."</h3><p>".$Trama."</p>
-";
-if(isset($_SESSION["UltimaRicerca"])){
-	echo "<a href=\"Ricerca.php?Ricerca=".$_SESSION["UltimaRicerca"]."\">Torna alla ricerca</a>";
-	
+<div id=\"content\">";
+$j=0;
+while ($i!=$j){
+    echo "<h3>".$Titoli[$j]."</h3><h4>".$Date[$j]."</h4><p>".$Contenuti[$j]."</p><a href=\"Serie.php?name=".$Serie[$j]."\">" .$Serie[$j]. "</a>";
+    $j=$j+1;
 }
-echo "<a href=\"".$Genere.".php\">Vai al genere</a>";
+
+
 echo 
-"
-</div>
-<div id=\"footer\">
+"</div><div id=\"footer\">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang=\"en\">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 </div>
 </body>
