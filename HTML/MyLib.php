@@ -56,6 +56,7 @@ function LoadCachedFile($G)
 	<img src=\"./../img/download.jpg\">
 	P.S. Dannato Sexy Ballan</p>";
 }
+
 function printCache($file,$path)
 {
 	if(!feof($file))
@@ -80,7 +81,7 @@ function RegenerateCacheGenere($file,$Genere){
 	$series = $runnable->fetchAll();
 	foreach ($series as $serie) {
     	fwrite($myfile,"\n <div class=\"ListaSerie\">
-        <a href=\"Serie.php?name=".$serie['Titolo']."\">" .$serie['Titolo']. "</a><p>".$serie['Valutazione']."/5</p>");
+        <a href=\"Serie.php?name=".$serie['Titolo']."\">" .$serie['Titolo']. "</a><p>".$serie['Valutazione']."/5</p></div>");
 	}
 
 $db=null;
@@ -89,6 +90,7 @@ fclose($myfile);
 LoadCachedFile($Genere);
 
 }
+
 function Ricerca($name){
 			$hostname = "localhost";
 		$dbname = "TecWeb";
@@ -117,7 +119,8 @@ foreach ($series as $serie) {
 		</a><p>
 		".$serie['Valutazione'].
 		"/5
-		</p>";
+		</p>
+		</div>";
 	}
 	$db=null;
 	$runnable=null;

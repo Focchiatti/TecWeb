@@ -5,18 +5,16 @@
 }
 
 html, body {
-    max-width: 1024px; /* definire dimensione massima pagina */
-    margin: auto;
+    max-width: 480px; /* definire dimensione massima pagina */
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
-    min-height: 100%;
-
 }
 
-html{border-left: 1px solid #DDD;
-	border-right: 1px solid #DDD;
+html{
 	background-color:#333;
 }
+
+
 
 #header {
 	text-align: center;
@@ -24,7 +22,7 @@ html{border-left: 1px solid #DDD;
 
 #header h1{
 	color: #cc3333;
-	font-size: 4em;
+	font-size: 5em;
 	font-weight: bold;
 	padding:0.5em;
 }
@@ -36,13 +34,16 @@ html{border-left: 1px solid #DDD;
 	padding: 0.2em;
 	color: #cc3333;
 	font-weight: bold;
+	font-size: 1.5em;
 }
-
 #menulogin{
-		height: 3em;
+	height: 1.5em;
+	float: none;
+	width: 100%;
 	background-color: #cc3333;
 	border-bottom: 1px solid #DDD;
-	margin-bottom:1em;
+	margin-bottom:0em;
+	font-size: 2em;
 }
 #menulogin ul{
 	list-style-type: none;
@@ -52,15 +53,15 @@ html{border-left: 1px solid #DDD;
     text-align: center;
 }
 #menulogin li{
-    float: left;
+    float: none;
 }
 #menulogin li a {
-	padding: 0.9em 1em 0.9em 1em;
+	padding: 0.2em;
     display: block;
 	color:white;
 }
 #menulogin li p {
-	padding: 0.9em 1em 0.9em 1em;
+	padding: 0em;
     display: block;
     color: white;
 }
@@ -69,10 +70,13 @@ html{border-left: 1px solid #DDD;
     background-color: #663333;
 }
 #menu {
-	height: 3em;
+	height: 7em;
+	float: none;
+	width: 100%;
 	background-color: #cc3333;
 	border-bottom: 1px solid #DDD;
-	margin-bottom:1em;
+	margin-bottom: 0;
+	font-size: 2em;
 }
 #menu ul{
 	list-style-type: none;
@@ -82,15 +86,15 @@ html{border-left: 1px solid #DDD;
     text-align: center;
 }
 #menu li{
-    float: left;
+    float: none;
 }
 #menu li a {
-	padding: 0.9em 1em 0.9em 1em;
+	padding: 0.2em;
     display: block;
 	color:white;
 }
 #menu li p {
-	padding: 0.9em 1em 0.9em 1em;
+	padding: 0.2em;
     display: block;
     color: white;
 }
@@ -101,7 +105,7 @@ html{border-left: 1px solid #DDD;
 
 #login{
 	display:block;
-	float:right;
+	float:none;
 }
 
 #TastoLogIn{
@@ -110,7 +114,7 @@ html{border-left: 1px solid #DDD;
 	border:none;
 	margin-top:0em;
 	font-size: 1em;
-	padding: 0.95em 1em 0.9em 1em;
+	padding: 0.2em;
 }
 input[type=submit]:hover
 {	
@@ -130,6 +134,7 @@ input[type=submit]:hover
 	color: #cc3333;
 	font-weight: bold;
 	padding:1em 0.5em;
+	font-size: 2em;
 }
 
 
@@ -144,7 +149,7 @@ input[type=submit]:hover
 	border:1px solid #000;	
 	width:20%;
 	min-width:8em;
-	margin-left:10%;
+	margin-left:15%;
 	margin-top:2em;
 	height:8em;
 	float:left;
@@ -154,33 +159,33 @@ input[type=submit]:hover
 .Genere a{
 	display:inline-block;
 	padding-top:3.4em;
-	padding-bottom:3.4em;
 	width:100%;
 	color: #FFF;
+	font-size: 1.2em;
 
 }
 .Thriller a:hover{
-	background-image:url("../Img/ThrillerAction1.jpg") ;
-	background-size:100% 100%;
+	background-image:none;
+	background-size:0;
 }
 .Drammatico a:hover{
-	background-image:url("../Img/DrammaticoAction.jpg") ;
-	background-size:100% 100%;
+	background-image:none ;
+	background-size:0;
 }
 .Poliziesco a:hover{
-	background-image:url("../Img/PoliziescoAction.jpg") ;
-	background-size:100% 100%;
+	background-image:none;
+	background-size:0;
 }
 .Commedia a:hover{
-	background-image:url("../Img/CommediaAction.jpg") ;
-	background-size:100% 100%;
+	background-image:none;
+	background-size:0;
 }
 .Fantasy a:hover{
-	background-image:url("../Img/FantasyAction.jpg") ;
-	background-size:100% 100%;
+	background-image:none ;
+	background-size:0;
 }.Fantascienza a:hover{
-	background-image:url("../Img/FantascienzaAction.jpg") ;
-	background-size:100% 100%;
+	background-image:none ;
+	background-size:0;
 }
 
 #footer{
@@ -220,6 +225,7 @@ label{
 	width: 100%;
 	display: inline-block;
 	margin: 0.5em;
+	font-size: 1.5em;
 }
 
 input[type=text], input[type=password] {
@@ -231,6 +237,7 @@ input[type=text], input[type=password] {
     display: block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    font-size: 1.5em;
 }
 
 input[type=submit]{
@@ -240,7 +247,7 @@ input[type=submit]{
 	font-weight: bold;
     padding: 1em;
     background-color: #cc3333;
-
+    font-size: 1.5em;
     margin-top: 0.5em;
 }
 
@@ -252,6 +259,7 @@ input[type=submit]{
     padding: 1em;
     background-color: #cc3333;
     float: left;
+    font-size: 1.5em;
 }
 .cancelbtn:hover{
     background-color: #663333;
@@ -292,6 +300,7 @@ input[type=submit]{
 
 #contentgenere{
 	text-align: center;
+	font-size: 2em;
 }
 #contentgenere a{
 	color: #cc3333;

@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-1512418388
- <div class="ListaSerie"><a href="Serie.php?name=Breaking Bad">Breaking Bad</a><p>/5</p>
- <div class="ListaSerie"><a href="Serie.php?name=Greys Anatomy">Greys Anatomy</a><p>/5</p>
- <div class="ListaSerie"><a href="Serie.php?name=Narcos">Narcos</a><p>/5</p>
-=======
-0
->>>>>>> 3efeb538890bb197817ac1484fd4b978ebb52042
+1512840859
+ <div class="ListaSerie">
+        <a href="Serie.php?name=Breaking Bad">Breaking Bad</a><p>/5</p></div>
+ <div class="ListaSerie">
+        <a href="Serie.php?name=Greys Anatomy">Greys Anatomy</a><p>/5</p></div>
+ <div class="ListaSerie">
+        <a href="Serie.php?name=Narcos">Narcos</a><p>/5</p></div>

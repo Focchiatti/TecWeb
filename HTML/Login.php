@@ -7,9 +7,9 @@ require_once "./MyLib.php"
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title> Serie-a-mente </title>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
-	<!-- <link type="text/css" rel="stylesheet" href="Style/small.css" media="handheld, screen and (max-width:480px),
+	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
-	<link type="text/css" rel="stylesheet" href="Style/print.css" media="print" /> -->
+	<link type="text/css" rel="stylesheet" href="../CSS/styleprint.css" media="print" />
 
 </head>
 
@@ -24,7 +24,7 @@ require_once "./MyLib.php"
 <div id="breadcrumbs">
 	<p>Ti trovi in: <span xml:lang="en">Login</span></p>
 </div>
-<div id="menu">
+<div id="menulogin">
 	<ul>
 		<li><a href="Home.php">Home</a></li>
 	</ul>
@@ -82,5 +82,4 @@ require_once "./MyLib.php"
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 </div>
 </body>
-</html>
 </html>
