@@ -19,19 +19,12 @@ session_start();
 	}
 	else
 	{
-		if($_SESSION["Admin"]==true)echo "Cacca";
 		echo "
 		<li><a href=\"Mypage.php\">Le mie serie</a></li>
 		<li><p>Benvenuto ".$_SESSION["Name"]."</p></li>
 		<div id=\"login\"><li><a href=\"logout.php\">Logout</a></li></div>";
 	}
 
-
-	
-	
-echo"
-</div>
-	";
 }
 
 function LoadCachedFile($G)
@@ -41,53 +34,90 @@ function LoadCachedFile($G)
 	if(file_exists ($G))
 	{
 		$myfile=fopen($G,"r") or die("<p>Errore: la ricerca è fallita<\p>");
-        $timefile = fgets($myfile);
-		if($timefile>=(time()-600)){
-			printCache($myfile,$G);
+        
+		if($Gen!="Notizie"){
+			$timefile = fgets($myfile);
+			if($timefile<(time()+600)){
 			fclose($myfile);
+			RegenerateCacheGenere($Gen);
+			}
+			$myfile=fopen($G,"r") or die("<p>Errore: la ricerca è fallita<\p>");
+			fgets($myfile);
+			printCache($myfile,$G);
 		}
 		else{
-			fclose($myfile);
-			RegenerateCacheGenere($G,$Gen);
-		}
-	}
-	else echo "<p>Errore: il server ha fuckappato GG WP questa cosa succederà ogni volta tu arriverai in questa pagina till I fix it so fucking goodbye bitch. </p>
-	<p>
-	<img src=\"./../img/download.jpg\">
-	P.S. Dannato Sexy Ballan</p>";
+			printCache($myfile,$G);
+			}
+		fclose($myfile);
+}else
+echo "<img src=\"../Img/download.jpg\">";
 }
 
 function printCache($file,$path)
 {
 	if(!feof($file))
-		echo fread($file, filesize($path));
-	else echo "<p>Ohh Crap non ci sono serie TV disponibili di questo genere forse non ci saranno mai o forse proprio in questo momento ne ho aggiunta una, chi lo sa stronzetto.</p>";
+		echo fread($file, filesize($path)+1);
+	else echo "<p>Ohh Crap nessuna informazione disponibile, forse non ci saranno mai o forse proprio in questo momento ne ho aggiunta una, chi lo sa stronzetto.</p>";
 }
 
-function RegenerateCacheGenere($file,$Genere){
-	$dsn ="mysql:dbname=TecWeb;host=127.0.0.1";
+function RegenerateCacheNotizie($file)
+{
+ 	$hostname = "localhost";
+	$dbname = "TecWeb";
 	$user ="root";
 	$pass ="";
+	$path="./ServerCache/".$file."Cache.txt";
 	try{
-        $db = new PDO ($dsn,$user,$pass);
-    }catch(PDOException $e){
-        echo "Errore:".$e->getMessage();
-        die();
-        }
-    $myfile=fopen($file,"w");
+		$db = new PDO ("mysql:host=".$hostname.";dbname=".$dbname,$user,$pass);
+	}catch(PDOException $e){
+		echo "Errore:".$e->getMessage();
+		die();
+	}
+    $myfile=fopen($path,"w");
+    $runnable=$db->prepare("SELECT Titolo,Data,Contenuto,SerieTv FROM Notizie ORDER BY Data DESC");
+		$runnable->execute();
+		$notizie = $runnable->fetchAll();
+
+foreach ($notizie as $notizia) {
+	fwrite($myfile,"<div class=\"notizia\"><h1>".$notizia["Titolo"]."</h1><h1>".$notizia["Data"]."</h1><h2>".$notizia["SerieTv"]."</h2><p>".$notizia["Contenuto"]."</p></div>\n");
+}
+
+$db=null;
+$runnable=null;
+fclose($myfile);
+}
+function RegenerateCacheGenere($file){
+		$hostname = "localhost";
+		$dbname = "TecWeb";
+		$user ="root";
+		$pass ="";
+		$path="./ServerCache/".$file."Cache.txt";
+		try{
+	$db = new PDO ("mysql:host=".$hostname.";dbname=".$dbname,$user,$pass);
+	}catch(PDOException $e){
+		echo "Errore:".$e->getMessage();
+		die();
+	}
+    $myfile=fopen($path,"w");
     $runnable=$db->prepare("SELECT Titolo,Valutazione FROM SerieTV WHERE Genere=?");
-    $runnable->execute(array($Genere));
+    $runnable->execute(array($file));
     fwrite($myfile,time());
 	$series = $runnable->fetchAll();
+	if($series!=null)
+	{
+
+		fwrite($myfile,"\n<ul id=\"ListaSerie\">");
+	
 	foreach ($series as $serie) {
-    	fwrite($myfile,"\n <div class=\"ListaSerie\">
-        <a href=\"Serie.php?name=".$serie['Titolo']."\">" .$serie['Titolo']. "</a><p>".$serie['Valutazione']."/5</p></div>");
+    	fwrite($myfile,"\n <li class=\"ELSerie\">
+        <a href=\"Serie.php?name=".$serie['Titolo']."\">" .$serie['Titolo']. "</a><p>".$serie['Valutazione']."/5</p></li>");
+	}
+		fwrite($myfile,"</ul>");
 	}
 
 $db=null;
 $runnable=null;
 fclose($myfile);
-LoadCachedFile($Genere);
 
 }
 

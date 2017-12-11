@@ -1,5 +1,6 @@
-1512842620
- <div class="ListaSerie">
-        <a href="Serie.php?name=How to get away with a murder">How to get away with a murder</a><p>/5</p></div>
- <div class="ListaSerie">
-        <a href="Serie.php?name=MrRobot">MrRobot</a><p>/5</p></div>
+1513029031
+<ul id="ListaSerie">
+ <li class="ELSerie">
+        <a href="Serie.php?name=How to get away with a murder">How to get away with a murder</a><p>3.00/5</p></li>
+ <li class="ELSerie">
+        <a href="Serie.php?name=MrRobot">MrRobot</a><p>3.50/5</p></li></ul>

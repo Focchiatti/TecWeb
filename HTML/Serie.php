@@ -62,7 +62,7 @@ echo "
 </ul>
 </div>
 
-<div id=\"contentserie\">
+<div id=\"content\" class=\"Serie\" >
 <h1>".$Titolo."</h1><h3>Genere ".$Genere."</h3><p>".$Trama."</p>
 ";
 if(isset($_SESSION["UltimaRicerca"])){

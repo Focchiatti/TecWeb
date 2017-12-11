@@ -36,7 +36,7 @@ require_once "./MyLib.php"
 </ul>
 </div>
 
-<div id="contentgenere">
+<div id="content">
      <?php
      	LoadCachedFile("Poliziesco");
      ?>	

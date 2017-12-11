@@ -35,39 +35,10 @@ html{border-left: 1px solid #DDD;
 	width: auto;
 	padding: 0.2em;
 	color: #cc3333;
+	
 	font-weight: bold;
 }
 
-#menulogin{
-		height: 3em;
-	background-color: #cc3333;
-	border-bottom: 1px solid #DDD;
-	margin-bottom:1em;
-}
-#menulogin ul{
-	list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    text-align: center;
-}
-#menulogin li{
-    float: left;
-}
-#menulogin li a {
-	padding: 0.9em 1em 0.9em 1em;
-    display: block;
-	color:white;
-}
-#menulogin li p {
-	padding: 0.9em 1em 0.9em 1em;
-    display: block;
-    color: white;
-}
-
-#menulogin li a:hover {
-    background-color: #663333;
-}
 #menu {
 	height: 3em;
 	background-color: #cc3333;
@@ -121,7 +92,7 @@ input[type=submit]:hover
 	float:right;
 	color: white;
 	width:100%;
-	text-align:center;
+	text-align: center;
 	margin-bottom: 10%;
 }
 
@@ -131,7 +102,54 @@ input[type=submit]:hover
 	font-weight: bold;
 	padding:1em 0.5em;
 }
+#content p{
+	text-align: left;
+	padding: 1em;
+}
 
+#content ul{
+	list-style-type: none;
+}
+
+.Serie h1{
+	padding: 0.5em;
+	display: block;
+	text-align: center;
+}
+
+.Serie h3{
+	padding-bottom: 1em;
+	text-align: center;
+	display: block;
+}
+.Serie a{
+	color: #cc3333;
+	display: block;
+	text-align: center;
+}
+
+.ELSerie{
+	margin-bottom:0.7em;
+}
+.ELSerie a{
+	color: #cc3333;
+	display: inline;
+}
+
+.ELSerie p{
+	display: inline;
+	color: white;
+}
+#ListaSerie
+{
+	padding:0.3em;
+}
+#ListaSerie p
+{
+
+	padding:0em;
+	margin-left :5%;
+}
 
 #barraricerca{
  width: 80%;
@@ -143,10 +161,9 @@ input[type=submit]:hover
 	text-align:center;
 	border:1px solid #000;	
 	width:20%;
-	min-width:8em;
+	min-width:6.5em;
 	margin-left:10%;
 	margin-top:2em;
-	height:8em;
 	float:left;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 	
@@ -262,45 +279,3 @@ input[type=submit]{
     padding: 1em;
 }
 
-#contentserie{
-	color: white;
-	padding: 1em;
-}
-
-#contentserie h1{
-	padding: 0.5em;
-	display: block;
-	text-align: center;
-}
-
-#contentserie h3{
-	padding-bottom: 1em;
-	text-align: center;
-	display: block;
-}
-
-#contentserie a{
-	color: #cc3333;
-	display: block;
-	text-align: center;
-}
-
-#contentserie p{
-	text-align: left;
-	padding: 1em;
-}
-
-#contentgenere{
-	text-align: center;
-}
-#contentgenere a{
-	color: #cc3333;
-	display: inline;
-	padding: 0.5em;
-}
-
-#contentgenere p{
-	display: inline;
-	color: white;
-	padding: 0.5em;
-}

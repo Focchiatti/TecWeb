@@ -1,7 +1,6 @@
-1512840859
- <div class="ListaSerie">
-        <a href="Serie.php?name=Breaking Bad">Breaking Bad</a><p>/5</p></div>
- <div class="ListaSerie">
-        <a href="Serie.php?name=Greys Anatomy">Greys Anatomy</a><p>/5</p></div>
- <div class="ListaSerie">
-        <a href="Serie.php?name=Narcos">Narcos</a><p>/5</p></div>
+1513029963
+<ul id="ListaSerie">
+ <li class="ELSerie">
+        <a href="Serie.php?name=Breaking Bad">Breaking Bad</a><p>3.50/5</p></li>
+ <li class="ELSerie">
+        <a href="Serie.php?name=Greys Anatomy">Greys Anatomy</a><p>3.50/5</p></li></ul>

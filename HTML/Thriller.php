@@ -26,7 +26,7 @@ require_once "./MyLib.php"
 
 <div id="menu">
 <ul>
-		<li><a href=Home.php>Home</a></li>
+		<li><a href="Home.php">Home</a></li>
 		<li><a href="news.php">News</a></li>
 		
 	<?php
@@ -36,7 +36,7 @@ require_once "./MyLib.php"
 </ul>
 </div>
 
-<div id="contentgenere">
+<div id="content">
      <?php
      	LoadCachedFile("Thriller");
      ?>	
