@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 1513075974
+=======
+1513029031
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 <ul id="ListaSerie">
  <li class="ELSerie">
         <a href="Serie.php?name=How to get away with a murder">How to get away with a murder</a><p>3.00/5</p></li>

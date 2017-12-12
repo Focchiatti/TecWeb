@@ -62,7 +62,11 @@ echo "
 </ul>
 </div>
 
+<<<<<<< HEAD
 <div id=\"content\" class=\"Serie\">
+=======
+<div id=\"content\" class=\"Serie\" >
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 <h1>".$Titolo."</h1><h3>Genere ".$Genere."</h3><p>".$Trama."</p>
 ";
 if(isset($_SESSION["UltimaRicerca"])){
@@ -72,7 +76,10 @@ if(isset($_SESSION["UltimaRicerca"])){
 echo "<a href=\"".$Genere.".php\">Vai al genere</a>";
 echo 
 "
+<<<<<<< HEAD
 
+=======
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 </div>
 <div id=\"footer\">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang=\"en\">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>

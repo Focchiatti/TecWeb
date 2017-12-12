@@ -36,6 +36,7 @@ require_once "./MyLib.php"
 </div>
 
 <div id="content">
+<<<<<<< HEAD
 <div id="barraricerca">
 	<form action="Ricerca.php" method="GET">
 		<input type="text" name="Ricerca" required="required"/>
@@ -43,6 +44,9 @@ require_once "./MyLib.php"
 	</form>
 </div>
 	
+=======
+<div id="barraricerca"><form action="Ricerca.php" method="GET"><input type="text" name="Ricerca" required="required"/><input type="submit" value="Cerca"/></form></div>
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 	<h2>Generi</h2>
 	<div class="Genere Thriller">
 		<a href="Thriller.php">

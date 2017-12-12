@@ -93,6 +93,7 @@ input[type=submit]:hover
 	float:right;
 	color: white;
 	width:100%;
+<<<<<<< HEAD
 	text-align:center;
 	margin-bottom: 10%;
 }
@@ -102,6 +103,10 @@ input[type=submit]:hover
 }
 #content ul{
 	list-style-type: none;
+=======
+	text-align: center;
+	margin-bottom: 10%;
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 }
 
 .Serie h2{
@@ -109,9 +114,20 @@ input[type=submit]:hover
 	font-weight: bold;
 	padding:1em 0.5em;
 }
+<<<<<<< HEAD
 
 .Serie p{text-align: left;}
 
+=======
+#content p{
+	text-align: left;
+	padding: 1em;
+}
+
+#content ul{
+	list-style-type: none;
+}
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 
 .Serie h1{
 	padding: 0.5em;
@@ -128,6 +144,7 @@ input[type=submit]:hover
 	color: #cc3333;
 	display: block;
 	text-align: center;
+<<<<<<< HEAD
 }
 
 .ELSerie{
@@ -138,6 +155,18 @@ input[type=submit]:hover
 	display: inline;
 }
 
+=======
+}
+
+.ELSerie{
+	margin-bottom:0.7em;
+}
+.ELSerie a{
+	color: #cc3333;
+	display: inline;
+}
+
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 .ELSerie p{
 	display: inline;
 	color: white;
@@ -206,6 +235,15 @@ input[type=submit]:hover
 	background-image:url("../Img/FantascienzaAction.jpg") ;
 	background-size:100% 100%;
 }
+<<<<<<< HEAD
+=======
+
+#footer{
+	text-align: center;
+	padding: 1em;
+	font-size: 0.8em;
+}
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 	
 	
 .Thriller{

@@ -35,6 +35,7 @@ echo "
 	echo "
 </ul>
 </div>
+<<<<<<< HEAD
 <div id=\"content\">
 ";
 if(isset($_GET["Ricerca"])&&$_GET["Ricerca"]!=""){
@@ -47,6 +48,16 @@ echo
 "
  <div id=\"barraricerca\"><form action=\"Ricerca.php\" method=\"GET\"><input type=\"text\" name=\"Ricerca\" required=\"required\"/><input type=\"submit\" value=\"Cerca\"/></form></div>";
 
+=======
+<div id=\"content\">";
+if(isset($_GET["Ricerca"])&&$_GET["Ricerca"]!=""){
+	
+	$_SESSION["UltimaRicerca"]=$_GET["Ricerca"];
+	Ricerca($_GET["Ricerca"]);
+}
+	else{
+	header("location:./Home.php");
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 }
 echo "
 </div>

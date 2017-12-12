@@ -137,6 +137,7 @@ function Ricerca($name){
 	$runnable->execute(array($name));
 	
 	$series = $runnable->fetchAll();
+<<<<<<< HEAD
 if($series!=null){
 echo "<table class=\"ListaSerie\">
 			<tr>
@@ -165,6 +166,27 @@ Nessun risultato.
 }
 	unset($db);
 	unset($runnable);
+=======
+
+$i=0;
+foreach ($series as $serie) {
+		$i=$i+1;
+		echo "<div class=\"ListaSerie\">
+		<a href=\"".$serie['Genere'].".php\">
+		<img src=\"./../img/".$serie['Genere']."Icon.jpg\" alt=\"Link Genere ".$serie['Genere']."\">
+		</a><a href=\"Serie.php?name=".$serie['Titolo']."\">
+		" .$serie['Titolo']. "
+		</a><p>
+		".$serie['Valutazione'].
+		"/5
+		</p>
+		</div>";
+	}
+	$db=null;
+	$runnable=null;
+	if($i==0)
+		echo "<p>Ohh Crap non ci sono serie TV disponibili di questo genere forse non ci saranno mai o forse proprio in questo momento ne ho aggiunta una, chi lo sa stronzetto.</p>";
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 
 }
 

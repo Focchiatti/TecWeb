@@ -1,4 +1,9 @@
 /*PARTE GENERALE*/
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 #header h1{
 	color: #cc3333;
 	font-weight: bold;
@@ -12,10 +17,17 @@
 
 
 #menu {
+<<<<<<< HEAD
 	font-size: 1.5em;
 	height: 100%;
 	float: none;
 	width: 100%;
+=======
+	height: auto;
+	float: none;
+	width: 100%;
+
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 	background-color: #cc3333;
 	border-bottom: 1px solid #DDD;
 	margin-bottom: 0;
@@ -33,15 +45,23 @@
     float: none;
 }
 #menu li a {
+<<<<<<< HEAD
 	width:100%;
 	padding:0;
+=======
+	padding: 0.2em;
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
     display: block;
 	color:white;
 }
 
 #menu li p {
+<<<<<<< HEAD
 
 	padding: 0em;
+=======
+	padding: 0.2em;
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
     display: block;
     color: white;
 }
@@ -73,7 +93,10 @@ input[type=submit]:hover
 	font-size: 1.5em;
 }
 #content {	
+<<<<<<< HEAD
 	font-size: 1.5em;
+=======
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 	float:right;
 	color: white;
 	width:100%;
@@ -89,14 +112,26 @@ input[type=submit]:hover
 }
 
 
+<<<<<<< HEAD
 #barraricerca input[type=text]{font-size:0.5em;}
 
 #barraricerca input[type=submit]{font-size:0.6em;}
+=======
+#barraricerca{
+ width: 80%;
+ margin-left: 10%;
+}
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 
 
 .Genere{
 	width:35%;
 	min-width:0em;
+<<<<<<< HEAD
+=======
+	margin-left:10%;
+	margin-top:2em;
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 	
 }
 .Genere a{
@@ -131,7 +166,10 @@ input[type=submit]:hover
 #footer{
 	text-align: center;
 	padding: 1em;
+<<<<<<< HEAD
 	font-size: 0.5em;
+=======
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 	
 }
 

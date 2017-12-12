@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 1513075756
+=======
+1513029963
+>>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 <ul id="ListaSerie">
  <li class="ELSerie">
         <a href="Serie.php?name=Breaking Bad">Breaking Bad</a><p>3.50/5</p></li>
