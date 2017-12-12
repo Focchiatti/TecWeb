@@ -6,9 +6,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title> Serie-a-mente </title>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
-	<!-- <link type="text/css" rel="stylesheet" href="Style/small.css" media="handheld, screen and (max-width:480px),
+	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
-	<link type="text/css" rel="stylesheet" href="Style/print.css" media="print" /> -->
+	<link type="text/css" rel="stylesheet" href="../CSS/styleprint.css" media="print" />
 
 </head>
 <body>
@@ -17,7 +17,7 @@
 	<h1>Serie-a-mente</h1>
 </div>
 <?php
-require_once ".\MyLib.php";
+require_once "./MyLib.php";
 
 
 echo "
@@ -35,15 +35,18 @@ echo "
 	echo "
 </ul>
 </div>
-
-<div id=\"content\">";
+<div id=\"content\">
+";
 if(isset($_GET["Ricerca"])&&$_GET["Ricerca"]!=""){
-	
+	echo "<div id=\"barraricerca\"><form action=\"Ricerca.php\" method=\"GET\"><input type=\"text\" name=\"Ricerca\" required=\"required\" value=\"".$_GET["Ricerca"]."\"/><input type=\"submit\" value=\"Cerca\"/></form></div>";
 	$_SESSION["UltimaRicerca"]=$_GET["Ricerca"];
 	Ricerca($_GET["Ricerca"]);
 }
-	else{
-	header("location:./Home.php");
+else{
+echo
+"
+ <div id=\"barraricerca\"><form action=\"Ricerca.php\" method=\"GET\"><input type=\"text\" name=\"Ricerca\" required=\"required\"/><input type=\"submit\" value=\"Cerca\"/></form></div>";
+
 }
 echo "
 </div>
@@ -52,3 +55,4 @@ echo "
 </div>
 </body>
 </html>";
+?>

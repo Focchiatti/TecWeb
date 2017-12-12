@@ -1,0 +1,198 @@
+/*PARTE GENERALE*/
+*{
+    padding: 0em;
+    margin: 0em;
+}
+
+html, body {
+	width: 100%;
+    font-family: Times;
+    font-size: 12pt;
+	background-color: white;
+	color: black;
+}
+a:link{color: black;}
+#header {
+	text-align: left;
+}
+
+#header h1{
+	font-size: 4em;
+	font-weight: bold;
+	padding:0.5em;
+	color: black;
+}
+
+#breadcrumbs {
+	padding: 0.2em;
+	font-weight: bold;
+	font-size: 1em;
+	color: black;
+}
+
+#menulogin{
+	display: none;
+}
+
+
+#menu {
+	display: none;
+}
+
+
+#login{
+	display:none;
+}
+
+#TastoLogIn{
+	display: none;
+}
+
+#content {	
+	float:right;
+	width:100%;
+	text-align:justify;
+	margin-bottom: 10%;
+}
+
+
+#content h2{
+	font-weight: bold;
+	padding:1em 0.5em;
+}
+
+
+#barraricerca{
+ width: 80%;
+ margin-left: 10%;
+}
+
+
+.Genere{
+	text-align:center;
+	border:1px solid #000;	
+	width:20%;
+	min-width:8em;
+	margin-left:10%;
+	margin-top:2em;
+	height:8em;
+	float:left;
+	
+}
+.Genere a{
+	display:inline-block;
+	padding-top:3.4em;
+	padding-bottom:3.4em;
+	width:100%;
+
+}
+
+
+#footer{
+	text-align: center;
+	padding: 1em;
+	font-size: 0.8em;
+}
+	
+	
+.Thriller{
+	background-image:none ;
+	background-size:100% 100%;
+	}
+.Drammatico{
+	background-image:none;
+	background-size:100% 100%;
+	}
+.Fantascienza{
+	background-image:none ;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	}
+.Fantasy{
+	background-image:none ;
+	background-size:100% 100%;
+	}
+.Commedia{
+	background-image:none ;
+	background-size:100% 100%;
+	}
+.Poliziesco{
+	background-image:none;
+	background-size:100% 100%;
+	}
+
+label{
+	width: 100%;
+	display: inline-block;
+	margin: 0.5em;
+}
+
+input[type=text], input[type=password] {
+	width: 80%;
+    padding: 0.5em 1em;
+    margin-left: 10%;
+    margin-top: 0.5em;
+    clear: both;
+    display: block;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+	display: inline;
+	border: 1px solid #000;
+	font-weight: bold;
+    padding: 1em;
+    margin-top: 0.5em;
+}
+
+.cancelbtn {
+	display: block;
+	border: 1px solid #000;
+	font-weight: bold;
+    padding: 1em;
+    float: left;
+}
+
+.container {
+    padding: 1em;
+}
+
+#contentserie{
+	padding: 1em;
+}
+
+#contentserie h1{
+	padding: 0.5em;
+	display: block;
+	text-align: center;
+}
+
+#contentserie h3{
+	padding-bottom: 1em;
+	text-align: center;
+	display: block;
+}
+
+#contentserie a{
+	display: block;
+	text-align: center;
+}
+
+#contentserie p{
+	text-align: left;
+	padding: 1em;
+}
+
+#contentgenere{
+	text-align: center;
+}
+#contentgenere a{
+	display: inline;
+	padding: 0.5em;
+}
+
+#contentgenere p{
+	display: inline;
+	padding: 0.5em;
+}
