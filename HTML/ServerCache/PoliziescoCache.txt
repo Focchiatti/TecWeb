@@ -1,4 +1,6 @@
-1513024948
+1513364940
 <ul id="ListaSerie">
  <li class="ELSerie">
-        <a href="Serie.php?name=CSI: Miami">CSI: Miami</a><p>0.00/5</p></li></ul>
+	        		<a href="Serie.php?name=CSI: Miami">CSI: Miami</a>
+	        		<p>/5</p>
+	        	</li></ul>

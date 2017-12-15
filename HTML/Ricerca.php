@@ -17,7 +17,7 @@
 	<h1>Serie-a-mente</h1>
 </div>
 <?php
-require_once "./MyLib.php";
+require_once "./DataWriter.php";
 
 
 echo "
@@ -31,33 +31,21 @@ echo "
 <ul>
 		<li><a href=\"Home.php\">Home</a></li>
 		<li><a href=\"news.php\">News</a></li>";
-	LogInButton();
+	DataWriter::LogInButton();
 	echo "
 </ul>
 </div>
-<<<<<<< HEAD
 <div id=\"content\">
 ";
 if(isset($_GET["Ricerca"])&&$_GET["Ricerca"]!=""){
 	echo "<div id=\"barraricerca\"><form action=\"Ricerca.php\" method=\"GET\"><input type=\"text\" name=\"Ricerca\" required=\"required\" value=\"".$_GET["Ricerca"]."\"/><input type=\"submit\" value=\"Cerca\"/></form></div>";
 	$_SESSION["UltimaRicerca"]=$_GET["Ricerca"];
-	Ricerca($_GET["Ricerca"]);
+	DataWriter::RicercaTitolo($_GET["Ricerca"]);
 }
 else{
 echo
 "
  <div id=\"barraricerca\"><form action=\"Ricerca.php\" method=\"GET\"><input type=\"text\" name=\"Ricerca\" required=\"required\"/><input type=\"submit\" value=\"Cerca\"/></form></div>";
-
-=======
-<div id=\"content\">";
-if(isset($_GET["Ricerca"])&&$_GET["Ricerca"]!=""){
-	
-	$_SESSION["UltimaRicerca"]=$_GET["Ricerca"];
-	Ricerca($_GET["Ricerca"]);
-}
-	else{
-	header("location:./Home.php");
->>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
 }
 echo "
 </div>
@@ -65,5 +53,5 @@ echo "
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang=\"en\">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 </div>
 </body>
-</html>";
+</html>"	;
 ?>

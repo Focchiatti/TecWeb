@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-1513075777
-=======
-1513024939
->>>>>>> 84d64d5f037ab2b8762f0c844530a1e45077c8e2
+1513364887
 <ul id="ListaSerie">
  <li class="ELSerie">
-        <a href="Serie.php?name=Dirk Gently. Agenzia di invest">Dirk Gently. Agenzia di invest</a><p>0.00/5</p></li></ul>
+	        		<a href="Serie.php?name=Dirk Gently. Agenzia di invest">Dirk Gently. Agenzia di invest</a>
+	        		<p>/5</p>
+	        	</li></ul>

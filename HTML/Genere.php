@@ -38,7 +38,7 @@ require_once ".\MyLib.php";
 		<li><a href=news.php>News</a></li>
 		
 	<?php
-	LogInButton();
+	DataWriter::LogInButton();
 	?>
 </ul>
 </div>
@@ -46,7 +46,7 @@ require_once ".\MyLib.php";
 <div id="content">
 	<h2><?php echo "Categoria ".$_GET['Genere'] ?></h2>
 	<?php
-		RicercaGenere($_GET['Genere']);
+		DataWriter::Ricerca($_GET['Genere']);
 	?>
 	
 </div>
