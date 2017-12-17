@@ -86,5 +86,34 @@
 				}
 				return false;    	
 			}
+            public function AggiungiSerie($Titolo,$Genere,$IData,$FData,$Stagioni,$Trama)
+			{
+				$runnable=$this->connessione->prepare("INSERT INTO SerieTv(Titolo,Genere,DataInizio,DataFine,Stagioni,Trama) values('".$Titolo."','".$Genere."','".$IData."','".$TFData."','".$Stagioni."','".$Trama."')");
+	    		$runnable->execute();	
+			}
+            public function AggiungiNews($Titolo,$Data,$Contenuto,$Serie)
+			{
+				$runnable=$this->connessione->prepare("INSERT INTO Notizie(Titolo,Data,Contenuto,SerieTv) values('".$Titolo."','".$Data."','".$Contenuto."','".$Serie."')");
+	    		$runnable->execute();
+			}
+            public function Get_Serie()
+			{
+
+				$runnable=$this->connessione->prepare("SELECT Titolo FROM SerieTv");
+                $runnable->execute();
+	    		$datas=$runnable->fetchall();
+                $i=0;
+                $series;
+                foreach ($datas as $data)
+                {
+                    $series[$i]=$data[0];
+                    $i=$i+1;
+                }
+				if($datas!=NULL)
+				{
+					return $series;
+				}
+				return false;    	
+			}
 		}
 ?>
