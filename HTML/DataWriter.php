@@ -88,7 +88,11 @@ class DataWriter
 			flock($myfile,LOCK_EX);
 			foreach ($notizie as $notizia) {
 				fwrite($myfile,
-					"<div class=\"notizia\"><h1>".$notizia["Titolo"]."</h1><h1>".$notizia["Data"]."</h1><h2>".$notizia["SerieTv"]."</h2><p>".$notizia["Contenuto"]."</p></div>\n");
+					"<div class=\"notizia\"><h4>".$notizia["Data"]."</h4>
+					<h4>".$notizia["SerieTv"]."</h4>
+					<h2>".$notizia["Titolo"]."</h2>
+					<p>".$notizia["Contenuto"]."</p>
+					</div>\n");
 			}
 			flock($myfile,LOCK_UN);
 		}

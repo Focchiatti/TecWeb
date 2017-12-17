@@ -4,7 +4,7 @@
 			private const HOST_DB="localhost";
 			private const USERNAME="root";
 			private const PASSWORD="";
-			private const DATABASE_NAME="mfocchia";
+			private const DATABASE_NAME="tecweb";
 			private $connessione;
 			
 			function __construct() 

@@ -47,4 +47,4 @@ DataWriter::PrintDataAbout("Notizie")
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 </div>
 </body>
-</html>";
+</html>
