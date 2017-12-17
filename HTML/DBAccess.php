@@ -66,6 +66,18 @@
 					$query->execute(array($data))	;
 					return $query->fetchAll();
 			}
+
+			public function RicercaSerie($data){
+					$query=$this->connessione->prepare("SELECT Titolo FROM SerieTV WHERE Titolo = '".$data."'"	);
+					$query->execute(array($data))	;
+					return $query->fetchAll();
+			}
+
+			public function RicercaSerieUtente($data){
+					$query=$this->connessione->prepare("SELECT Titoloserie,Voto FROM Valutazione WHERE NickName= '".$data."' "	);
+					$query->execute(array($data))	;
+					return $query->fetchAll();
+			}
 			
 			public function LogInUtente($User,$Password)
 			{

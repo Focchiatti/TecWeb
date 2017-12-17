@@ -54,6 +54,7 @@ if(isset($_SESSION["UltimaRicerca"])){
 	echo "<a href=\"Ricerca.php?Ricerca=".$_SESSION["UltimaRicerca"]."\">Torna alla ricerca</a>";	
 }
 echo "<a href=\"".$Genere.".php\">Vai al genere</a>";
+
 echo 
 "
 </div>

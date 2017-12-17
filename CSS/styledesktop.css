@@ -176,6 +176,18 @@ input[type=submit]:hover
 	margin-bottom: 3%;
 }
 
+.lemieserie{
+	padding: 1em;
+}
+.lemieserie a {
+	color: #cc3333;
+	display: inline;
+}
+
+.lemieserie p {
+	display: inline;
+}
+
 #barraricerca{
  width: 80%;
  margin-left: 10%;
