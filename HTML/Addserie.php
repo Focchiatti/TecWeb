@@ -36,6 +36,35 @@
 		if(isset($_GET['error']))
 			echo "<p>Campi mal compilati</p>";
 		session_start();
+        if(!isset($_SESSION['CallingPage']))
+        {
+            $_SESSION['CallingPage']="./Home.php";
+        }
+        if(isset($_POST['Titolo']))
+        {
+            $Db=new DBAccess();
+            if(($Db->AggiungiSerie($_POST['Titolo'],$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama'])))
+            {
+                unset($_POST['Titolo']);
+                unset($_POST['Genere']);
+                unset($_POST['IData']);
+                unset($_POST['FData']);
+                unset($_POST['Stagioni']);
+                unset($_POST['Trama']);
+
+                header("location:".$_SERVER['PHP_SELF']);
+            }
+            else
+            {
+                unset($_POST['Titolo']);
+                unset($_POST['Genere']);
+                unset($_POST['IData']);
+                unset($_POST['FData']);
+                unset($_POST['Stagioni']);
+                unset($_POST['Trama']);
+                header("location:./Addserie.php?error");
+            }
+        }
 				echo "
 						<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\">
 
@@ -73,10 +102,7 @@
 						
 						";
 
-						if(!isset($_SESSION['CallingPage']))
-						{
-							$_SESSION['CallingPage']="./Home.php";
-						}
+
 
 						echo "
 						<div class=\"container\">
@@ -86,25 +112,7 @@
 
 						echo"
 					</div>";
-        if(isset($_POST['Titolo']))
-        {
-            $Db=new DBAccess();
-            if(($Db->AggiungiSerie($_POST['Titolo'],$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama'])))
-            {
-	            unset($_POST['Titolo']);
-	            unset($_POST['Genere']);
-	            unset($_POST['IData']);
-	            unset($_POST['FData']);
-	            unset($_POST['Stagioni']);
-	            unset($_POST['Trama']);
 
-	            header("location:".$_SERVER['PHP_SELF']);
-			}
-			else
-			{ 
-            header("location:./Addserie.php?error");
-			}
-		}
 		?>
 
 

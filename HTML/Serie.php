@@ -53,8 +53,34 @@ echo "
 if(isset($_SESSION["UltimaRicerca"])){
 	echo "<a href=\"Ricerca.php?Ricerca=".$_SESSION["UltimaRicerca"]."\">Torna alla ricerca</a><br/>";	
 }
-echo "<a href=\"".$Genere.".php\">Vai al genere</a>";
+echo "<a href=\"".$Genere.".php\">Vai al genere</a>
+";
 
+$Text="Rimuovi dalle mie serie";
+$check=false;
+if($Db->RicercaSerieUtenteNonSeguita($_SESSION['Name'],$Titolo))
+{
+    $check=true;
+    $Text="Aggiungi alle mie serie";
+}
+if($_SESSION["Name"])
+{
+    echo"
+    <form method = \"POST\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $_GET['name'] . "\" >
+<input type='submit' value='".$Text."'>
+<input type='hidden' name='Act' >
+</form>";
+
+if (isset($_POST['Act'])&&$check) {
+    $Db->AggiungiMieSerie($_GET['name'], $_SESSION["Name"]);
+    header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $_GET['name'] );
+}
+else if(isset($_POST['Act'])&&!$check)
+{
+    $Db->RimuoviSerieSeguita($_GET['name'], $_SESSION["Name"]);
+    header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $_GET['name'] );
+}
+}
 echo 
 "
 </div>
@@ -63,3 +89,4 @@ echo
 </div>
 </body>
 </html>";
+?>

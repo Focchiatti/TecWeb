@@ -31,7 +31,17 @@
 	</div>
 		<?php 
 		session_start();
-		if(!isset($_POST["Titolo"]))
+        if(!isset($_SESSION['CallingPage']))
+        {
+            $_SESSION['CallingPage']="./Home.php";
+        }
+        if(isset($_POST['Titolo']))
+        {
+            $Db=new DBAccess();
+            $Db->AggiungiNews($_POST['Titolo'],$_POST['Data'],$_POST['Contenuto'],$_POST['Serie']);
+            header("location:".$_SESSION["CallingPage"]);
+        }
+		else
 		{
 				echo "
 					<div id=\"content\">
@@ -63,22 +73,14 @@
                         }
 						echo"</select><br/>
 						<input type=\"submit\"value=\"Submit\"\></form>";
-						if(!isset($_SESSION['CallingPage']))
-						{
-							$_SESSION['CallingPage']="./Home.php";
-						}
+
 						echo "
 						<div class=\"container\">
 							<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
 						</div>
 						</div>";
 		}
-        if(isset($_POST['Titolo']))
-        {
-            $Db=new DBAccess();
-            $Db->AggiungiNews($_POST['Titolo'],$_POST['Data'],$_POST['Contenuto'],$_POST['Serie']);
-            header("location:".$_SESSION['CallingPage']);
-		}
+
 		?>
 
 

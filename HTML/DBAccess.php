@@ -4,7 +4,7 @@
 			private const HOST_DB="localhost";
 			private const USERNAME="root";
 			private const PASSWORD="";
-			private const DATABASE_NAME="mfocchia";
+			private const DATABASE_NAME="tecweb";
 			private $connessione;
 			
 			function __construct() 
@@ -73,12 +73,32 @@
 					return $query->fetchAll();
 			}
 
-			public function RicercaSerieUtente($data){
-					$query=$this->connessione->prepare("SELECT Titoloserie,Voto FROM Valutazione WHERE NickName= '".$data."' "	);
-					$query->execute(array($data))	;
-					return $query->fetchAll();
+        public function RicercaSerieUtente($data){
+            $query=$this->connessione->prepare("SELECT Titoloserie,Voto FROM Valutazione WHERE NickName= '".$data."' "	);
+            $query->execute(array($data));
+            return $query->fetchAll();
+        }
+        public function RicercaSerieUtenteNonSeguita($utente,$serie){
+        $query=$this->connessione->prepare("SELECT 1 FROM Valutazione WHERE NickName= ? AND TitoloSerie = ?");
+        $query->execute(array($utente,$serie));
+        return $query->fetchAll()==NULL?true:false;
+    }
+    public function RimuoviSerieSeguita($serie,$utente)
+    {
+        $query = $this->connessione->prepare("DELETE FROM Valutazione WHERE NickName= ? AND TitoloSerie = ?");
+        return $query->execute(array($utente, $serie));
+    }
+
+			public function AggiornaVoto($voto,$serie,$nick){
+                $query=$this->connessione->prepare("UPDATE valutazione SET Voto=".$voto." WHERE Valutazione.NickName= '".$nick."' AND Valutazione.Titoloserie= '".$serie."' "	);
+                return $query->execute();
 			}
-			
+
+        public function AggiungiMieSerie($serie,$nick){
+            $query=$this->connessione->prepare("INSERT INTO valutazione(Titoloserie	,NickName) values ('".$serie."','".$nick."') "	);
+            return $query->execute();
+        }
+
 			public function LogInUtente($User,$Password)
 			{
 

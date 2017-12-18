@@ -38,23 +38,38 @@ require_once "./DataWriter.php";
 <?php
 	$nick= $_SESSION["Name"];
 	$Db=new DBAccess();
+    if (isset($_POST['Voti'])){
+    $updated=$Db->AggiornaVoto($_POST['Voti'],$_POST['serie'],$nick);
+    header("location:".$_SERVER['PHP_SELF']);
+    }
 	$mieserie= $Db->RicercaSerieUtente($nick);
 	if($mieserie!=null){
+	    if(isset($updated)&&$updated){
+	        echo "<p>Voto Aggiornato</p>";
+	        $updated=false;
+	    }
 		foreach ($mieserie as $serie) {
 			echo "<div class='lemieserie'>
-			<a href=\"Serie.php?name=".$serie['Titoloserie']."\">".$serie['Titoloserie']."</a>";
-
-			if ($serie["Voto"]!=NULL){
-				echo "
-				<p>Il mio voto: ".$serie['Voto']."</p>
-				</div>";
-			}
-			else{
-				echo "
-				</div>";
-			}
-		}
-	}
+            <form action=".$_SERVER['PHP_SELF']." method='post'>
+			<a href=\"Serie.php?name=".$serie['Titoloserie']."\">".$serie['Titoloserie']."</a>
+			<input type=\"hidden\" name=\"serie\" value=\"".$serie['Titoloserie']."\"";
+			echo "
+			<p>Il mio voto:</p>
+			<select name='Voti'>
+                <option selected hidden>".$serie['Voto']."</option>
+                <option value='NULL'>NULL</option>
+                <option value='0'>0</option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option> 
+            </select>
+            <input type='submit' value='Vota'>
+            </form>
+            </div>";
+	    }
+    }
 
 ?>
 </div>
