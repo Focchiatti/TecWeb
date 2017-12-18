@@ -58,6 +58,7 @@ insert into `Utente`(`NickName`,`Password`)values
 ('Carla89','687365'),
 ('DavideSe','786239'),
 ('NicolaT1','678987'),
+('XxX_pUsSyDeStRoYeR_XxX','Sperminator'),
 ('LorenzoMi','976923'),
 ('utente','utente');
  insert into `Utente`(`NickName`,`Password`,`Admin`)values
