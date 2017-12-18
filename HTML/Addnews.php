@@ -56,33 +56,22 @@
                             <label for=\"Serie\">
 								<b>Serie</b>
 							</label>
-							";
-                        $i=0;
+							<select name=\"Serie\">";
                         foreach($Series as $serie)
                         {
-                            if ($i==0)
-                            {
-                                echo"<input type=\"radio\" name=\"Serie\" value='".$serie."' checked> ".$serie."<br>";
-                                $i=$i+1;
-                            }
-                            else
-                                echo"<input type=\"radio\" name=\"Serie\" value='".$serie."'> ".$serie."<br>";
+                                echo"<option value='".$serie[0]."'> ".$serie[0]."</option>";
                         }
-						echo"<input type=\"submit\"value=\"Submit\"\></form>";
-						if(isset($_SESSION['CallingPage']))
+						echo"</select><br/>
+						<input type=\"submit\"value=\"Submit\"\></form>";
+						if(!isset($_SESSION['CallingPage']))
 						{
+							$_SESSION['CallingPage']="./Home.php";
+						}
 						echo "
 						<div class=\"container\">
 							<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
 						</div>
-						";
-						}
-						else 
-						{
-							$_SESSION['CallingPage']="./Home.php";
-						}
-						echo"
-					</div>";
+						</div>";
 		}
         if(isset($_POST['Titolo']))
         {

@@ -29,16 +29,16 @@
 			<li><a href="Home.php">Home</a></li>
 	</ul>
 	</div>
+
+		<div id="content">	
 		<?php 
+		
+		if(isset($_GET['error']))
+			echo "<p>Campi mal compilati</p>";
 		session_start();
-		if(!isset($_POST["Titolo"]))
-		{
 				echo "
-					<div id=\"content\">
-						<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\">";
-						if(isset($_GET['error']))
-							echo "<p>Campi mal compilati</p>";
-						echo "
+						<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\">
+
 							<label for=\"Titolo\">
 								<b>Titolo</b>
 							</label>
@@ -46,51 +46,64 @@
 							<label for=\"Genere\">
 								<b>Inserisci il genere</b>
 							</label>
-                                <input type=\"radio\" name=\"Genere\" value=\"thriller\" checked> Thriller<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"drammatico\"> Drammatico<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"commedia\"> Commedia<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"fantastico\"> Fantastico<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"fantascienza\"> Fantascienza<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"poliziesco\"> Poliziesco<br>
+                                <input type=\"radio\" name=\"Genere\" value=\"thriller\" checked/> Thriller<br>
+                                <input type=\"radio\" name=\"Genere\" value=\"drammatico\"/> Drammatico<br>
+                                <input type=\"radio\" name=\"Genere\" value=\"commedia\"/> Commedia<br>
+                                <input type=\"radio\" name=\"Genere\" value=\"fantastico\"/> Fantastico<br>
+                                <input type=\"radio\" name=\"Genere\" value=\"fantascienza\"/> Fantascienza<br>
+                                <input type=\"radio\" name=\"Genere\" value=\"poliziesco\"/> Poliziesco<br>
                             <label for=\"IData\">
 								<b>Data d'inizio</b>
 							</label>
-							<input type=\"text\" placeholder=\"aaaa-mm-gg\" name=\"IData\" required=\"required\">
+							<input type=\"text\" placeholder=\"aaaa-mm-gg\" name=\"IData\" required=\"required\"/>
                             <label for=\"FData\">
 								<b>Data di fine</b>
 							</label>
-							<input type=\"text\" placeholder=\"aaaa-mm-gg (opzionale)\" name=\"FData\">
+							<input type=\"text\" placeholder=\"aaaa-mm-gg (opzionale)\" name=\"FData\"/>
                             <label for=\"Stagioni\">
 								<b>Numero Stagioni</b>
 							</label>
-							<input type=\"number\" placeholder=\"Inserisci il numero di stagioni\" name=\"Stagioni\" required=\"required\">
+							<input type=\"number\" placeholder=\"Inserisci il numero di stagioni\" name=\"Stagioni\" required=\"required\"/>
                             <label for=\"Trama\">
 								<b>Trama</b>
 							</label>
-							<input type=\"text\" placeholder=\"Inserisci la trama\" name=\"Trama\" required=\"required\">
-							<input type=\"submit\"value=\"Submit\"\>
+							<input type=\"text\" placeholder=\"Inserisci la trama\" name=\"Trama\" required=\"required\"/>
+							<input type=\"submit\"value=\"Submit\"/>
 						</form>
+						
 						";
-						if(isset($_SESSION['CallingPage']))
+
+						if(!isset($_SESSION['CallingPage']))
 						{
+							$_SESSION['CallingPage']="./Home.php";
+						}
+
 						echo "
 						<div class=\"container\">
 							<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
 						</div>
 						";
-						}
-						else 
-						{
-							$_SESSION['CallingPage']="./Home.php";
-						}
+
 						echo"
 					</div>";
-		}
         if(isset($_POST['Titolo']))
         {
             $Db=new DBAccess();
-            $Db->AggiungiSerie($_POST['Titolo'],$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama']);
-            header("location:".$_SESSION['CallingPage']);
+            if(($Db->AggiungiSerie($_POST['Titolo'],$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama'])))
+            {
+	            unset($_POST['Titolo']);
+	            unset($_POST['Genere']);
+	            unset($_POST['IData']);
+	            unset($_POST['FData']);
+	            unset($_POST['Stagioni']);
+	            unset($_POST['Trama']);
+
+	            header("location:".$_SERVER['PHP_SELF']);
+			}
+			else
+			{ 
+            header("location:./Addserie.php?error");
+			}
 		}
 		?>
 
