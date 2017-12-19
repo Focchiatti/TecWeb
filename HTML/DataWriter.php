@@ -151,7 +151,7 @@ class DataWriter
             echo "
             <li><a href=\"Addserie.php\">Aggiungi serie</a></li>
             <li><a href=\"Addnews.php\">Aggiungi notizie</a></li>
-            <div id=\"login\"><li><a href=\"logout.php\">Logout</a></li></div>";
+            <div id=\"login\"><li><a href=\"Logout.php\">Logout</a></li></div>";
             }
 			else if (basename($_SERVER['PHP_SELF'])== 'Mypage.php'){
 			echo "
