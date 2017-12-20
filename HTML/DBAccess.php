@@ -4,7 +4,7 @@
 			private const HOST_DB="localhost";
 			private const USERNAME="root";
 			private const PASSWORD="";
-			private const DATABASE_NAME="tecweb";
+			private const DATABASE_NAME="mfocchia";
 			private $connessione;
 			
 			function __construct() 
@@ -90,12 +90,12 @@
     }
 
 			public function AggiornaVoto($voto,$serie,$nick){
-                $query=$this->connessione->prepare("UPDATE valutazione SET Voto=".$voto." WHERE Valutazione.NickName= '".$nick."' AND Valutazione.Titoloserie= '".$serie."' "	);
+                $query=$this->connessione->prepare("UPDATE Valutazione SET Voto=".$voto." WHERE Valutazione.NickName= '".$nick."' AND Valutazione.Titoloserie= '".$serie."' "	);
                 return $query->execute();
 			}
 
         public function AggiungiMieSerie($serie,$nick){
-            $query=$this->connessione->prepare("INSERT INTO valutazione(Titoloserie	,NickName) values ('".$serie."','".$nick."') "	);
+            $query=$this->connessione->prepare("INSERT INTO Valutazione(Titoloserie	,NickName) values ('".$serie."','".$nick."')"	);
             return $query->execute();
         }
 

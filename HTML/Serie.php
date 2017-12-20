@@ -75,7 +75,7 @@ if (isset($_POST['Act'])&&$check) {
     $Db->AggiungiMieSerie($_GET['name'], $_SESSION["Name"]);
     header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $_GET['name'] );
 }
-else if(isset($_POST['Act'])&&!$check)
+else if(isset($_POST['Act']))
 {
     $Db->RimuoviSerieSeguita($_GET['name'], $_SESSION["Name"]);
     header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $_GET['name'] );
