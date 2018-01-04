@@ -1,10 +1,14 @@
-1513668009
+1515072375
 <ul id="ListaSerie">
  <li class="ELSerie">
 	        		<a href="Serie.php?name=Breaking Bad">Breaking Bad</a>
-	        		<p>3.50/5</p>
+	        		<p>3.67/5</p>
 	        	</li>
  <li class="ELSerie">
 	        		<a href="Serie.php?name=Greys Anatomy">Greys Anatomy</a>
+	        		<p>3.75/5</p>
+	        	</li>
+ <li class="ELSerie">
+	        		<a href="Serie.php?name=Narcos">Narcos</a>
 	        		<p>3.50/5</p>
 	        	</li></ul>

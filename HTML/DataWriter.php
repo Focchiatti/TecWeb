@@ -105,7 +105,7 @@ class DataWriter
 		$series=$MyDBConnection->Ricerca($Titolo);
 		if($series!=null)
 		{
-			echo "<table class=\"ListaSerie\">
+			echo "<table id=\"RisultatoRicerca\">
 				<tr>
 					<th> Genere </th>
 					<th> Titolo </th>

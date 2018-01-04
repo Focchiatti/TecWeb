@@ -58,12 +58,12 @@ echo "<a href=\"".$Genere.".php\">Vai al genere</a>
 
 $Text="Rimuovi dalle mie serie";
 $check=false;
-if($Db->RicercaSerieUtenteNonSeguita($_SESSION['Name'],$Titolo))
+if(isset($_SESSION["Name"])&&$Db->RicercaSerieUtenteNonSeguita($_SESSION['Name'],$Titolo))
 {
     $check=true;
     $Text="Aggiungi alle mie serie";
 }
-if($_SESSION["Name"])
+if(isset($_SESSION["Name"])&&$_SESSION["Name"])
 {
     echo"
     <form method = \"POST\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $_GET['name'] . "\" >

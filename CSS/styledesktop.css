@@ -1,4 +1,5 @@
 /*PARTE GENERALE*/
+
 *{
     padding: 0em;
     margin: 0em;
@@ -10,10 +11,10 @@ html, body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
     min-height: 100%;
-
 }
 
-html{border-left: 1px solid #DDD;
+html{
+	border-left: 1px solid #DDD;
 	border-right: 1px solid #DDD;
 	background-color:#333;
 }
@@ -33,9 +34,7 @@ html{border-left: 1px solid #DDD;
 	border-top: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
 	width: auto;
-	padding: 0.2em;
 	color: #cc3333;
-	
 	font-weight: bold;
 }
 
@@ -45,10 +44,12 @@ html{border-left: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
 	margin-bottom:1em;
 }
+
 #menu #login{
 	display: inline-block;
 	float:right;
 }
+
 #menu ul{
 	list-style-type: none;
     margin: 0;
@@ -56,15 +57,18 @@ html{border-left: 1px solid #DDD;
     overflow: hidden;
     text-align: center;
 }
+
 #menu li{
 	display: block;
     float: left;
 }
+
 #menu li a {
 	padding: 0.9em 1em 0.9em 1em;
     display: block;
 	color:white;
 }
+
 #menu li p {
 	padding: 0.9em 1em 0.9em 1em;
     display: block;
@@ -76,12 +80,10 @@ html{border-left: 1px solid #DDD;
 }
 
 
-
-input[type=submit]:hover
-{	
+input[type=submit]:hover{	
 	background-color: #663333;
-
 }
+
 #content {	
 	display: inline-block;
 	float:right;
@@ -90,35 +92,32 @@ input[type=submit]:hover
 	text-align:center;
 	margin-bottom: 10%;
 }
-#content p
-{
-	padding: 1em;
-}
+
 #content ul{
 	list-style-type: none;
 	text-align: center;
 	margin-bottom: 10%
 }
 
-.Serie h2{
-	color: #cc3333;
-	font-weight: bold;
-	padding:1em 0.5em;
-}
-.Serie p{text-align: left;}
-
 #content p{
 	text-align: left;
 	padding: 1em;
 }
 
-#content ul{
-	list-style-type: none;
+.Serie p{
+	text-align: left;
 }
+
 .Serie h1{
 	padding: 0.5em;
 	display: block;
 	text-align: center;
+}
+
+.Serie h2{
+	color: #cc3333;
+	font-weight: bold;
+	padding:1em 0.5em;
 }
 
 .Serie h3{
@@ -128,16 +127,18 @@ input[type=submit]:hover
 }
 .Serie a{
 	color: #cc3333;
-	
 	text-align: center;
+	padding-bottom: 1em;
+	display: block;
 }
 
-.ELSerie{
-	margin-bottom:0.7em;
+#ListaSerie{
+	padding:0.3em;
 }
-.ELSerie a{
-	color: #cc3333;
-	display: inline;
+
+#ListaSerie p{
+	padding:0em;
+	margin-left :5%;
 }
 
 .ELSerie{
@@ -152,15 +153,15 @@ input[type=submit]:hover
 	display: inline;
 	color: white;
 }
-#ListaSerie
-{
-	padding:0.3em;
-}
-#ListaSerie p
-{
 
-	padding:0em;
-	margin-left :5%;
+#RisultatoRicerca{
+	padding-left:20%;
+	padding-top:0.5em;
+	text-align: left;
+}
+
+#RisultatoRicerca a{
+	color: #cc3333;
 }
 
 .notizia h2{
@@ -171,6 +172,7 @@ input[type=submit]:hover
 	display: inline-block;
 	padding: 0em 0.5em 0em 1em;
 }
+
 .notizia p{
 	padding: 2em;
 	margin-bottom: 3%;
@@ -189,14 +191,16 @@ input[type=submit]:hover
 }
 
 #barraricerca{
- width: 80%;
- margin-left: 10%;
+	width: 80%;
+	margin-left: 10%;
+	padding-bottom: 5%;
 }
-#footer
-{
+
+#footer{
 	text-align: center;
 	display: block;
 	padding:0.5em;
+	font-size: 0.8em;
 }
 
 .Genere{
@@ -208,70 +212,75 @@ input[type=submit]:hover
 	margin-top:2em;
 	float:left;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-	
 }
+
 .Genere a{
 	display:inline-block;
 	padding-top:3.4em;
 	padding-bottom:3.4em;
 	width:100%;
 	color: #FFF;
-
 }
+
 .Thriller a:hover{
 	background-image:url("../Img/ThrillerAction1.jpg") ;
 	background-size:100% 100%;
 }
+
 .Drammatico a:hover{
 	background-image:url("../Img/DrammaticoAction.jpg") ;
 	background-size:100% 100%;
 }
+
 .Poliziesco a:hover{
 	background-image:url("../Img/PoliziescoAction.jpg") ;
 	background-size:100% 100%;
 }
+
 .Commedia a:hover{
 	background-image:url("../Img/CommediaAction.jpg") ;
 	background-size:100% 100%;
 }
+
 .Fantasy a:hover{
 	background-image:url("../Img/FantasyAction.jpg") ;
 	background-size:100% 100%;
-}.Fantascienza a:hover{
+}
+
+.Fantascienza a:hover{
 	background-image:url("../Img/FantascienzaAction.jpg") ;
 	background-size:100% 100%;
 }
 
-#footer{
-	text-align: center;
-	padding: 1em;
-	font-size: 0.8em;
-}	
-	
 .Thriller{
 	background-image:url("../Img/Thriller1.jpg") ;
 	background-size:100% 100%;
-	}
+}
+
 .Drammatico{
 	background-image:url("../Img/Drammatico.jpg") ;
 	background-size:100% 100%;
-	}
+}
+
 .Fantascienza{
 	background-image:url("../Img/Fantascienza.jpg") ;
 	background-size:100% 100%;
-	}
+}
+
 .Fantasy{
 	background-image:url("../Img/Fantasy.jpg") ;
 	background-size:100% 100%;
-	}
+}
+
 .Commedia{
 	background-image:url("../Img/Commedia.jpg") ;
 	background-size:100% 100%;
-	}
+}
+
 .Poliziesco{
 	background-image:url("../Img/Poliziesco.jpg") ;
 	background-size:100% 100%;
-	}
+}
 
 label{
 	width: 100%;
@@ -296,7 +305,6 @@ input[type=submit]{
 	font-weight: bold;
     padding: 1em;
     background-color: #cc3333;
-
     margin-top: 0.5em;
 }
 
@@ -309,6 +317,7 @@ input[type=submit]{
     background-color: #cc3333;
     float: left;
 }
+
 .cancelbtn:hover{
     background-color: #663333;
 }
@@ -318,21 +327,3 @@ input[type=submit]{
     padding: 1em;
 }
 
-.ListaSerie{
-
-	padding-left:20%;
-	padding-top:0.5em;
-	text-align: left;
-
-}
-
-
-
-.ListaSerie a
-{
-	color: #cc3333;
-}
-.ListaSerie a,p
-{
-	padding-right: 1em;
-}
