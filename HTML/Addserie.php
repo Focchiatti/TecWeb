@@ -14,7 +14,7 @@
 	</head>
 
 	<body>
-
+	<a name="top"></a>
 	<div id="header">
 		<h1>Serie-a-mente</h1>
 	</div>
@@ -25,7 +25,7 @@
 	</div>
 
 	<div id="hamburger">
-	<a href="#menu">&#9776;</a>
+	<a href="#smallmenu">&#9776;</a>
 </div> 
 
 	<div id="menu">
@@ -44,6 +44,10 @@
         if(!isset($_SESSION['CallingPage']))
         {
             $_SESSION['CallingPage']="./Home.php";
+        }
+
+        if (!isset($_SESSION["Admin"]) || (isset($_SESSION["Admin"])&&$_SESSION["Admin"]==0)) {
+        	header("location:".$_SESSION['CallingPage']);
         }
         if(isset($_POST['Titolo']))
         {
@@ -124,5 +128,19 @@
 	<div id="footer">
 		<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 	</div>
+
+	<div id="smallmenu">
+<ul>
+		<a name="smallmenu"></a>
+		<li><p>Home</p></li>
+		<li><a href="news.php">News</a></li>
+		
+	<?php
+		DataWriter::LogInButton();
+		$_SESSION["UltimaRicerca"]=null;
+	?>
+	<li id="up"><a href="#top">Torna su</a></li>
+</ul>
+</div>
 	</body>
 	</html>

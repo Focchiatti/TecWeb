@@ -36,6 +36,7 @@ html{
 	width: auto;
 	color: #cc3333;
 	font-weight: bold;
+	padding-left: 0.5em;
 }
 
 #hamburger {
@@ -84,6 +85,15 @@ html{
     background-color: #663333;
 }
 
+#smallmenu {
+	display: none;
+}
+
+#up {
+	font-size: 0px;
+	height: 0px;
+	overflow: hidden;
+}
 
 input[type=submit]:hover{	
 	background-color: #663333;

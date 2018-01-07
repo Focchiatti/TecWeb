@@ -7,7 +7,7 @@ require_once "./DataWriter.php"
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title> Serie-a-mente </title>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
-	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
+	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:420px),
 	only screen and (max-device-width:480px)" />
 	<link rel="stylesheet" type="text/css"  href="../CSS/styleprint.css" media="print" />
 
@@ -15,9 +15,11 @@ require_once "./DataWriter.php"
 
 <body>
 
+<a name="top"></a>
 <div id="header">
 	<h1>Serie-a-mente</h1>
 </div>
+
 
 
 <div id="breadcrumbs">
@@ -25,13 +27,13 @@ require_once "./DataWriter.php"
 </div>
 
 <div id="hamburger">
-	<a href="#menu">&#9776;</a>
+	<a href="#smallmenu">&#9776;</a>
 </div> 
 
 
 <div id="menu">
 <ul>
-		<a name="menu"></a>
+		
 		<li><p>Home</p></li>
 		<li><a href="news.php">News</a></li>
 		
@@ -85,6 +87,20 @@ require_once "./DataWriter.php"
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
+</div>
+
+<div id="smallmenu">
+<ul>
+		<a name="smallmenu"></a>
+		<li><p>Home</p></li>
+		<li><a href="news.php">News</a></li>
+		
+	<?php
+		DataWriter::LogInButton();
+		$_SESSION["UltimaRicerca"]=null;
+	?>
+		<li id="up"><a href="#top">Torna su</a></li>
+</ul>
 </div>
 
 

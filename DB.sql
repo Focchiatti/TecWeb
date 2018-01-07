@@ -84,7 +84,8 @@ CREATE VIEW MediaVoti as
 SELECT Titoloserie, avg(Voto) as Media
 FROM Valutazione GROUP BY Titoloserie;
 
-CREATE TRIGGER `UpdateMediaVoti` AFTER INSERT ON `Valutazione` FOR EACH ROW UPDATE SerieTV SET SerieTV.Valutazione=(SELECT MediaVoti.Media from MediaVoti where MediaVoti.Titoloserie=SerieTV.Titolo) WHERE SerieTV.Titolo=NEW.TitoloSerie;
+CREATE TRIGGER `UpdateMediaVotiInsert` AFTER INSERT ON `Valutazione` FOR EACH ROW UPDATE SerieTV SET SerieTV.Valutazione=(SELECT MediaVoti.Media from MediaVoti where MediaVoti.Titoloserie=SerieTV.Titolo) WHERE SerieTV.Titolo=NEW.TitoloSerie;
+CREATE TRIGGER `UpdateMediaVotiUpdate` AFTER UPDATE ON `Valutazione` FOR EACH ROW UPDATE SerieTV SET SerieTV.Valutazione=(SELECT MediaVoti.Media from MediaVoti where MediaVoti.Titoloserie=SerieTV.Titolo) WHERE SerieTV.Titolo=NEW.TitoloSerie;
 /*Data for the table `Valutazione` */
  
 insert into `Valutazione`(`Titoloserie`,`Voto`,`NickName`)values

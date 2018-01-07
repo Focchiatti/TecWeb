@@ -133,15 +133,14 @@ class DataWriter
 
 	public static function LogInButton()
 	{
-
-	session_start();
+		if (!isset($_SESSION)){
+		session_start();}
 			$_SESSION["CallingPage"]=$_SERVER['REQUEST_URI'];
 		if(!isset($_SESSION["Name"]) || session_id()==''){
 			echo 
 			"<li><a href=\"Login.php\">Le mie serie</a></li>
 			<li id=\"login\">
 			<a href=\"Login.php\"> Login </a>
-			</div>
 			</li>
 			";
 		}
@@ -152,7 +151,7 @@ class DataWriter
             <li><a href=\"Addserie.php\">Aggiungi serie</a></li>
             <li><a href=\"Addnews.php\">Aggiungi notizie</a></li>
 
-            <div id=\"login\"><li><a href=\"Logout.php\">Logout</a></li></div>";
+            <div id=\"login\"><li><a href=\"Logout.php\">Logout</a></li>";
 
             }
 			else if (basename($_SERVER['PHP_SELF'])== 'Mypage.php'){

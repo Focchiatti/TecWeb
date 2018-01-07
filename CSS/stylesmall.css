@@ -11,40 +11,67 @@ html{
 
 
 #breadcrumbs{
-	width: 100%;
+	width: auto;
 }
 
+#menu {display: none}
 
-#menu{
+#smallmenu{
+	display: inline-block;
 	height: auto;
 	float: none;
 	width: 100%;
 	border-top: 1px solid #DDD;
-	position: sticky;
-	bottom: 0;
+	background-color: #cc3333;
+	margin-bottom: 28em;
+}
+
+#smallmenu #login{
+	display: block;
+	float: none;
+}
+
+#smallmenu li{
+	float: none;
+}
+
+#smallmenu li a {
+	padding: 0.3em;
+	color:white;
+	display: block;
+}
+
+#smallmenu li p {
+	padding: 0.3em;
+	color: white;
+	display: block;
+}
+
+#up {
+	font-size: inherit;
+	height: inherit;
 }
 
 #menu #login{
-	display: block;
-	float: none;
+	display: inline-block;
+	float:right;
 }
 
-#menu li{
-	float: none;
+#smallmenu ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
 }
 
-#menu li a {
-	padding: 0.3em;
+#smallmenu a:active{
+	background-color: #663333;
 }
-
-#menu li p {
-	padding: 0.3em;
-}
-
 
 #hamburger {
 	display: block;
-	width: 100%;
+	width: auto;
 	height: auto;
 	background-color: #cc3333;
 	border-bottom: 1px solid #DDD;

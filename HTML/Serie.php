@@ -16,7 +16,7 @@ require_once "./DBAccess.php";
 
 </head>
 <body>
-
+<a name="top"></a>
 <div id="header">
 	<h1>Serie-a-mente</h1>
 </div>
@@ -37,7 +37,7 @@ echo "
 </div>
 
 <div id=\"hamburger\">
-	<a href=\"#menu\">&#9776;</a>
+	<a href=\"#smallmenu\">&#9776;</a>
 </div> 
 
 <div id=\"menu\">
@@ -92,6 +92,22 @@ echo
 <div id=\"footer\">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang=\"en\">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 </div>
+
+<div id=\"smallmenu\">
+<ul>
+		<a name=\"smallmenu\"></a>
+		<li><p>Home</p></li>
+		<li><a href=\"news.php\">News</a></li>
+		"
+;
+		DataWriter::LogInButton();
+		$_SESSION["UltimaRicerca"]=null;
+	
+	echo "
+	<li id=\"up\"><a href=\"#top\">Torna su</a></li>
+</ul>
+</div>
+
 </body>
 </html>";
 ?>
