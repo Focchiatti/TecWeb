@@ -14,10 +14,14 @@ html{
 	width: 100%;
 }
 
+
 #menu{
 	height: auto;
 	float: none;
 	width: 100%;
+	border-top: 1px solid #DDD;
+	position: sticky;
+	bottom: 0;
 }
 
 #menu #login{
@@ -35,6 +39,24 @@ html{
 
 #menu li p {
 	padding: 0.3em;
+}
+
+
+#hamburger {
+	display: block;
+	width: 100%;
+	height: auto;
+	background-color: #cc3333;
+	border-bottom: 1px solid #DDD;
+	color: #fff;
+	padding-left: 0.3em;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+#hamburger a {
+	color: #fff;
+	text-decoration:none;
 }
 
 .Genere{

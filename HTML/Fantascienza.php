@@ -24,8 +24,13 @@ require_once "./DataWriter.php"
 	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Fantascienza </p>
 </div>
 
+<div id="hamburger">
+	<a href="#menu">&#9776;</a>
+</div> 
+
 <div id="menu">
 <ul>
+	<a name="menu"></a>
 		<li><a href=Home.php>Home</a></li>
 		<li><a href="news.php">News</a></li>
 		

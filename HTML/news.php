@@ -26,8 +26,13 @@ require_once "./DataWriter.php";
 	</p>
 </div>
 
+<div id="hamburger">
+	<a href="#menu">&#9776;</a>
+</div> 
+
 <div id="menu">
 <ul>
+	<a name="menu"></a>
 		<li><a href="Home.php">Home</a></li>
 		<li><p >News</p></li>
 		

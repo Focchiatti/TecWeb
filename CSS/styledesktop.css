@@ -38,11 +38,16 @@ html{
 	font-weight: bold;
 }
 
+#hamburger {
+	display: none;
+}
+
 #menu {
 	height: 3em;
 	background-color: #cc3333;
 	border-bottom: 1px solid #DDD;
 	margin-bottom:1em;
+
 }
 
 #menu #login{

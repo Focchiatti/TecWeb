@@ -24,9 +24,14 @@
 		<p>Ti trovi in: Aggiungi serie</p>
 	</div>
 
+	<div id="hamburger">
+		<a href="#menu">&#9776;</a>
+	</div> 
+
 	<div id="menu">
 	<ul>
-			<li><a href="Home.php">Home</a></li>
+		<a name="menu"></a>
+		<li><a href="Home.php">Home</a></li>
 	</ul>
 	</div>
 		<?php 

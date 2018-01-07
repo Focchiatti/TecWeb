@@ -24,13 +24,18 @@ require_once "./DataWriter.php"
 	<p>Ti trovi in: <span xml:lang="en">Home</span></p>
 </div>
 
+<div id="hamburger">
+	<a href="#menu">&#9776;</a>
+</div> 
+
+
 <div id="menu">
 <ul>
+		<a name="menu"></a>
 		<li><p>Home</p></li>
 		<li><a href="news.php">News</a></li>
 		
 	<?php
-
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
@@ -76,15 +81,11 @@ require_once "./DataWriter.php"
 			Poliziesco
 		</a>
 	</div>
-	
 </div>
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 </div>
-
-
-
 
 
 </body>

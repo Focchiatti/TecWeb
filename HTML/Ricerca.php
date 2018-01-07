@@ -27,8 +27,13 @@ echo "
 	</p>
 </div>
 
+<div id=\"hamburger\">
+	<a href=\"#menu\">&#9776;</a>
+</div> 
+
 <div id=\"menu\">
 <ul>
+<a name=\"menu\"></a>
 		<li><a href=\"Home.php\">Home</a></li>
 		<li><a href=\"news.php\">News</a></li>";
 	DataWriter::LogInButton();
