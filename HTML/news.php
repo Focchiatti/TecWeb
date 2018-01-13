@@ -69,8 +69,8 @@ else
 					</div>\n";
 			}
 			$url=strtok($_SERVER["REQUEST_URI"],'?');
-	if($page!=0)echo "<a href='".$url."?page=".($page-1)."'>Pagina Precedente</a>";
-	if(count($notizia)-$page*$resultPage>=$resultPage)echo "<a href='".$url."?page=".($page+1)."'>Pagina Successiva</a>";
+	if($page!=0)echo "<a href='".$url."?page=".($page-1)."' class='cancelbtn' >Pagina Precedente</a>";
+	if(count($notizia)-$page*$resultPage>=$resultPage)echo "<a href='".$url."?page=".($page+1)."' class='right cancelbtn'>Pagina Successiva</a>";
 	}
 ?>
 </div>

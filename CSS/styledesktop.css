@@ -324,6 +324,8 @@ input[type=submit]{
 }
 
 .cancelbtn {
+		margin-top:1em;
+		margin-left:5%;
 	display: block;
 	border: 1px solid #ccc;
 	color: #fff;
@@ -336,9 +338,10 @@ input[type=submit]{
 .cancelbtn:hover{
     background-color: #663333;
 }
-
-
-.container {
-    padding: 1em;
+.cancelbtn.right{
+		margin-left:0;
+		margin-right:5%;
+		
+	    float: right;
 }
 

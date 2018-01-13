@@ -62,9 +62,8 @@
 							$_SESSION['CallingPage']="./Home.php";
 						}
 						echo "
-						<div class=\"container\">
 							<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
-						</div>
+						
 						
 					</div>";
 		}
