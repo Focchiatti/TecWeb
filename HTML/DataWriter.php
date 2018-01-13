@@ -1,5 +1,10 @@
 <?php
-
+//
+// 	TODO Stampa Notizie senza cache
+//
+//
+//
+//
 require_once "./DBAccess.php";
 class DataWriter
 {
@@ -63,7 +68,7 @@ class DataWriter
 			{
 				echo
 	    		" <li class=\"ELSerie\">
-	        		<a href=\"Serie.php?name=".$serie['Titolo']."\">" .$serie['Titolo']. "</a>
+	        		<a href=\"Serie.php?name=".$serie['Titolo']."\">" .DBAccess::RetrieveData($serie['Titolo']). "</a>
 	        		<p>".$serie['Valutazione']."/5</p>
 	        	</li>";
 			}
@@ -135,7 +140,7 @@ class DataWriter
 				echo "
 					<tr>
 						<td> <a href=\"".$serie['Genere'].".php\">".$serie['Genere']."  </a></td>
-						<td> <a href=\"Serie.php?name=".$serie['Titolo']."\">".$serie['Titolo']." </a></td>
+						<td> <a href=\"Serie.php?name=".$serie['Titolo']."\">".DBAccess::RetrieveData($serie['Titolo'])." </a></td>
 						<td> <p> ".$serie['Valutazione']."</p> </td>
 					
 					</tr>";

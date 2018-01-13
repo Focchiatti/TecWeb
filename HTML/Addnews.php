@@ -21,7 +21,6 @@
 
 
 	<div id="breadcrumbs">
-		<p>Ti trovi in: Aggiungi serie</p>
 		<p>Ti trovi in: Aggiungi Notizie</p>
 	</div>
 
@@ -81,7 +80,6 @@
 							<select name=\"Serie\">";
                         foreach($Series as $serie)
                         {
-                                echo"<option value='".$serie[0]."'> ".$serie[0]."</option>";
                                 echo"<option value='".$serie[0]."'> ".DBAccess::RetrieveData($serie[0])."</option>";
                         }
 						echo"</select><br/>
