@@ -64,7 +64,6 @@
 						echo "
 							<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
 						
-						
 					</div>";
 		}
 		else{

@@ -338,10 +338,34 @@ input[type=submit]{
 .cancelbtn:hover{
     background-color: #663333;
 }
-.cancelbtn.right{
-		margin-left:0;
-		margin-right:5%;
-		
-	    float: right;
-}
 
+#pageNavigation
+{
+		color:#cc3333;
+	display: inline-block;
+	float: none;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+#pageNavigation p
+{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+#pageNavigation li{
+	float:left;
+	padding:0.5em;
+	margin-left:0.5em;
+}
+#pageNavigation a:visited{
+	float:left;
+	padding:0.5em;
+	margin-left:0.5em;
+	color:#CC00CC;
+}
