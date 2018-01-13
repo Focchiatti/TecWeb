@@ -43,7 +43,7 @@ require_once "./DataWriter.php"
 
 <div id="content">
      <?php
-     	DataWriter::DBPrintDataAboutGenere("Drammatico");
+     	DataWriter::PrintDataAbout("Drammatico");
      ?>	
 </div>
 

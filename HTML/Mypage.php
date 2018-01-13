@@ -56,7 +56,7 @@ require_once "./DataWriter.php";
 		foreach ($mieserie as $serie) {
 			echo "<div class='lemieserie'>
             <form action=".$_SERVER['PHP_SELF']." method='post'>
-			<a href=\"Serie.php?name=".$serie['Titoloserie']."\">".$serie['Titoloserie']."</a>
+			<a href=\"Serie.php?name=".$serie['Titoloserie']."\">".DBAccess::RetrieveData($serie['Titoloserie'])."</a>
 			<input type=\"hidden\" name=\"serie\" value=\"".$serie['Titoloserie']."\"";
 			echo "
 			<p>Il mio voto:</p>

@@ -120,6 +120,7 @@ class DataWriter
 	public static function RicercaTitolo($Titolo)
 	{
 		$MyDBConnection=new DBAccess();
+		
 		$series=$MyDBConnection->Ricerca($Titolo);
 		if($series!=null)
 		{
@@ -148,7 +149,47 @@ class DataWriter
 			</p>";
 		}
    	}
-
+	public static function UploadFile($File,$Name)
+	{
+		$target_dir = "../Img/";
+		$target_file = $target_dir.basename($File["name"]);
+		$uploadOk = 1;
+		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+		$newname=$target_dir.$Name.".".$imageFileType;
+		// Check if image file is a actual image or fake image
+		if(isset($File["tmp_name"])) {
+			$check = getimagesize($File["tmp_name"]);
+			if($check !== false) {
+				echo "File is an image - " . $check["mime"] . ".";
+				$uploadOk = 1;
+			} else {
+				echo "File is not an image.";
+				$uploadOk = 0;
+			}
+		}
+		// Check if file already exists
+		if (file_exists($target_file)) {
+			echo "Sorry, file already exists.";
+			$uploadOk = 0;
+		}
+		// Check file size
+		if ($File["size"] > 500000) {
+			echo "Sorry, your file is too large.";
+			$uploadOk = 0;
+		}
+		// Allow certain file formats
+		if($imageFileType != "jpg") {
+			echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+			$uploadOk = 0;
+		}
+		// Check if $uploadOk is set to 0 by an error
+		if ($uploadOk == 0) {
+			return false;
+		// if everything is ok, try to upload file
+		} else {
+			return move_uploaded_file($File["tmp_name"], $newname);
+		}
+	}
 	public static function LogInButton()
 	{
 		if (!isset($_SESSION)){

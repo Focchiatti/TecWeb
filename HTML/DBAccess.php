@@ -19,7 +19,16 @@
 			{
 				$this->closeDBConnection();
 			}	
-			
+			public static function createKey($Data){
+				
+				$Key = preg_replace('/\s+/', '+', $Data);
+				return $Key;
+			}
+			public static function RetrieveData($K){
+				
+				$Key = preg_replace('/\++/', ' ', $K);
+				return $Key;
+			}
 			//Initialize
 			private function openDBConnection()
 			{
@@ -56,20 +65,23 @@
 			}
 			public function Ricerca($data)
 			{
-					$query=$this->connessione->prepare("SELECT Titolo,Genere,Valutazione FROM SerieTV WHERE Titolo LIKE '".$data."%' OR Titolo LIKE '% ".$data."%' " );
-					$query->execute(array($data))	;
+				$string=DBAccess::createKey($data);
+				$string=$string."%";
+				$string2="%+".$string;
+					$query=$this->connessione->prepare("SELECT Titolo,Genere,Valutazione FROM SerieTV WHERE Titolo LIKE ? OR Titolo LIKE ? " );
+					$query->execute(array($string,$string2));
 					return $query->fetchAll();
 			}
 			public function RicercaSpecifica($data)
 			{
-					$query=$this->connessione->prepare("SELECT Titolo,Genere,Trama FROM SerieTV WHERE Titolo LIKE '".$data."'"	);
-					$query->execute(array($data))	;
+					$query=$this->connessione->prepare("SELECT Titolo,Genere,Trama FROM SerieTV WHERE Titolo LIKE ?");
+					$query->execute(array(DBAccess::createKey($data)));
 					return $query->fetchAll();
 			}
 
 			public function RicercaSerie($data){
-					$query=$this->connessione->prepare("SELECT Titolo FROM SerieTV WHERE Titolo = '".$data."'"	);
-					$query->execute(array($data))	;
+					$query=$this->connessione->prepare("SELECT Titolo FROM SerieTV WHERE Titolo = ?");
+					$query->execute(array(DBAccess::createKey($data)));
 					return $query->fetchAll();
 			}
 
@@ -80,22 +92,23 @@
         }
         public function RicercaSerieUtenteNonSeguita($utente,$serie){
         $query=$this->connessione->prepare("SELECT 1 FROM Valutazione WHERE NickName= ? AND TitoloSerie = ?");
-        $query->execute(array($utente,$serie));
+        $query->execute(array($utente,DBAccess::createKey($serie)));
         return $query->fetchAll()==NULL?true:false;
     }
     public function RimuoviSerieSeguita($serie,$utente)
     {
         $query = $this->connessione->prepare("DELETE FROM Valutazione WHERE NickName= ? AND TitoloSerie = ?");
-        return $query->execute(array($utente, $serie));
+        return $query->execute(array($utente,DBAccess::createKey($serie)));
     }
 
 			public function AggiornaVoto($voto,$serie,$nick){
-                $query=$this->connessione->prepare("UPDATE Valutazione SET Voto=".$voto." WHERE Valutazione.NickName= '".$nick."' AND Valutazione.Titoloserie= '".$serie."' "	);
+                $query=$this->connessione->prepare("UPDATE Valutazione SET Voto=".$voto." WHERE Valutazione.NickName= '".$nick."' AND Valutazione.Titoloserie= '".DBAccess::createKey($serie)."' "	);
                 return $query->execute();
 			}
 
         public function AggiungiMieSerie($serie,$nick){
-            $query=$this->connessione->prepare("INSERT INTO Valutazione(Titoloserie	,NickName) values ('".$serie."','".$nick."')"	);
+			$key=DBAccess::createKey($serie);
+            $query=$this->connessione->prepare("INSERT INTO Valutazione(Titoloserie	,NickName) values ('".$key."','".$nick."')"	);
             return $query->execute();
         }
 
@@ -118,15 +131,19 @@
 				}
 				return false;    	
 			}
+			
             public function AggiungiSerie($Titolo,$Genere,$IData,$FData,$Stagioni,$Trama)
 			{
-	            $runnable=$this->connessione->prepare("INSERT INTO SerieTV(Titolo,Genere,DataInizio,DataFine,Stagioni,Trama) values('".$Titolo."','".$Genere."','".$IData."','".$TFData."','".$Stagioni."','".$Trama."')");
+	            $runnable=$this->connessione->prepare(
+				"INSERT INTO SerieTV(Titolo,Genere,DataInizio,DataFine,Stagioni,Trama) 
+				values('".$Titolo."','".$Genere."','".$IData."','".$TFData."','".$Stagioni."','".$Trama."')"
+				);
 	    		return $runnable->execute();
 	
 			}
             public function AggiungiNews($Titolo,$Data,$Contenuto,$Serie)
 			{
-				$runnable=$this->connessione->prepare("INSERT INTO Notizie(Titolo,Data,Contenuto,SerieTV) values('".$Titolo."','".$Data."','".$Contenuto."','".$Serie."')");
+				$runnable=$this->connessione->prepare("INSERT INTO Notizie(Titolo,Data,Contenuto,SerieTV) values('".DBAccess::createKey($Titolo)."','".$Data."','".$Contenuto."','".$Serie."')");
 	    		return $runnable->execute();
 			}
             public function Get_Serie()

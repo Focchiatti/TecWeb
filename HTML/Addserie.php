@@ -39,7 +39,7 @@
 		<?php 
 		
 		if(isset($_GET['error']))
-			echo "<p>Campi mal compilati</p>";
+			echo "<p>".$_GET['error']."</p>";
 		session_start();
         if(!isset($_SESSION['CallingPage']))
         {
@@ -52,8 +52,13 @@
         if(isset($_POST['Titolo']))
         {
             $Db=new DBAccess();
-            if(($Db->AggiungiSerie($_POST['Titolo'],$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama'])))
+			$Titolo=DBAccess::createKey($_POST['Titolo']);
+			if(DataWriter::UploadFile($_FILES['userfile'],$Titolo))
+			$error="";
+			else $error="Upload Fallito";
+            if($error==""&&($Db->AggiungiSerie($Titolo,$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama'])))
             {
+				$error=="Campi mal Compilati";
                 unset($_POST['Titolo']);
                 unset($_POST['Genere']);
                 unset($_POST['IData']);
@@ -63,33 +68,35 @@
 
                 header("location:".$_SERVER['PHP_SELF']);
             }
-            else
-            {
+			else{
+				$error=="Upload Fallito";
                 unset($_POST['Titolo']);
                 unset($_POST['Genere']);
                 unset($_POST['IData']);
                 unset($_POST['FData']);
                 unset($_POST['Stagioni']);
                 unset($_POST['Trama']);
-                header("location:./Addserie.php?error");
-            }
+				
+                header("location:./Addserie.php?error=".$error);
+			}
         }
 				echo "
-						<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\">
+						<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\" enctype='multipart/form-data'>
 
 							<label for=\"Titolo\">
 								<b>Titolo</b>
 							</label>
 							<input type=\"text\" placeholder=\"Inserisci il Titolo\" name=\"Titolo\" required=\"required\">
 							<label for=\"Genere\">
-								<b>Inserisci il genere</b>
-							</label>
-                                <input type=\"radio\" name=\"Genere\" value=\"thriller\" checked/> Thriller<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"drammatico\"/> Drammatico<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"commedia\"/> Commedia<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"fantastico\"/> Fantastico<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"fantascienza\"/> Fantascienza<br>
-                                <input type=\"radio\" name=\"Genere\" value=\"poliziesco\"/> Poliziesco<br>
+								<b>Genere: </b>
+							<select name=\"Genere\">
+                                <option value=\"thriller\"> Thriller</option>
+                                <option value=\"drammatico\"> Drammatico</option>
+                                <option value=\"commedia\"> Commedia</option>
+                                <option value=\"fantastico\"> Fantastico</option>
+                                <option value=\"fantascienza\"> Fantascienza</option>
+                                <option value=\"poliziesco\"> Poliziesco</option>
+							<\select>
                             <label for=\"IData\">
 								<b>Data d'inizio</b>
 							</label>
@@ -105,8 +112,13 @@
                             <label for=\"Trama\">
 								<b>Trama</b>
 							</label>
-							<input type=\"text\" placeholder=\"Inserisci la trama\" name=\"Trama\" required=\"required\"/>
+							<textarea id='inputbox' placeholder=\"Inserisci la trama\" name=\"Trama\" required=\"required\"></textarea></br>
+							<label for=\"file\">
+								<b>Immagine della serie</b>
+							</label>
+							<input type='file' name='userfile'></br>
 							<input type=\"submit\"value=\"Submit\"/>
+							
 						</form>
 						
 						";

@@ -30,9 +30,9 @@
 
 	<div id="menu">
 	<ul>
-		<a name="menu"></a>		<li><a href="Home.php">Home</a></li>
+		<a name="menu"></a>
+			<li><a href="Home.php">Home</a></li>
 		<li><a href="news.php">News</a></li>
-		<li id="login"><p>Login</p></li>
 	</ul>
 	</div>
 		<?php 
@@ -57,23 +57,18 @@
 							<input type=\"submit\"value=\"Submit\"\>
 						</form>
 						";
-						if(isset($_SESSION['CallingPage']))
+						if(!isset($_SESSION['CallingPage']))
 						{
+							$_SESSION['CallingPage']="./Home.php";
+						}
 						echo "
 						<div class=\"container\">
 							<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
 						</div>
-						";
-						}
-						else 
-						{
-							$_SESSION['CallingPage']="./Home.php";
-						}
-						echo"
+						
 					</div>";
 		}
 		else{
-			if(!isset($_SESSION['Name']) && isset($_POST['Password']))
 			{
 				$Db=new DBAccess();
 				if($Db->LogInUtente($_POST['Name'],$_POST['Password']))
@@ -94,9 +89,8 @@
 	<div id="smallmenu">
 <ul>
 		<a name="smallmenu"></a>
-		<li><a href="home.php">Home</a></li>
+		<li><p>Home</p></li>
 		<li><a href="news.php">News</a></li>
-		<li id="login"><p>Login</p></li>
 	<li id="up"><a href="#top">Torna su</a></li>
 </ul>
 </div>

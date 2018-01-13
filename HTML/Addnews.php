@@ -22,6 +22,7 @@
 
 	<div id="breadcrumbs">
 		<p>Ti trovi in: Aggiungi serie</p>
+		<p>Ti trovi in: Aggiungi Notizie</p>
 	</div>
 
 	<div id="hamburger">
@@ -69,6 +70,7 @@
 								<b>Data</b>
 							</label>
 							<input type=\"text\" placeholder=\"aaaa-mm-gg\" name=\"Data\" required=\"required\">
+							<input type=\"text\" placeholder=\"aaaa-mm-gg\" value=".date("Y-m-d")." name=\"Data\" required=\"required\">
                             <label for=\"Contenuto\">
 								<b>Contenuto</b>
 							</label>
@@ -80,6 +82,7 @@
                         foreach($Series as $serie)
                         {
                                 echo"<option value='".$serie[0]."'> ".$serie[0]."</option>";
+                                echo"<option value='".$serie[0]."'> ".DBAccess::RetrieveData($serie[0])."</option>";
                         }
 						echo"</select><br/>
 						<input type=\"submit\"value=\"Submit\"\></form>";

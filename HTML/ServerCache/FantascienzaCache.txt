@@ -1,6 +1,6 @@
-1515404092
+1515851744
 <ul id="ListaSerie">
  <li class="ELSerie">
 	        		<a href="Serie.php?name=The Expanse">The Expanse</a>
-	        		<p>1.00/5</p>
+	        		<p>/5</p>
 	        	</li></ul>

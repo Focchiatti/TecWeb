@@ -1,3 +1,8 @@
+<div class="notizia"><h4>2018-01-13</h4>
+					<h4>asdg+adsa</h4>
+					<h2>ASDfgas</h2>
+					<p>asdasdas</p>
+					</div>
 <div class="notizia"><h4>2017-12-11</h4>
 					<h4>MrRobot</h4>
 					<h2>Mr Robot va a una festa di hacker nella prima foto della stagione 3</h2>
@@ -22,4 +27,9 @@
 					<h4>MrRobot</h4>
 					<h2>Annunciata la terza stagione della serie</h2>
 					<p>'c8 fissato per l'11 ottobre l'esordio della terza stagione della pluripremiata serie cult firmata da Sam Esmail, con Rami Malek nel ruolo dell'hacker sociopatico Elliot Alderson. Ripartiamo dunque dai colpi di scena e dai cliffhanger del finale della stagione 2 per provare a riflettere su cosa aspettarci da Mr. Robot per il prossimo autunno.</p>
+					</div>
+<div class="notizia"><h4>0000-00-00</h4>
+					<h4>asdg+adsa</h4>
+					<h2>ghafsd</h2>
+					<p>dsgdfas</p>
 					</div>

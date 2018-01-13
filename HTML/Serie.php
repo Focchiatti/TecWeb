@@ -23,10 +23,13 @@ require_once "./DBAccess.php";
 <?php
 	$Db=new DBAccess();
 	$serie=$Db->RicercaSpecifica($_GET['name']);
-	$Titolo=$serie[0]["Titolo"];
+	if($serie){
+		$Key=$serie[0]["Titolo"];
+	$Titolo=DBAccess::RetrieveData($serie[0]["Titolo"]);
 	$Genere=$serie[0]["Genere"];
 	$Trama=$serie[0]["Trama"];
-
+	}
+	else header("location:./Home.php");
 echo "
 <div id=\"breadcrumbs\">
 	<p>Ti trovi in: <span xml:lang=\"en\">Home >> 
@@ -53,6 +56,7 @@ echo "
 <div id=\"content\" class=\"Serie\">
 <h1>".$Titolo."</h1>
 <h3>Genere ".$Genere."</h3>
+<img src='../Img/".$Key.".jpg' alt='".$Titolo."' id='Copertina''>
 <p>".$Trama."</p>
 ";
 if(isset($_SESSION["UltimaRicerca"])){
@@ -68,17 +72,17 @@ if(isset($_SESSION["Name"])&&$Db->RicercaSerieUtenteNonSeguita($_SESSION['Name']
     $check=true;
     $Text="Aggiungi alle mie serie";
 }
-if(isset($_SESSION["Name"])&&$_SESSION["Name"])
+if(isset($_SESSION["Name"])&& !$_SESSION["Admin"] )
 {
     echo"
-    <form method = \"POST\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $_GET['name'] . "\" >
+    <form method = \"POST\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $Key . "\" >
 <input type='submit' value='".$Text."'>
 <input type='hidden' name='Act' >
 </form>";
 
 if (isset($_POST['Act'])&&$check) {
-    $Db->AggiungiMieSerie($_GET['name'], $_SESSION["Name"]);
-    header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $_GET['name'] );
+    $Db->AggiungiMieSerie($Key, $_SESSION["Name"]);
+    header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $Key );
 }
 else if(isset($_POST['Act']))
 {
