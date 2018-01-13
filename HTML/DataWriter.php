@@ -52,6 +52,24 @@ class DataWriter
 		else
 		echo "Stai sbagliando a non esistono dati con quel nome, sei forse tu dannatissimo sexy Ballan? <img src=\"../Img/download.jpg\">";
 	}
+		public static function DBPrintDataAboutGenere($data)
+	{
+		$MyDBConnection=new DBAccess();
+		$series=$MyDBConnection->ReadGenere($data);
+		if($series!=null)
+		{
+			echo " <ul id=\"ListaSerie\">";
+			foreach ($series as $serie) 
+			{
+				echo
+	    		" <li class=\"ELSerie\">
+	        		<a href=\"Serie.php?name=".$serie['Titolo']."\">" .$serie['Titolo']. "</a>
+	        		<p>".$serie['Valutazione']."/5</p>
+	        	</li>";
+			}
+			echo "</ul>";
+		}
+	}
 
 	private static function RefreshCacheGenere($myfile,$Genere)
 	{

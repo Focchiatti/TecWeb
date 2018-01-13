@@ -30,8 +30,9 @@
 
 	<div id="menu">
 	<ul>
-		<a name="menu"></a>
-			<li><a href="Home.php">Home</a></li>
+		<a name="menu"></a>		<li><a href="Home.php">Home</a></li>
+		<li><a href="news.php">News</a></li>
+		<li id="login"><p>Login</p></li>
 	</ul>
 	</div>
 		<?php 
@@ -93,13 +94,9 @@
 	<div id="smallmenu">
 <ul>
 		<a name="smallmenu"></a>
-		<li><p>Home</p></li>
+		<li><a href="home.php">Home</a></li>
 		<li><a href="news.php">News</a></li>
-		
-	<?php
-		DataWriter::LogInButton();
-		$_SESSION["UltimaRicerca"]=null;
-	?>
+		<li id="login"><p>Login</p></li>
 	<li id="up"><a href="#top">Torna su</a></li>
 </ul>
 </div>
