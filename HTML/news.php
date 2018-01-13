@@ -1,6 +1,14 @@
 
 <?php
 require_once "./DataWriter.php";
+require_once "./DBAccess.php";
+if(!isset($_GET['page']))
+	$page=0;
+else
+	$page=$_GET['page'];
+		$resultPage=2;
+		$MyDBConnection=new DBAccess();
+		$notizia=$MyDBConnection->ReadNotizie();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -45,10 +53,28 @@ require_once "./DataWriter.php";
 
 <div id="content">
 <?php
-DataWriter::RefreshCacheNotizie("Notizie");
-DataWriter::PrintDataAbout("Notizie")
+	if($notizia!=null)
+	{
+		
+			$element=min($resultPage,count($notizia)-$page*$resultPage);
+
+			$start=$page*$resultPage;
+			for($i=$start;$i<$start+$element;$i=$i+1) 
+			{
+				echo
+	    		"<div class=\"notizia\"><h4>".$notizia[$i]["Data"]."</h4>
+					<h4>".$notizia[$i]["SerieTv"]."</h4>
+					<h2>".$notizia[$i]["Titolo"]."</h2>
+					<p>".$notizia[$i]["Contenuto"]."</p>
+					</div>\n";
+			}
+			$url=strtok($_SERVER["REQUEST_URI"],'?');
+	if($page!=0)echo "<a href='".$url."?page=".($page-1)."'>Pagina Precedente</a>";
+	if(count($notizia)-$page*$resultPage>=$resultPage)echo "<a href='".$url."?page=".($page+1)."'>Pagina Successiva</a>";
+	}
 ?>
-</div><div id="footer">
+</div>
+<div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 </div>
 

@@ -74,8 +74,7 @@ class DataWriter
 			}
 			echo "</ul>";
 		}
-	}
-
+	}		
 	private static function RefreshCacheGenere($myfile,$Genere)
 	{
 		$MyDBConnection=new DBAccess();
