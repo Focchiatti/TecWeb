@@ -63,7 +63,7 @@ else
 			{
 				echo
 	    		"<div class=\"notizia\"><h4>".$notizia[$i]["Data"]."</h4>
-					<h4>".$notizia[$i]["SerieTv"]."</h4>
+					<h4>".DBAccess::RetrieveData($notizia[$i]["SerieTv"])."</h4>
 					<h2>".$notizia[$i]["Titolo"]."</h2>
 					<p>".$notizia[$i]["Contenuto"]."</p>
 					</div>\n";
