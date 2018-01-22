@@ -35,6 +35,8 @@
 				try
 				{
 					$this->connessione = new PDO ("mysql:host=".DBAccess::HOST_DB.";dbname=".DBAccess::DATABASE_NAME,DBAccess::USERNAME,DBAccess::PASSWORD);
+                    $query=$this->connessione->prepare("SET NAMES 'utf8'");
+                    $query->execute();
 				}
 				catch(PDOException $e)
 				{

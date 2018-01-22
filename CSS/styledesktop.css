@@ -220,7 +220,8 @@ input[type=submit]:hover{
 
 .Genere{
 	text-align:center;
-	border:1px solid #000;	
+	border:1px solid #000;
+    border-radius:15px;
 	width:20%;
 	min-width:6.5em;
 	margin-left:10%;
@@ -231,6 +232,7 @@ input[type=submit]:hover{
 
 .Genere a{
 	display:inline-block;
+    border-radius:15px;
 	padding-top:3.4em;
 	padding-bottom:3.4em;
 	width:100%;
@@ -368,4 +370,8 @@ input[type=submit]{
 	padding:0.5em;
 	margin-left:0.5em;
 	color:#CC00CC;
+}
+
+img.ImgSerie {
+    width: 10em;
 }

@@ -56,7 +56,7 @@ echo "
 <div id=\"content\" class=\"Serie\">
 <h1>".$Titolo."</h1>
 <h3>Genere ".$Genere."</h3>
-<img src='../Img/".$Key.".jpg' alt='".$Titolo."' id='Copertina''>
+<img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt='".$Titolo."' id='Copertina''>
 <p>".$Trama."</p>
 ";
 if(isset($_SESSION["UltimaRicerca"])){
