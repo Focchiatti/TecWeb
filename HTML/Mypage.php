@@ -58,7 +58,7 @@ require_once "./DataWriter.php";
             <form action=\"".$_SERVER['PHP_SELF']."\" method='post'>
             <fieldset>
 			<a href=\"Serie.php?name=".$serie['Titoloserie']."\">".DBAccess::RetrieveData($serie['Titoloserie'])."</a>
-			<input type=\"hidden\" name=\"serie\" value=\"".$serie['Titoloserie']."\"/>";
+			<input type=\"hidden\" title=\"Serie\" name=\"serie\" value=\"".$serie['Titoloserie']."\"/>";
 			echo "
 			<p>Il mio voto:</p>
 			<select name='Voti' title='Voti'>
@@ -71,7 +71,7 @@ require_once "./DataWriter.php";
                 <option value='4'>4</option>
                 <option value='5'>5</option> 
             </select>
-            <input type='submit' title='Vota' value='Vota'/>
+            <input class='submitvoto' type='submit' title='Vota' value='Vota'/>
             </fieldset>
             </form>
             </div>";

@@ -56,13 +56,13 @@ echo "
 <div id=\"content\" class=\"Serie\">
 <h2>".$Titolo."</h2>
 <h3>Genere ".$Genere."</h3>
-<img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt='".$Titolo."' id='Copertina'/>
-<p>".$Trama."</p>
+
+<p id=\"trama\"><img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt='".$Titolo."' id='Copertina'/>".$Trama."</p>
 ";
 if(isset($_SESSION["UltimaRicerca"])){
 	echo "<a href=\"Ricerca.php?Ricerca=".$_SESSION["UltimaRicerca"]."\">Torna alla ricerca</a><br/>";	
 }
-echo "<a href=\"".$Genere.".php\">Vai al genere</a>
+echo "<a id=\"back\" href=\"".$Genere.".php\">Vai al genere</a>
 ";
 
 $Text="Rimuovi dalle mie serie";
@@ -77,7 +77,7 @@ if(isset($_SESSION["Name"])&& !$_SESSION["Admin"] )
     echo"
     <form method = \"post\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $Key . "\" >
     <fieldset>
-<input type='submit' value='".$Text."'/>
+<input class='submitserie' title='Submit' type='submit' value='".$Text."'/>
 <input type='hidden' name='Act' />
 </fieldset>
 </form>";

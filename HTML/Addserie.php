@@ -86,7 +86,7 @@
 							<label><strong>Titolo</strong></label>
 							<input type=\"text\" title=\"Titolo\" name=\"Titolo\"/>
 							<label> <strong>Genere: </strong></label>
-							<select name='Genere' title='Genere'>
+							<select id='selectgenere' name='Genere' title='Genere'>
                                 <option value=\"thriller\"> Thriller</option>
                                 <option value=\"drammatico\"> Drammatico</option>
                                 <option value=\"commedia\"> Commedia</option>

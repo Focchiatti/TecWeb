@@ -219,7 +219,7 @@ html{
 
 #footer{
 	text-align: center;
-	display: block;
+	display: inline-block;
 	padding:0.5em;
 	font-size: 0.8em;
 }
@@ -309,6 +309,7 @@ label{
 	width: 80%;
 	display: inline-block;
 	margin: 0.5em;
+	text-align: center;
 }
 
 input[type=text], input[type=password] {
@@ -373,8 +374,22 @@ input[type=text], input[type=password] {
 	color:#253F5D;
 }
 
-img.ImgSerie {
+.ImgSerie {
     width: 10em;
+    float: left;
+    display: inline;
+    overflow: auto;
+    padding: 0 1em 0 0;
+}
+
+#trama {
+	display: block;
+}
+
+#back  {
+	display: inline-block;
+	width: 20%;
+	margin: auto;
 }
 
 #inputbox {
@@ -383,6 +398,7 @@ img.ImgSerie {
 
 #submit {
 	display: block;
+	clear: both;
 	margin-left: 46%;
 	border: 1px solid #ccc;
 	color: #EDF2F7;
@@ -394,4 +410,29 @@ img.ImgSerie {
 
 #submit:hover{	
 	background-color: #A5C5E9;
+}
+
+.submitvoto {
+	display: inline;
+	border: 1px solid #ccc;
+	color: #EDF2F7;
+	font-weight: bold;
+    padding: 1em;
+    background-color: #4D4D4D;
+    margin-top: 0.5em;
+}
+
+.submitserie {
+	display: inline;
+	border: 1px solid #ccc;
+	color: #EDF2F7;
+	font-weight: bold;
+    padding: 1em;
+    background-color: #4D4D4D;
+    margin-top: 0.5em;
+}
+
+#selectgenere {
+	display: block;
+	margin:auto;
 }
