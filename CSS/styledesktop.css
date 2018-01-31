@@ -422,6 +422,10 @@ input[type=text], input[type=password] {
     margin-top: 0.5em;
 }
 
+.submitvoto:hover{	
+	background-color: #A5C5E9;
+}
+
 .submitserie {
 	display: inline;
 	border: 1px solid #ccc;
@@ -430,6 +434,10 @@ input[type=text], input[type=password] {
     padding: 1em;
     background-color: #4D4D4D;
     margin-top: 0.5em;
+}
+
+.submitserie:hover{	
+	background-color: #A5C5E9;
 }
 
 #selectgenere {
