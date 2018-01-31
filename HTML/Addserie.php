@@ -21,7 +21,8 @@
 
 
 	<div id="breadcrumbs">
-		<p>Ti trovi in: Aggiungi serie</p>
+		<p>Ti trovi in:<span xml:lang="en">Home</span> >> Aggiungi serie</p>
+		<a class="aiuti" href="#content">Salta la navigazione</a>
 	</div>
 
 	<div id="hamburger">
@@ -119,6 +120,7 @@
 						";
 
 						echo"
+						<a class=\"aiuti\" href=\"#header\">Torna su</a>
 					</div>";
 
 		?>

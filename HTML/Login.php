@@ -22,6 +22,7 @@
 
 	<div id="breadcrumbs">
 		<p>Ti trovi in: <span xml:lang="en">Login</span></p>
+		<a class="aiuti" href="#content">Salta la navigazione</a>
 	</div>
 
 	<div id="hamburger">
@@ -64,7 +65,7 @@
 						}
 						echo "
 							<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
-						
+						<a class=\"aiuti\" href=\"#header\">Torna su</a>
 					</div>";
 		}
 		else{

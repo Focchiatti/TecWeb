@@ -133,6 +133,7 @@ html{
 
 #ListaSerie{
 	padding:0.3em;
+	float: left;
 }
 
 #ListaSerie p{
@@ -271,4 +272,8 @@ display: none;
 
 .submitvoto {
 	display: none;
+}
+
+.aiuti{
+display: none;
 }

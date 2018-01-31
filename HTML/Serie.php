@@ -32,11 +32,8 @@ require_once "./DBAccess.php";
 	else header("location:./Home.php");
 echo "
 <div id=\"breadcrumbs\">
-	<p>Ti trovi in: <span xml:lang=\"en\">Home >> 
-			".$Genere." >> ".$Titolo.
-		"
-		</span>
-	</p>
+	<p>Ti trovi in: <span xml:lang=\"en\">Home >> ".$Genere." >> ".$Titolo."</span></p>
+	<a class=\"aiuti\" href=\"#content\">Salta la navigazione</a>
 </div>
 
 <div id=\"hamburger\">
@@ -93,7 +90,7 @@ else if(isset($_POST['Act']))
 }
 }
 echo 
-"
+"<a class=\"aiuti\" href=\"#header\">Torna su</a>
 </div>
 <div id=\"footer\">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang=\"en\">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>

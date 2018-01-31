@@ -21,7 +21,8 @@
 
 
 	<div id="breadcrumbs">
-		<p>Ti trovi in: Aggiungi Notizie</p>
+		<p>Ti trovi in:<span xml:lang="en">Home</span> >> Aggiungi Notizie</p>
+		<a class="aiuti" href="#content">Salta la navigazione</a>
 	</div>
 
 	<div id="hamburger">
@@ -83,6 +84,7 @@
 						<div class=\"container\">
 							<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
 						</div>
+						<a class=\"aiuti\" href=\"#header\">Torna su</a>
 						</div>";
 		}
 

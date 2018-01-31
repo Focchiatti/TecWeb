@@ -17,11 +17,13 @@ require_once "./DataWriter.php"
 
 <div id="header">
 	<h1>Serie-a-mente</h1>
+	
 </div>
 
 
 <div id="breadcrumbs">
 	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Commedia </p>
+	<span xml:lang="en">Home</span> >>
 </div>
 
 <div id="hamburger">
@@ -45,6 +47,7 @@ require_once "./DataWriter.php"
      <?php
      	DataWriter::DBPrintDataAboutGenere("Commedia");
      ?>	
+     <a class="aiuti" href="#header">Torna su</a>
 </div>
 
 <div id="footer">

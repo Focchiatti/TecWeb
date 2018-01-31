@@ -21,6 +21,7 @@ require_once "./DataWriter.php"
 
 <div id="breadcrumbs">
 	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Drammatico </p>
+	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
 
@@ -45,6 +46,7 @@ require_once "./DataWriter.php"
      <?php
      	DataWriter::DBPrintDataAboutGenere("Drammatico");
      ?>	
+     <a class="aiuti" href="#header">Torna su</a>
 </div>
 
 <div id="footer">

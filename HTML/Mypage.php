@@ -21,6 +21,7 @@ require_once "./DataWriter.php";
 
 <div id="breadcrumbs">
 	<p>Ti trovi in: Home >> Le mie serie</p>
+	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
 <div id="hamburger">
@@ -79,6 +80,7 @@ require_once "./DataWriter.php";
     }
 
 ?>
+<a class="aiuti" href="#header">Torna su</a>
 </div>
 
 <div id="footer">

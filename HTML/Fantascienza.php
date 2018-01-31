@@ -22,6 +22,7 @@ require_once "./DataWriter.php"
 
 <div id="breadcrumbs">
 	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Fantascienza </p>
+	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
 <div id="hamburger">
@@ -45,6 +46,7 @@ require_once "./DataWriter.php"
      <?php
      	DataWriter::DBPrintDataAboutGenere("Fantascienza");
      ?>	
+     <a class="aiuti" href="#header">Torna su</a>
 </div>
 
 <div id="footer">

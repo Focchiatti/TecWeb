@@ -28,10 +28,8 @@ else
 </div>
 
 <div id="breadcrumbs">
-	<p>Ti trovi in: <span xml:lang="en">Home</span> >>
-    <span xml:lang="en">News
-		</span>
-	</p>
+	<p>Ti trovi in: <span xml:lang="en">Home</span> >><span xml:lang="en">News</span></p>
+	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
 <div id="hamburger">
@@ -81,6 +79,7 @@ else
 					echo "</ul>\n";
 				}
 				?>
+				<a class="aiuti" href="#header">Torna su</a>
 	</div>	
 
 <div id="footer">

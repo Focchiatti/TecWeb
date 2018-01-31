@@ -22,9 +22,8 @@ require_once "./DataWriter.php";
 
 echo "
 <div id=\"breadcrumbs\">
-	<p>Ti trovi in: <span xml:lang=\"en\">Home >> Ricerca
-		</span>
-	</p>
+	<p>Ti trovi in: <span xml:lang=\"en\">Home</span> >> Ricerca</p>
+		<a class=\"aiuti\" href=\"#content\">Salta la navigazione</a>
 </div>
 
 <div id=\"hamburger\">
@@ -65,7 +64,7 @@ echo
  </form>
  </div>";
 }
-echo "
+echo "<a class=\"aiuti\" href=\"#header\">Torna su</a>
 </div>
 <div id=\"footer\">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang=\"en\">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
