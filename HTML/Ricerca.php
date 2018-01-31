@@ -46,7 +46,7 @@ if(isset($_GET["Ricerca"])&&$_GET["Ricerca"]!=""){
 	<form action=\"Ricerca.php\" method=\"get\">
 	<fieldset>
 	<input type=\"text\" title=\"Ricerca\" name=\"Ricerca\" value=\"".$_GET["Ricerca"]."\"/>
-	<input type=\"submit\" value=\"Cerca\"/>
+	<input id=\"submit\" type=\"submit\" value=\"Cerca\"/>
 	</fieldset>
 	</form>
 	</div>";
@@ -60,7 +60,7 @@ echo
  <form action=\"Ricerca.php\" method=\"get\">
  <fieldset>
  <input type=\"text\" title=\"Ricerca\" name=\"Ricerca\"/>
- <input type=\"submit\" value=\"Cerca\"/>
+ <input id= \"submit\" type=\"submit\" value=\"Cerca\"/>
  </fieldset>
  </form>
  </div>";
@@ -74,7 +74,7 @@ echo "
 <div id=\"smallmenu\">
 <ul>
 
-		<li><p>Home</p></li>
+		<li><a href=\"Home.php\">Home</a></li>
 		<li><a href=\"news.php\">News</a></li>
 		
 	";

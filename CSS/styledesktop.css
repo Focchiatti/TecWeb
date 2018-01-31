@@ -95,9 +95,7 @@ html{
 	overflow: hidden;
 }
 
-input[type=submit]:hover{	
-	background-color: #A5C5E9;
-}
+
 
 #content {	
 	display: inline-block;
@@ -308,7 +306,7 @@ input[type=submit]:hover{
 }
 
 label{
-	width: 100%;
+	width: 80%;
 	display: inline-block;
 	margin: 0.5em;
 }
@@ -316,29 +314,19 @@ label{
 input[type=text], input[type=password] {
 	width: 80%;
     padding: 0.5em 1em;
-    margin-left: 10%;
     margin-top: 0.5em;
     clear: both;
-    display: block;
+    display: inline-block;
     border: 1px solid #ccc;
 }
 
-input[type=submit]{
-	display: inline;
-	border: 1px solid #ccc;
-	color: #fff;
-	font-weight: bold;
-    padding: 1em;
-    background-color: #4D4D4D;
-    margin-top: 0.5em;
-}
 
 .cancelbtn {
-		margin-top:1em;
-		margin-left:5%;
+	margin-top:1em;
+	margin-left:5%;
 	display: block;
 	border: 1px solid #ccc;
-	color: #fff;
+	color: #EDF2F7;
 	font-weight: bold;
     padding: 1em;
     background-color: #4D4D4D;
@@ -387,4 +375,23 @@ input[type=submit]{
 
 img.ImgSerie {
     width: 10em;
+}
+
+#inputbox {
+	width: 80%;
+}
+
+#submit {
+	display: block;
+	margin-left: 46%;
+	border: 1px solid #ccc;
+	color: #EDF2F7;
+	font-weight: bold;
+    padding: 1em;
+    background-color: #4D4D4D;
+    margin-top: 0.5em;
+}
+
+#submit:hover{	
+	background-color: #A5C5E9;
 }

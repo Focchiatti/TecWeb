@@ -75,7 +75,7 @@
                                 echo"<option value='".$serie[0]."'> ".DBAccess::RetrieveData($serie[0])."</option>";
                         }
 						echo"</select>
-						<input type=\"submit\" title=\"Submit\" value=\"Submit\"/>
+						<input type=\"submit\" title=\"Submit\" value=\"Submit\" id=\"submit\"/>
 						</fieldset>
 						</form>";
 
@@ -96,7 +96,7 @@
 <div id="smallmenu">
 <ul>
 
-		<li><p>Home</p></li>
+		<li><a href="Home.php">Home</a></li>
 		<li><a href="news.php">News</a></li>
 		
 	<?php

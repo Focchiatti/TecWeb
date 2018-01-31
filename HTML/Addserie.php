@@ -101,10 +101,10 @@
                             <label><strong>Numero Stagioni</strong></label>
 							<input type=\"text\" title=\"Numero di stagioni\" name=\"Stagioni\"/>
                             <label><strong>Trama</strong></label>
-							<textarea id='inputbox' title=\"Trama\" name=\"Trama\" rows=\"15\" cols=\"100\"></textarea>
+							<textarea id='inputbox' title=\"Trama\" name=\"Trama\" rows=\"15\" cols=\"10\"></textarea>
 							<label><strong>Immagine della serie</strong></label>
 							<input type='file' title=\"Immagine della serie\" name='userfile'/>
-							<input type=\"submit\" title=\"Submit\" value=\"Submit\"/>
+							<input type=\"submit\" title=\"Submit\" value=\"Submit\" id=\"submit\"/>
 							</fieldset>
 						</form>
 						
@@ -131,7 +131,7 @@
 	<div id="smallmenu">
 <ul>
 
-		<li><p>Home</p></li>
+		<li><a href="Home.php">Home</a></li>
 		<li><a href="news.php">News</a></li>
 		
 	<?php

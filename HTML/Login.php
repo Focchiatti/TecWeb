@@ -54,7 +54,7 @@
 								<strong>Password</strong>
 							</label>
 							<input type=\"password\" title=\"Password\" name=\"Password\"/>
-							<input type=\"submit\" value=\"Submit\"/>
+							<input id=\"submit\" type=\"submit\" value=\"Submit\"/>
 							</fieldset>
 						</form>
 						";
@@ -88,7 +88,7 @@
 	<div id="smallmenu">
 <ul>
 
-		<li><p>Home</p></li>
+		<li><a href="Home.php">Home</a></li>
 		<li><a href="news.php">News</a></li>
 	<li id="up"><a href="#header">Torna su</a></li>
 </ul>

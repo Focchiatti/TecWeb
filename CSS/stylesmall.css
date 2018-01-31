@@ -22,7 +22,7 @@ html{
 	float: none;
 	width: 100%;
 	border-top: 1px solid #DDD;
-	background-color: #cc3333;
+	background-color: #4D4D4D;
 	margin-bottom: 28em;
 }
 
@@ -37,13 +37,13 @@ html{
 
 #smallmenu li a {
 	padding: 0.3em;
-	color:white;
+	color:#EDF2F7;
 	display: block;
 }
 
 #smallmenu li p {
 	padding: 0.3em;
-	color: white;
+	color: #EDF2F7;
 	display: block;
 }
 
@@ -66,23 +66,23 @@ html{
 }
 
 #smallmenu a:active{
-	background-color: #663333;
+	background-color: #9C9C9C;
 }
 
 #hamburger {
 	display: block;
 	width: auto;
 	height: auto;
-	background-color: #cc3333;
+	background-color: #4D4D4D;
 	border-bottom: 1px solid #DDD;
-	color: #fff;
+	color: #EDF2F7;
 	padding-left: 0.3em;
 	font-weight: bold;
 	font-size: 1.5em;
 }
 
 #hamburger a {
-	color: #fff;
+	color: #EDF2F7;
 	text-decoration:none;
 }
 
@@ -150,8 +150,8 @@ input {
 	font:inherit;
 }
 
-
+/*
 input[type=submit]{	
 	padding:0.5em;
 	font-size: inherit;
-}
+}*/

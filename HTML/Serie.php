@@ -102,7 +102,7 @@ echo
 <div id=\"smallmenu\">
 <ul>
 
-		<li><p>Home</p></li>
+		<li><a href=\"Home.php\">Home</a></li>
 		<li><a href=\"news.php\">News</a></li>
 		"
 ;

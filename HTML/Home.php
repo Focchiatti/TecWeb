@@ -7,7 +7,7 @@ require_once "./DataWriter.php"
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title> Serie-a-mente </title>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
-	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:420px),
+	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
 	<link rel="stylesheet" type="text/css"  href="../CSS/styleprint.css" media="print" />
 
@@ -15,12 +15,9 @@ require_once "./DataWriter.php"
 
 <body>
 
-
 <div id="header">
 	<h1>Serie-a-mente</h1>
 </div>
-
-
 
 <div id="breadcrumbs">
 	<p>Ti trovi in: <span xml:lang="en">Home</span></p>
@@ -33,7 +30,6 @@ require_once "./DataWriter.php"
 
 <div id="menu">
 <ul>
-		
 		<li><p>Home</p></li>
 		<li><a href="news.php">News</a></li>
 		
@@ -49,7 +45,7 @@ require_once "./DataWriter.php"
 	<form action="Ricerca.php" method="get">
 		
 	<fieldset>	<input type="text" title="Ricerca" name="Ricerca"/>
-		<input type="submit" value="Cerca"/></fieldset>
+		<input id="submit" type="submit" value="Cerca"/></fieldset>
 	</form>
 </div>
 
