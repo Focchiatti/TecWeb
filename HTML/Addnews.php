@@ -14,7 +14,7 @@
 	</head>
 
 	<body>
-		<a name="top"></a>
+
 	<div id="header">
 		<h1>Serie-a-mente</h1>
 	</div>
@@ -30,7 +30,7 @@
 
 	<div id="menu">
 	<ul>
-		<a name="menu"></a>
+
 		<li><a href="Home.php">Home</a></li>
 	</ul>
 	</div>
@@ -55,35 +55,29 @@
 		{
 				echo "
 					<div id=\"content\">
-						<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\">";
+						<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">";
 						if(isset($_GET['error']))
 							echo "<p>Campi mal compilati</p>";
                         $Db=new DBAccess();
                         $Series=$Db->Get_Serie();
 						echo "
-							<label for=\"Titolo\">
-								<b>Titolo</b>
-							</label>
-							<input type=\"text\" placeholder=\"Inserisci il Titolo\" name=\"Titolo\" required=\"required\">
-                            <label for=\"Data\">
-								<b>Data</b>
-							</label>
-							<input type=\"text\" placeholder=\"aaaa-mm-gg\" name=\"Data\" required=\"required\">
-							<input type=\"text\" placeholder=\"aaaa-mm-gg\" value=".date("Y-m-d")." name=\"Data\" required=\"required\">
-                            <label for=\"Contenuto\">
-								<b>Contenuto</b>
-							</label>
-							<input type=\"text\" placeholder=\"Inserisci il contenuto della notizia\" name=\"Contenuto\" required=\"required\">
-                            <label for=\"Serie\">
-								<b>Serie</b>
-							</label>
-							<select name=\"Serie\">";
+						<fieldset>
+							<label><strong>Titolo</strong></label>
+							<input type=\"text\" title=\"Titolo\" name=\"Titolo\"/>
+                            <label><strong>Data</strong></label>
+							<input type=\"text\" title=\"Data\" name=\"Data\"/>
+                            <label><strong>Contenuto</strong></label>
+							<input type=\"text\" title=\"Contenuto\" name=\"Contenuto\"/>
+                            <label><strong>Serie</strong></label>
+							<select name=\"Serie\" title=\"Serie\">";
                         foreach($Series as $serie)
                         {
                                 echo"<option value='".$serie[0]."'> ".DBAccess::RetrieveData($serie[0])."</option>";
                         }
-						echo"</select><br/>
-						<input type=\"submit\"value=\"Submit\"\></form>";
+						echo"</select>
+						<input type=\"submit\" title=\"Submit\" value=\"Submit\"/>
+						</fieldset>
+						</form>";
 
 						echo "
 						<div class=\"container\">
@@ -101,7 +95,7 @@
 
 <div id="smallmenu">
 <ul>
-		<a name="smallmenu"></a>
+
 		<li><p>Home</p></li>
 		<li><a href="news.php">News</a></li>
 		
@@ -109,7 +103,7 @@
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
-	<li id="up"><a href="#top">Torna su</a></li>
+	<li id="up"><a href="#header">Torna su</a></li>
 </ul>
 </div>
 	

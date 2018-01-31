@@ -14,7 +14,7 @@ require_once "./DataWriter.php"
 </head>
 
 <body>
-<a name="top"></a>
+
 <div id="header">
 	<h1>Serie-a-mente</h1>
 </div>
@@ -30,9 +30,9 @@ require_once "./DataWriter.php"
 
 <div id="menu">
 <ul>
-	<a name="menu"></a>
-		<li><a href=.\Home.php>Home</a></li>
-		<li><a href=".\news.php">News</a></li>
+
+		<li><a href="Home.php">Home</a></li>
+		<li><a href="news.php">News</a></li>
 		
 	<?php
 		DataWriter::LogInButton();
@@ -54,7 +54,7 @@ require_once "./DataWriter.php"
 
 <div id="smallmenu">
 <ul>
-		<a name="smallmenu"></a>
+
 		<li><p>Home</p></li>
 		<li><a href="news.php">News</a></li>
 		
@@ -62,7 +62,7 @@ require_once "./DataWriter.php"
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
-	<li id="up"><a href="#top">Torna su</a></li>
+	<li id="up"><a href="#header">Torna su</a></li>
 </ul>
 </div>
 

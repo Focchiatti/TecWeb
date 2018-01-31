@@ -13,7 +13,7 @@ require_once "./DataWriter.php";
 </head>
 
 <body>
-<a name="top"></a>
+
 <div id="header">
 	<h1>Serie-a-mente</h1>
 </div>
@@ -29,7 +29,7 @@ require_once "./DataWriter.php";
 
 <div id="menu">
 <ul>
-	<a name="menu"></a>
+
 		<li><a href="Home.php">Home</a></li>
 		<li><a href="news.php">News</a></li>
 		<?php
@@ -55,13 +55,14 @@ require_once "./DataWriter.php";
 	    }
 		foreach ($mieserie as $serie) {
 			echo "<div class='lemieserie'>
-            <form action=".$_SERVER['PHP_SELF']." method='post'>
+            <form action=\"".$_SERVER['PHP_SELF']."\" method='post'>
+            <fieldset>
 			<a href=\"Serie.php?name=".$serie['Titoloserie']."\">".DBAccess::RetrieveData($serie['Titoloserie'])."</a>
-			<input type=\"hidden\" name=\"serie\" value=\"".$serie['Titoloserie']."\"";
+			<input type=\"hidden\" name=\"serie\" value=\"".$serie['Titoloserie']."\"/>";
 			echo "
 			<p>Il mio voto:</p>
-			<select name='Voti'>
-                <option selected hidden>".$serie['Voto']."</option>
+			<select name='Voti' title='Voti'>
+                <option selected='selected'>".$serie['Voto']."</option>
                 <option value='NULL'>NULL</option>
                 <option value='0'>0</option>
                 <option value='1'>1</option>
@@ -70,7 +71,8 @@ require_once "./DataWriter.php";
                 <option value='4'>4</option>
                 <option value='5'>5</option> 
             </select>
-            <input type='submit' value='Vota'>
+            <input type='submit' title='Vota' value='Vota'/>
+            </fieldset>
             </form>
             </div>";
 	    }
@@ -85,7 +87,7 @@ require_once "./DataWriter.php";
 
 <div id="smallmenu">
 <ul>
-		<a name="smallmenu"></a>
+
 		<li><p>Home</p></li>
 		<li><a href="news.php">News</a></li>
 		
@@ -93,7 +95,7 @@ require_once "./DataWriter.php";
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
-	<li id="up"><a href="#top">Torna su</a></li>
+	<li id="up"><a href="#header">Torna su</a></li>
 </ul>
 </div>
 

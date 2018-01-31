@@ -16,7 +16,7 @@ require_once "./DBAccess.php";
 
 </head>
 <body>
-<a name="top"></a>
+
 <div id="header">
 	<h1>Serie-a-mente</h1>
 </div>
@@ -45,7 +45,7 @@ echo "
 
 <div id=\"menu\">
 <ul>
-<a name=\"menu\"></a>
+
 		<li><a href=\"Home.php\">Home</a></li>
 		<li><a href=\"news.php\">News</a></li>";
 	DataWriter::LogInButton();
@@ -54,9 +54,9 @@ echo "
 </div>
 
 <div id=\"content\" class=\"Serie\">
-<h1>".$Titolo."</h1>
+<h2>".$Titolo."</h2>
 <h3>Genere ".$Genere."</h3>
-<img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt='".$Titolo."' id='Copertina''>
+<img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt='".$Titolo."' id='Copertina'/>
 <p>".$Trama."</p>
 ";
 if(isset($_SESSION["UltimaRicerca"])){
@@ -75,9 +75,11 @@ if(isset($_SESSION["Name"])&&$Db->RicercaSerieUtenteNonSeguita($_SESSION['Name']
 if(isset($_SESSION["Name"])&& !$_SESSION["Admin"] )
 {
     echo"
-    <form method = \"POST\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $Key . "\" >
-<input type='submit' value='".$Text."'>
-<input type='hidden' name='Act' >
+    <form method = \"post\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $Key . "\" >
+    <fieldset>
+<input type='submit' value='".$Text."'/>
+<input type='hidden' name='Act' />
+</fieldset>
 </form>";
 
 if (isset($_POST['Act'])&&$check) {
@@ -99,7 +101,7 @@ echo
 
 <div id=\"smallmenu\">
 <ul>
-		<a name=\"smallmenu\"></a>
+
 		<li><p>Home</p></li>
 		<li><a href=\"news.php\">News</a></li>
 		"
@@ -108,7 +110,7 @@ echo
 		$_SESSION["UltimaRicerca"]=null;
 	
 	echo "
-	<li id=\"up\"><a href=\"#top\">Torna su</a></li>
+	<li id=\"up\"><a href=\"#header\">Torna su</a></li>
 </ul>
 </div>
 

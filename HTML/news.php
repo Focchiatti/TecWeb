@@ -22,13 +22,13 @@ else
 
 </head>
 <body>
-<a name="top"></a>
+
 <div id="header">
 	<h1>Serie-a-mente</h1>
 </div>
 
 <div id="breadcrumbs">
-	<p>Ti trovi in: <span xml:lang="en">Home >>
+	<p>Ti trovi in: <span xml:lang="en">Home</span> >>
     <span xml:lang="en">News
 		</span>
 	</p>
@@ -40,7 +40,7 @@ else
 
 <div id="menu">
 <ul>
-		<a name="menu"></a>
+
 		<li><a href="Home.php">Home</a></li>
 		<li><p>News</p></li>
 		
@@ -60,34 +60,36 @@ else
 					for($i=$start;$i<$start+$element;$i=$i+1) {
 						echo
 						"<div class=\"notizia\">
+						<h2>".$notizia[$i]["Titolo"]."</h2>
 						<h4>".$notizia[$i]["Data"]."</h4>
 						<h4>".DBAccess::RetrieveData($notizia[$i]["SerieTv"])."</h4>
-						<h2>".$notizia[$i]["Titolo"]."</h2>
+						
 						<p>".$notizia[$i]["Contenuto"]."</p>
 						</div>\n";
 					}
 					$url=strtok($_SERVER["REQUEST_URI"],'?');
-					echo "<ul id='pageNavigation'>";
+					echo "<ul id='pageNavigation'>\n";
 					for($i=0;$i<$page;$i=$i+1)
 					{
-						echo "<li><a href='".$url."?page=".$i."'>".$i."</a></li>";
+						echo "<li><a href='".$url."?page=".$i."'>".$i."</a></li>\n";
 					}
-					echo "<li><p>".$page."</p></li>";
+					echo "<li><p>".$page."</p></li>\n";
 					for($i=$page+1;$i<floor(count($notizia)/$resultPage)+1;$i=$i+1)
 					{
-					echo "<li><a href='".$url."?page=".$i."'>".$i."</a></li>";
+					echo "<li><a href='".$url."?page=".$i."'>".$i."</a></li>\n";
 					}
-					echo "</ul>";
+					echo "</ul>\n";
 				}
 				?>
-	</div>				
+	</div>	
+
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 </div>
 
 <div id="smallmenu">
 <ul>
-		<a name="smallmenu"></a>
+
 		<li><a href="Home.php">Home</a></li>
 		<li><p>News</p></li>
 		
@@ -95,7 +97,7 @@ else
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
-	<li id="up"><a href="#top">Torna su</a></li>
+	<li id="up"><a href="#header">Torna su</a></li>
 </ul>
 </div>
 </body>

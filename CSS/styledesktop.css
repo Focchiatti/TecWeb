@@ -16,7 +16,7 @@ html, body {
 html{
 	border-left: 1px solid #DDD;
 	border-right: 1px solid #DDD;
-	background-color:#333;
+	background-color:#EDF2F7;
 }
 
 #header {
@@ -24,7 +24,7 @@ html{
 }
 
 #header h1{
-	color: #cc3333;
+	color: #4D4D4D;
 	font-size: 4em;
 	font-weight: bold;
 	padding:0.5em;
@@ -34,7 +34,7 @@ html{
 	border-top: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
 	width: auto;
-	color: #cc3333;
+	color: #4D4D4D;
 	font-weight: bold;
 	padding-left: 0.5em;
 }
@@ -45,13 +45,13 @@ html{
 
 #menu {
 	height: 3em;
-	background-color: #cc3333;
+	background-color: #4D4D4D;
 	border-bottom: 1px solid #DDD;
 	margin-bottom:1em;
 
 }
 
-#menu #login{
+#menu .login{
 	display: inline-block;
 	float:right;
 }
@@ -72,37 +72,37 @@ html{
 #menu li a {
 	padding: 0.9em 1em 0.9em 1em;
     display: block;
-	color:white;
+	color:#EDF2F7;
 }
 
 #menu li p {
 	padding: 0.9em 1em 0.9em 1em;
     display: block;
-    color: white;
+    color: #EDF2F7;
 }
 
 #menu li a:hover {
-    background-color: #663333;
+    background-color: #9C9C9C;
 }
 
 #smallmenu {
 	display: none;
 }
 
-#up {
+.up {
 	font-size: 0px;
 	height: 0px;
 	overflow: hidden;
 }
 
 input[type=submit]:hover{	
-	background-color: #663333;
+	background-color: #A5C5E9;
 }
 
 #content {	
 	display: inline-block;
 	float:right;
-	color: white;
+	color: #4D4D4D;
 	width:100%;
 	text-align:center;
 	margin-bottom: 10%;
@@ -119,6 +119,10 @@ input[type=submit]:hover{
 	padding: 1em;
 }
 
+#content fieldset {
+	border: none;
+}
+
 .Serie p{
 	text-align: left;
 }
@@ -130,7 +134,7 @@ input[type=submit]:hover{
 }
 
 .Serie h2{
-	color: #cc3333;
+	color: #4D4D4D;
 	font-weight: bold;
 	padding:1em 0.5em;
 }
@@ -141,7 +145,7 @@ input[type=submit]:hover{
 	display: block;
 }
 .Serie a{
-	color: #cc3333;
+	color: #4D4D4D;
 	text-align: center;
 	padding-bottom: 1em;
 	display: block;
@@ -160,13 +164,13 @@ input[type=submit]:hover{
 	margin-bottom:0.7em;
 }
 .ELSerie a{
-	color: #cc3333;
+	color: #4D4D4D;
 	display: inline;
 }
 
 .ELSerie p{
 	display: inline;
-	color: white;
+	color: #4D4D4D;
 }
 
 #RisultatoRicerca{
@@ -176,7 +180,7 @@ input[type=submit]:hover{
 }
 
 #RisultatoRicerca a{
-	color: #cc3333;
+	color: #4D4D4D;
 }
 
 .notizia h2{
@@ -197,7 +201,7 @@ input[type=submit]:hover{
 	padding: 1em;
 }
 .lemieserie a {
-	color: #cc3333;
+	color: #4D4D4D;
 	display: inline;
 }
 
@@ -209,6 +213,10 @@ input[type=submit]:hover{
 	width: 80%;
 	margin-left: 10%;
 	padding-bottom: 5%;
+}
+
+#barraricerca fieldset {
+	border: none;
 }
 
 #footer{
@@ -236,7 +244,7 @@ input[type=submit]:hover{
 	padding-top:3.4em;
 	padding-bottom:3.4em;
 	width:100%;
-	color: #FFF;
+	color: #EDF2F7;
 }
 
 .Thriller a:hover{
@@ -321,7 +329,7 @@ input[type=submit]{
 	color: #fff;
 	font-weight: bold;
     padding: 1em;
-    background-color: #cc3333;
+    background-color: #4D4D4D;
     margin-top: 0.5em;
 }
 
@@ -333,17 +341,17 @@ input[type=submit]{
 	color: #fff;
 	font-weight: bold;
     padding: 1em;
-    background-color: #cc3333;
+    background-color: #4D4D4D;
     float: left;
 }
 
 .cancelbtn:hover{
-    background-color: #663333;
+    background-color: #9C9C9C;
 }
 
 #pageNavigation
 {
-		color:#cc3333;
+	color:#540B0E;
 	display: inline-block;
 	float: none;
 	list-style-type: none;
@@ -365,11 +373,16 @@ input[type=submit]{
 	padding:0.5em;
 	margin-left:0.5em;
 }
+
+#pageNavigation a{
+	color:#4D4D4D;
+}
+
 #pageNavigation a:visited{
 	float:left;
 	padding:0.5em;
 	margin-left:0.5em;
-	color:#CC00CC;
+	color:#253F5D;
 }
 
 img.ImgSerie {

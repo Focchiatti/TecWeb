@@ -14,7 +14,7 @@
 	</head>
 
 	<body>
-		<a name="top"></a>
+
 	<div id="header">
 		<h1>Serie-a-mente</h1>
 	</div>
@@ -30,7 +30,7 @@
 
 	<div id="menu">
 	<ul>
-		<a name="menu"></a>
+
 			<li><a href="Home.php">Home</a></li>
 		<li><a href="news.php">News</a></li>
 	</ul>
@@ -42,19 +42,20 @@
 				echo "
 					<div id=\"content\">
 
-						<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\">";
+						<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">";
 						if(isset($_GET['error']))
 							echo "<p>Username o password sbagliati</p>";
-						echo "
-							<label for=\"Name\">
-								<b>Username</b>
+						echo "<fieldset>
+							<label>
+								<strong>Username</strong>
 							</label>
-							<input type=\"text\" placeholder=\"Enter Username\" name=\"Name\" required=\"required\">
-							<label for=\"Password\">
-								<b>Password</b>
+							<input type=\"text\" title=\"Username\" name=\"Name\" />
+							<label>
+								<strong>Password</strong>
 							</label>
-							<input type=\"password\" placeholder=\"Enter Password\" name=\"Password\" required=\"required\">
-							<input type=\"submit\"value=\"Submit\"\>
+							<input type=\"password\" title=\"Password\" name=\"Password\"/>
+							<input type=\"submit\" value=\"Submit\"/>
+							</fieldset>
 						</form>
 						";
 						if(!isset($_SESSION['CallingPage']))
@@ -86,10 +87,10 @@
 
 	<div id="smallmenu">
 <ul>
-		<a name="smallmenu"></a>
+
 		<li><p>Home</p></li>
 		<li><a href="news.php">News</a></li>
-	<li id="up"><a href="#top">Torna su</a></li>
+	<li id="up"><a href="#header">Torna su</a></li>
 </ul>
 </div>
 	</body>

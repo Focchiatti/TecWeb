@@ -14,7 +14,7 @@
 	</head>
 
 	<body>
-	<a name="top"></a>
+
 	<div id="header">
 		<h1>Serie-a-mente</h1>
 	</div>
@@ -30,7 +30,7 @@
 
 	<div id="menu">
 	<ul>
-		<a name="menu"></a>
+
 			<li><a href="Home.php">Home</a></li>
 	</ul>
 	</div>
@@ -81,44 +81,31 @@
 			}
         }
 				echo "
-						<form method=\"POST\"action=".$_SERVER['PHP_SELF']." class=\"container\" enctype='multipart/form-data'>
-
-							<label for=\"Titolo\">
-								<b>Titolo</b>
-							</label>
-							<input type=\"text\" placeholder=\"Inserisci il Titolo\" name=\"Titolo\" required=\"required\">
-							<label for=\"Genere\">
-								<b>Genere: </b>
-							<select name=\"Genere\">
+						<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
+							<fieldset>
+							<label><strong>Titolo</strong></label>
+							<input type=\"text\" title=\"Titolo\" name=\"Titolo\"/>
+							<label> <strong>Genere: </strong></label>
+							<select name='Genere' title='Genere'>
                                 <option value=\"thriller\"> Thriller</option>
                                 <option value=\"drammatico\"> Drammatico</option>
                                 <option value=\"commedia\"> Commedia</option>
                                 <option value=\"fantastico\"> Fantastico</option>
                                 <option value=\"fantascienza\"> Fantascienza</option>
                                 <option value=\"poliziesco\"> Poliziesco</option>
-							<\select>
-                            <label for=\"IData\">
-								<b>Data d'inizio</b>
-							</label>
-							<input type=\"text\" placeholder=\"aaaa-mm-gg\" name=\"IData\" required=\"required\"/>
-                            <label for=\"FData\">
-								<b>Data di fine</b>
-							</label>
-							<input type=\"text\" placeholder=\"aaaa-mm-gg (opzionale)\" name=\"FData\"/>
-                            <label for=\"Stagioni\">
-								<b>Numero Stagioni</b>
-							</label>
-							<input type=\"number\" placeholder=\"Inserisci il numero di stagioni\" name=\"Stagioni\" required=\"required\"/>
-                            <label for=\"Trama\">
-								<b>Trama</b>
-							</label>
-							<textarea id='inputbox' placeholder=\"Inserisci la trama\" name=\"Trama\" required=\"required\"></textarea></br>
-							<label for=\"file\">
-								<b>Immagine della serie</b>
-							</label>
-							<input type='file' name='userfile'></br>
-							<input type=\"submit\"value=\"Submit\"/>
-							
+                                </select>
+                            <label><strong>Data d'inizio</strong></label>
+							<input type=\"text\" title=\"Data di inizio\" name=\"IData\"/>
+                            <label><strong>Data di fine (opzionale)</strong></label>
+							<input type=\"text\" title=\"Data di fine\" name=\"FData\"/>
+                            <label><strong>Numero Stagioni</strong></label>
+							<input type=\"text\" title=\"Numero di stagioni\" name=\"Stagioni\"/>
+                            <label><strong>Trama</strong></label>
+							<textarea id='inputbox' title=\"Trama\" name=\"Trama\" rows=\"15\" cols=\"100\"></textarea>
+							<label><strong>Immagine della serie</strong></label>
+							<input type='file' title=\"Immagine della serie\" name='userfile'/>
+							<input type=\"submit\" title=\"Submit\" value=\"Submit\"/>
+							</fieldset>
 						</form>
 						
 						";
@@ -143,7 +130,7 @@
 
 	<div id="smallmenu">
 <ul>
-		<a name="smallmenu"></a>
+
 		<li><p>Home</p></li>
 		<li><a href="news.php">News</a></li>
 		
@@ -151,7 +138,7 @@
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
-	<li id="up"><a href="#top">Torna su</a></li>
+	<li id="up"><a href="#header">Torna su</a></li>
 </ul>
 </div>
 	</body>
