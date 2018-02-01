@@ -78,7 +78,6 @@ echo "<a class=\"aiuti\" href=\"#header\">Torna su</a>
 		
 	";
 		DataWriter::LogInButton();
-		$_SESSION["UltimaRicerca"]=null;
 	echo "
 	<li id=\"up\"><a href=\"#header\">Torna su</a></li>
 </ul>

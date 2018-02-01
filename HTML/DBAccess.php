@@ -1,11 +1,11 @@
 <?php
 	class DBAccess
 		{
-			private const HOST_DB="localhost";
-			private const USERNAME="root";
-			private const PASSWORD="";
-			private const DATABASE_NAME="tecweb";
-			private $connessione;
+			const HOST_DB="localhost";
+			const USERNAME="vmarcon";
+			const PASSWORD="Aeph3eidei1ieSho";
+			const DATABASE_NAME="vmarcon";
+			public $connessione;
 			
 			function __construct() 
 			{
@@ -35,6 +35,7 @@
 				try
 				{
 					$this->connessione = new PDO ("mysql:host=".DBAccess::HOST_DB.";dbname=".DBAccess::DATABASE_NAME,DBAccess::USERNAME,DBAccess::PASSWORD);
+					$this->connessione->setAttribute (PDO::ATTR_ORACLE_NULLS, PDO::NULL_TO_STRING );
                     $query=$this->connessione->prepare("SET NAMES 'utf8'");
                     $query->execute();
 				}
@@ -76,7 +77,7 @@
 			}
 			public function RicercaSpecifica($data)
 			{
-					$query=$this->connessione->prepare("SELECT Titolo,Genere,Trama FROM SerieTV WHERE Titolo LIKE ?");
+					$query=$this->connessione->prepare("SELECT Titolo,Genere,Trama,DataInizio,DataFine,Stagioni FROM SerieTV WHERE Titolo LIKE ?");
 					$query->execute(array(DBAccess::createKey($data)));
 					return $query->fetchAll();
 			}
@@ -136,11 +137,58 @@
 			
             public function AggiungiSerie($Titolo,$Genere,$IData,$FData,$Stagioni,$Trama)
 			{
-	            $runnable=$this->connessione->prepare(
-				"INSERT INTO SerieTV(Titolo,Genere,DataInizio,DataFine,Stagioni,Trama) 
-				values('".$Titolo."','".$Genere."','".$IData."','".$TFData."','".$Stagioni."','".$Trama."')"
-				);
+				$dataInizio = explode('-',$IData);
+				$dataFine = explode('-',$FData);
+				$approved=false;
+				$null=false;
+				if(!isset($FData)||$FData==""){
+				$query="INSERT INTO SerieTV(Titolo,Genere,DataInizio,Stagioni,Trama) 
+				values('".$Titolo."','".$Genere."','".$IData."','".$Stagioni."','".$Trama."')" ;
+				$approved=true;
+				$null=true;
+				}
+				else if(checkdate($dataFine[1],$dataFine[2],$dataFine[0]))
+				$approved=true;
+				if($approved&&isset($Titolo)&&$Titolo!=""&&isset($Genere)&&$Genere!=""&&isset($IData)&&
+				checkdate($dataInizio[1],$dataInizio[2],$dataInizio[0])&&isset($Stagioni)&&$Stagioni!=""&&isset($Trama)&&$Trama!="")
+				{
+					if(!$null){
+					$query="INSERT INTO SerieTV(Titolo,Genere,DataInizio,DataFine,Stagioni,Trama) 
+					values('".$Titolo."','".$Genere."','".$IData."','".$FData."','".$Stagioni."','".$Trama."')";
+				}
+	            $runnable=$this->connessione->prepare($query);
 	    		return $runnable->execute();
+				}
+				else return false;
+	
+			}
+			public function AggiornaSerie($Titolo,$Genere,$IData,$FData,$Stagioni,$Trama)
+			{
+				$dataInizio = explode('-',$IData);
+				$dataFine = explode('-',$FData);
+				$approved=false;
+				$null=false;
+				if(!isset($FData)||$FData==""){
+				$query="UPDATE SerieTV 
+				SET Genere='".$Genere."',DataInizio='".$IData."',DataFine=NULL,Stagioni='".$Stagioni."',Trama='".$Trama."'
+				WHERE Titolo='".$Titolo."' ";
+				$approved=true;
+				$null=true;
+				}
+				else if(checkdate($dataFine[1],$dataFine[2],$dataFine[0]))
+				$approved=true;
+				if($approved&&isset($Titolo)&&$Titolo!=""&&isset($Genere)&&$Genere!=""&&isset($IData)&&
+				checkdate($dataInizio[1],$dataInizio[2],$dataInizio[0])&&isset($Stagioni)&&$Stagioni!=""&&isset($Trama)&&$Trama!="")
+				{
+					if(!$null){
+					$query="UPDATE SerieTV 
+				SET Genere='".$Genere."',DataInizio='".$IData."',DataFine='".$FData."',Stagioni='".$Stagioni."',Trama='".$Trama."'
+				WHERE Titolo='".$Titolo."' ";
+				}
+	            $runnable=$this->connessione->prepare($query);
+	    		return $runnable->execute();
+				}
+				else return false;
 	
 			}
             public function AggiungiNews($Titolo,$Data,$Contenuto,$Serie)

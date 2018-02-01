@@ -58,7 +58,6 @@ insert into `Utente`(`NickName`,`Password`)values
 ('Carla89','687365'),
 ('DavideSe','786239'),
 ('NicolaT1','678987'),
-('XxX_pUsSyDeStRoYeR_XxX','Sperminator'),
 ('LorenzoMi','976923'),
 ('utente','utente');
  insert into `Utente`(`NickName`,`Password`,`Admin`)values
@@ -86,6 +85,7 @@ FROM Valutazione GROUP BY Titoloserie;
 
 CREATE TRIGGER `UpdateMediaVotiInsert` AFTER INSERT ON `Valutazione` FOR EACH ROW UPDATE SerieTV SET SerieTV.Valutazione=(SELECT MediaVoti.Media from MediaVoti where MediaVoti.Titoloserie=SerieTV.Titolo) WHERE SerieTV.Titolo=NEW.TitoloSerie;
 CREATE TRIGGER `UpdateMediaVotiUpdate` AFTER UPDATE ON `Valutazione` FOR EACH ROW UPDATE SerieTV SET SerieTV.Valutazione=(SELECT MediaVoti.Media from MediaVoti where MediaVoti.Titoloserie=SerieTV.Titolo) WHERE SerieTV.Titolo=NEW.TitoloSerie;
+CREATE TRIGGER `UpdateMediaVotiDelete` AFTER DELETE ON `Valutazione` FOR EACH ROW UPDATE SerieTV SET SerieTV.Valutazione=(SELECT MediaVoti.Media from MediaVoti where MediaVoti.Titoloserie=SerieTV.Titolo) WHERE SerieTV.Titolo=OLD.TitoloSerie;
 /*Data for the table `Valutazione` */
  
 insert into `Valutazione`(`Titoloserie`,`Voto`,`NickName`)values

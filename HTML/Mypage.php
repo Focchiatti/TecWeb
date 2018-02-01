@@ -62,15 +62,24 @@ require_once "./DataWriter.php";
 			<input type=\"hidden\" title=\"Serie\" name=\"serie\" value=\"".$serie['Titoloserie']."\"/>";
 			echo "
 			<p>Il mio voto:</p>
-			<select name='Voti' title='Voti'>
-                <option selected='selected'>".$serie['Voto']."</option>
-                <option value='NULL'>NULL</option>
-                <option value='0'>0</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option> 
+			<select name='Voti' title='Voti'>";
+			$j=$serie[Voto];
+			if ($j==""){ 	
+				$j=6;
+				echo "<option selected='selected' value='NULL'>Non votato</option>";
+								for ($i=0; $i<$j; ++$i)
+					echo"<option value='".$i."'>".$i."</option>";
+				}
+				else{
+					echo "<option value='NULL'>Non votato</option>";
+
+				for ($i=0; $i<$j; ++$i)
+					echo"<option value='".$i."'>".$i."</option>";
+				echo "<option selected='selected' value='".$j."'>".$j."</option>";
+				for ($i=$j+1; $i<6; ++$i)
+					echo"<option value='".$i."'>".$i."</option>";
+				}
+					echo"
             </select>
             <input class='submitvoto' type='submit' title='Vota' value='Vota'/>
             </fieldset>

@@ -218,7 +218,8 @@ html{
 	text-align: center;
 	display: inline-block;
 	padding:0.5em;
-	font-size: 0.8em;
+	font-size: 0.8em;	
+	width:100%;
 }
 
 .Genere{
@@ -311,7 +312,8 @@ label{
 
 input[type=text], input[type=password] {
 	width: 80%;
-    padding: 0.5em 1em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
     margin-top: 0.5em;
     clear: both;
     display: inline-block;
@@ -383,10 +385,11 @@ input[type=text], input[type=password] {
 	display: block;
 }
 
-#back  {
+.back  {
 	display: inline-block;
 	width: 20%;
 	margin: auto;
+	clear:both;
 }
 
 #inputbox {

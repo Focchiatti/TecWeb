@@ -65,34 +65,29 @@ class DataWriter
 		if(isset($File["tmp_name"])) {
 			$check = getimagesize($File["tmp_name"]);
 			if($check !== false) {
-				echo "File is an image - " . $check["mime"] . ".";
+				//"File is an image - " . $check["mime"] . ".";
 				$uploadOk = 1;
 			} else {
-				echo "File is not an image.";
+				$error="File non corretto, deve essere un'immagine JPG";
 				$uploadOk = 0;
 			}
 		}
-		// Check if file already exists
-		if (file_exists($target_file)) {
-			echo "Sorry, file already exists.";
-			$uploadOk = 0;
-		}
 		// Check file size
-		if ($File["size"] > 500000) {
-			echo "Sorry, your file is too large.";
+		if ($uploadOk&&$File["size"] > 500000) {
+			$error="Dimensione massima di 500kb superata";
 			$uploadOk = 0;
 		}
 		// Allow certain file formats
-		if($imageFileType != "jpg") {
-			echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+		if($uploadOk&&$imageFileType != "jpg") {
+			$error="Solo file JPG permessi";
 			$uploadOk = 0;
 		}
 		// Check if $uploadOk is set to 0 by an error
 		if ($uploadOk == 0) {
-			return false;
+			return $error;
 		// if everything is ok, try to upload file
 		} else {
-			return move_uploaded_file($File["tmp_name"], $newname);
+			return move_uploaded_file($File["tmp_name"], $newname)?"":"Upload Fallito lato Server";
 		}
 	}
 	public static function LogInButton()

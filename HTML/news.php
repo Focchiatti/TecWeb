@@ -55,6 +55,7 @@ else
 				{
 						$element=min($resultPage,count($notizia)-$page*$resultPage);
 						$start=$page*$resultPage;
+						if ($element<=0) header("location:./news.php");
 					for($i=$start;$i<$start+$element;$i=$i+1) {
 						echo
 						"<div class=\"notizia\">

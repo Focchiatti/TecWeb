@@ -24,10 +24,15 @@ require_once "./DBAccess.php";
 	$Db=new DBAccess();
 	$serie=$Db->RicercaSpecifica($_GET['name']);
 	if($serie){
-		$Key=$serie[0]["Titolo"];
+		$Key=strtolower($serie[0]["Titolo"]);
 	$Titolo=DBAccess::RetrieveData($serie[0]["Titolo"]);
 	$Genere=$serie[0]["Genere"];
 	$Trama=$serie[0]["Trama"];
+		$DataI=$serie[0]["DataInizio"];
+	$DataF=$serie[0]["DataFine"];
+	if($DataF=="")
+	$DataF="In Corso";
+		$Stag=$serie[0]["Stagioni"];
 	}
 	else header("location:./Home.php");
 echo "
@@ -54,14 +59,18 @@ echo "
 <h2>".$Titolo."</h2>
 <h3>Genere ".$Genere."</h3>
 
+<h4>".$Stag." Stagioni,  ".$DataI." - ".$DataF."</h4>
 <p id=\"trama\"><img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt='".$Titolo."' id='Copertina'/>".$Trama."</p>
 ";
 if(isset($_SESSION["UltimaRicerca"])){
-	echo "<a href=\"Ricerca.php?Ricerca=".$_SESSION["UltimaRicerca"]."\">Torna alla ricerca</a><br/>";	
+	echo "<a class=\"back\" href=\"Ricerca.php?Ricerca=".$_SESSION["UltimaRicerca"]."\">Torna alla ricerca</a><br/>";	
 }
-echo "<a id=\"back\" href=\"".$Genere.".php\">Vai al genere</a>
-";
+echo "<a class=\"back\" href=\"".$Genere.".php\">Vai al genere</a>
 
+";
+if (isset($_SESSION["Admin"]) && $_SESSION["Admin"]==1) {
+        echo "<a class=\"back\" href=\"Modserie.php?Titolo=".$Titolo."\">Modifica serie</a>";
+}
 $Text="Rimuovi dalle mie serie";
 $check=false;
 if(isset($_SESSION["Name"])&&$Db->RicercaSerieUtenteNonSeguita($_SESSION['Name'],$Titolo))

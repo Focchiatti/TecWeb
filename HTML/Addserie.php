@@ -54,31 +54,32 @@
         {
             $Db=new DBAccess();
 			$Titolo=DBAccess::createKey($_POST['Titolo']);
-			if(DataWriter::UploadFile($_FILES['userfile'],$Titolo))
-			$error="";
-			else $error="Upload Fallito";
-            if($error==""&&($Db->AggiungiSerie($Titolo,$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama'])))
+			
+				$error=DataWriter::UploadFile($_FILES['userfile'],strtolower($Titolo));
+			if($error==""&&!($Db->AggiungiSerie($Titolo,$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama'])))
             {
-				$error=="Campi mal Compilati";
+				
+				$error="Campi mal Compilati";
+				unlink ( "./../Img/".$Titolo.".jpg");
                 unset($_POST['Titolo']);
                 unset($_POST['Genere']);
                 unset($_POST['IData']);
                 unset($_POST['FData']);
                 unset($_POST['Stagioni']);
                 unset($_POST['Trama']);
-
-                header("location:".$_SERVER['PHP_SELF']);
+				header("location:./Addserie.php?error=".$error);
             }
 			else{
-				$error=="Upload Fallito";
                 unset($_POST['Titolo']);
                 unset($_POST['Genere']);
                 unset($_POST['IData']);
                 unset($_POST['FData']);
                 unset($_POST['Stagioni']);
                 unset($_POST['Trama']);
-				
+				if($error!="")
                 header("location:./Addserie.php?error=".$error);
+                else
+                header("location:./Addserie.php");
 			}
         }
 				echo "
@@ -88,17 +89,17 @@
 							<input type=\"text\" title=\"Titolo\" name=\"Titolo\"/>
 							<label> <strong>Genere: </strong></label>
 							<select id='selectgenere' name='Genere' title='Genere'>
-                                <option value=\"thriller\"> Thriller</option>
-                                <option value=\"drammatico\"> Drammatico</option>
-                                <option value=\"commedia\"> Commedia</option>
-                                <option value=\"fantastico\"> Fantastico</option>
-                                <option value=\"fantascienza\"> Fantascienza</option>
-                                <option value=\"poliziesco\"> Poliziesco</option>
+                                <option value=\"Thriller\"> Thriller</option>
+                                <option value=\"Drammatico\"> Drammatico</option>
+                                <option value=\"Commedia\"> Commedia</option>
+                                <option value=\"Fantastico\"> Fantastico</option>
+                                <option value=\"Fantascienza\"> Fantascienza</option>
+                                <option value=\"Poliziesco\"> Poliziesco</option>
                                 </select>
-                            <label><strong>Data d'inizio</strong></label>
+                            <label><strong>Data d'inizio (AAAA-MM-GG)</strong></label>
 							<input type=\"text\" title=\"Data di inizio\" name=\"IData\"/>
-                            <label><strong>Data di fine (opzionale)</strong></label>
-							<input type=\"text\" title=\"Data di fine\" name=\"FData\"/>
+                            <label><strong>Data di fine (opzionale AAAA-MM-GG)</strong></label>
+							<input type=\"text\" title=\"Data di fine\" name=\"FData\" value=\"\"/>
                             <label><strong>Numero Stagioni</strong></label>
 							<input type=\"text\" title=\"Numero di stagioni\" name=\"Stagioni\"/>
                             <label><strong>Trama</strong></label>
