@@ -71,7 +71,8 @@ else
 			echo "<li><a href='".$url."?page=".$i."'>".$i."</a></li>\n";
 		}
 		echo "<li><p>".$page."</p></li>\n";
-		for($i=$page+1;$i<floor(count($notizia)/$resultPage)+1;$i=$i+1){
+		$max=floor(count($notizia)/$resultPage)==count($notizia)/$resultPage?floor(count($notizia)/$resultPage):floor(count($notizia)/$resultPage)+1;
+		for($i=$page+1;$i<$max;$i=$i+1){
 			echo "<li><a href='".$url."?page=".$i."'>".$i."</a></li>\n";
 		}
 		echo "</ul>\n";

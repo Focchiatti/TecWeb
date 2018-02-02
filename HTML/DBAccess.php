@@ -188,7 +188,7 @@ class DBAccess
     public function AggiungiNews($Titolo,$Data,$Contenuto,$Serie){
     	$Datanews = explode('-',$Data);
     	if (isset($Titolo)&&$Titolo!=""&&isset($Contenuto)&&$Contenuto!=""&&isset($Serie)&&$Serie!=""&&isset($Data)&&checkdate($Datanews[1],$Datanews[2],$Datanews[0])){
-    		$query="INSERT INTO Notizie(Titolo,Data,Contenuto,SerieTV) values('".DBAccess::createKey($Titolo)."','".$Data."','".$Contenuto."','".$Serie."')";
+    		$query="INSERT INTO Notizie(Titolo,Data,Contenuto,SerieTV) values('".$Titolo."','".$Data."','".$Contenuto."','".DBAccess::createKey($Serie)."')";
     		$runnable=$this->connessione->prepare($query);
     		return $runnable->execute();
     	}
