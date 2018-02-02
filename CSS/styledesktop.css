@@ -90,9 +90,7 @@ html{
 }
 
 .up {
-	font-size: 0px;
-	height: 0px;
-	overflow: hidden;
+	display: none;
 }
 
 #content {	
@@ -172,6 +170,7 @@ html{
 	padding-left:20%;
 	padding-top:0.5em;
 	text-align: left;
+	border-spacing: 1em;
 }
 
 #RisultatoRicerca a{
@@ -370,7 +369,7 @@ input[type=text], input[type=password] {
 	float:left;
 	padding:0.5em;
 	margin-left:0.5em;
-	color:#253F5D;
+	color:#A50600;
 }
 
 .ImgSerie {

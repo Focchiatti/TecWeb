@@ -51,6 +51,7 @@ html{
 }
 
 .up {
+	display: list-item;
 	font-size: inherit;
 	height: inherit;
 }

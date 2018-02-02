@@ -1,4 +1,3 @@
-
 <?php
 require_once "./DataWriter.php";
 require_once "./DBAccess.php";
@@ -107,13 +106,11 @@ echo
 
 <div id=\"smallmenu\">
 <ul>
-
-		<li><a href=\"Home.php\">Home</a></li>
-		<li><a href=\"news.php\">News</a></li>
-		"
-;
-		DataWriter::LogInButton();
-		$_SESSION["UltimaRicerca"]=null;
+	<li><a href=\"Home.php\">Home</a></li>
+	<li><a href=\"news.php\">News</a></li>
+	";
+	DataWriter::LogInButton();
+	$_SESSION["UltimaRicerca"]=null;
 	
 	echo "
 	<li id=\"up\"><a href=\"#header\">Torna su</a></li>

@@ -19,11 +19,10 @@
 <?php
 require_once "./DataWriter.php";
 
-
-echo "
-<div id=\"breadcrumbs\">
+echo 
+"<div id=\"breadcrumbs\">
 	<p>Ti trovi in: <span xml:lang=\"en\">Home</span> >> Ricerca</p>
-		<a class=\"aiuti\" href=\"#content\">Salta la navigazione</a>
+	<a class=\"aiuti\" href=\"#content\">Salta la navigazione</a>
 </div>
 
 <div id=\"hamburger\">
@@ -32,11 +31,11 @@ echo "
 
 <div id=\"menu\">
 <ul>
-		<li><a href=\"Home.php\">Home</a></li>
-		<li><a href=\"news.php\">News</a></li>";
+	<li><a href=\"Home.php\">Home</a></li>
+	<li><a href=\"news.php\">News</a></li>";
 	DataWriter::LogInButton();
-	echo "
-</ul>
+echo 
+"</ul>
 </div>
 <div id=\"content\">
 ";
@@ -53,9 +52,7 @@ if(isset($_GET["Ricerca"])&&$_GET["Ricerca"]!=""){
 	DataWriter::RicercaTitolo($_GET["Ricerca"]);
 }
 else{
-echo
-"
- <div id=\"barraricerca\">
+echo "<div id=\"barraricerca\">
  <form action=\"Ricerca.php\" method=\"get\">
  <fieldset>
  <input type=\"text\" title=\"Ricerca\" name=\"Ricerca\"/>
@@ -72,16 +69,12 @@ echo "<a class=\"aiuti\" href=\"#header\">Torna su</a>
 
 <div id=\"smallmenu\">
 <ul>
-
-		<li><a href=\"Home.php\">Home</a></li>
-		<li><a href=\"news.php\">News</a></li>
-		
-	";
-		DataWriter::LogInButton();
-	echo "
-	<li id=\"up\"><a href=\"#header\">Torna su</a></li>
+	<li><a href=\"Home.php\">Home</a></li>
+	<li><a href=\"news.php\">News</a></li>";
+	DataWriter::LogInButton();
+	echo "<li id=\"up\"><a href=\"#header\">Torna su</a></li>
 </ul>
 </div>
 </body>
-</html>"	;
+</html>";
 ?>
