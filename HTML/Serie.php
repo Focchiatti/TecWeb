@@ -68,7 +68,7 @@ echo "<a class=\"back\" href=\"".$Genere.".php\">Vai al genere</a>
 
 ";
 if (isset($_SESSION["Admin"]) && $_SESSION["Admin"]==1) {
-        echo "<a class=\"back\" href=\"Modserie.php?Titolo=".$Titolo."\">Modifica serie</a>";
+        echo "<a class=\"back\" href=\"Modserie.php?Titolo=".DBAccess::createKey($Titolo)."\">Modifica serie</a>";
 }
 $Text="Rimuovi dalle mie serie";
 $check=false;

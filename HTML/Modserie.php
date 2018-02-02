@@ -52,9 +52,10 @@ if (!isset($_SESSION["Admin"]) || (isset($_SESSION["Admin"])&&$_SESSION["Admin"]
 
 $Db=new DBAccess();
 if (isset($_POST['Titolo'])&&isset($_POST['Genere'])&&isset($_POST['IData'])&&isset($_POST['Stagioni'])&&isset($_POST['Trama'])){
-	if(!isset($_POST['FData']))
-	$_POST['FData']="";
-	$result=$Db->AggiornaSerie($_POST['Titolo'],$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama']);
+	$DataF="";
+	if(isset($_POST['FData']))
+	$DataF=$_POST['FData'];
+	$result=$Db->AggiornaSerie($_POST['Titolo'],$_POST['Genere'],$_POST['IData'],$DataF,$_POST['Stagioni'],$_POST['Trama']);
 	if ($result==false) 
 		header("location: ./Modserie.php?Titolo=".$_POST['Titolo']."&error=Campi%20mal%20compilati");
 	else 
@@ -63,7 +64,6 @@ if (isset($_POST['Titolo'])&&isset($_POST['Genere'])&&isset($_POST['IData'])&&is
 else{
 	$serie=$Db->RicercaSpecifica($_GET['Titolo']);
 	if($serie){
-		$Key=strtolower($serie[0]["Titolo"]);
 		$Titolo=DBAccess::RetrieveData($serie[0]["Titolo"]);
 		$Genere=$serie[0]["Genere"];
 		$Trama=$serie[0]["Trama"];
@@ -75,7 +75,9 @@ else{
 	echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
 		<fieldset>
 		<label><strong>Titolo</strong></label>
-		<input type=\"text\" title=\"Titolo\" name=\"Titolo\" value=\"".$Titolo."\" readonly=\"readonly\"/>
+		
+		<input type=\"hidden\" title=\"Titolo\" name=\"Titolo\" value=\"".DBAccess::createKey($Titolo)."\"/>
+		<input type=\"text\" title=\"Titolo\" name=\"Titolo\" value=\"".$Titolo."\" disabled=\"disabled\"/>
 		<label> <strong>Genere: </strong></label>
 		<select id='selectgenere' name='Genere' title='Genere'>";
 		if ($Genere=="Thriller")
@@ -117,7 +119,7 @@ else{
 		</form>";
 	echo "
 	<div class=\"container\">
-		<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
+		<a href=\"./Serie.php?name=".DBAccess::createKey($Titolo)."\" class=\"cancelbtn\">Back</a>
 	</div>";
 
 		echo"<a class=\"aiuti\" href=\"#header\">Torna su</a>
