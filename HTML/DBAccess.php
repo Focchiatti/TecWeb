@@ -161,9 +161,6 @@
 				$approved=false;
 				$null=false;
 				if(!isset($FData)||$FData==""){
-					$query="UPDATE SerieTV 
-					SET Genere='".$Genere."', DataInizio='".$IData."', DataFine=NULL, Stagioni='".$Stagioni."', Trama='".$Trama."'
-					WHERE Titolo LIKE '".$Titolo."' ";
 					$approved=true;
 					$null=true;
 				}
@@ -174,13 +171,16 @@
 				}
 				if($approved&&isset($Titolo)&&$Titolo!=""&&isset($Genere)&&$Genere!=""&&isset($IData)&&
 				checkdate($dataInizio[1],$dataInizio[2],$dataInizio[0])&&isset($Stagioni)&&$Stagioni!=""&&isset($Trama)&&$Trama!=""){
-					if(!$null){
+					
 						$query="UPDATE SerieTV 
-						SET Genere='".$Genere."', DataInizio='".$IData."', DataFine='".$FData."', Stagioni='".$Stagioni."', Trama='".$Trama."'
-						WHERE Titolo LIKE '".$Titolo."' ";
+						SET Genere=?, DataInizio=?, DataFine=?, Stagioni=?, Trama=?
+						WHERE Titolo LIKE ?";
+					$runnable=$this->connessione->prepare($query);
+					if(!$null){
+		    		return $runnable->execute(array($Genere,$IData,$FData,$Stagioni,$Trama,$Titolo));
 					}
-		            $runnable=$this->connessione->prepare($query);
-		    		return $runnable->execute();
+					else
+						return $runnable->execute(array($Genere,$IData,NULL,$Stagioni,$Trama,$Titolo));
 				}
 				else return false;
 			}
