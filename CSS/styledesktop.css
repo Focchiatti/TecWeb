@@ -89,7 +89,7 @@ html{
 	display: none;
 }
 
-.up {
+#up {
 	display: none;
 }
 
@@ -167,10 +167,11 @@ html{
 }
 
 #RisultatoRicerca{
-	padding-left:20%;
 	padding-top:0.5em;
 	text-align: left;
 	border-spacing: 1em;
+	width:70%; 
+    margin-left:15%; 
 }
 
 #RisultatoRicerca a{

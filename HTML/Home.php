@@ -5,12 +5,14 @@ require_once "./DataWriter.php"
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title> Serie-a-mente </title>
+	<title> Serie-a-mente</title>
+	<meta name="title" content="Serie-a-mente home">
+	<meta name="description" content="Homepage del sito serie-a-mente, mostra i generi delle serie">
+	<meta name="keywords" content="home serietv televisione memoria">
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
 	<link rel="stylesheet" type="text/css"  href="../CSS/styleprint.css" media="print" />
-
 </head>
 
 <body>
@@ -28,12 +30,10 @@ require_once "./DataWriter.php"
 	<a href="#smallmenu">&#9776;</a>
 </div> 
 
-
 <div id="menu">
 <ul>
-		<li><p>Home</p></li>
-		<li><a href="news.php">News</a></li>
-		
+	<li><p>Home</p></li>
+	<li><a href="news.php">News</a></li>
 	<?php
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
@@ -44,9 +44,9 @@ require_once "./DataWriter.php"
 <div id="content">
 <div id="barraricerca">
 	<form action="Ricerca.php" method="get">
-		
 	<fieldset>	<input type="text" title="Ricerca" name="Ricerca"/>
-		<input id="submit" type="submit" value="Cerca"/></fieldset>
+		<input id="submit" type="submit" value="Cerca"/>
+	</fieldset>
 	</form>
 </div>
 
@@ -90,18 +90,14 @@ require_once "./DataWriter.php"
 
 <div id="smallmenu">
 <ul>
-
-		<li><p>Home</p></li>
-		<li><a href="news.php">News</a></li>
-		
+	<li><p>Home</p></li>
+	<li><a href="news.php">News</a></li>	
 	<?php
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
-		<li class="up"><a href="#header">Torna su</a></li>
+	<li id="up"><a href="#header">Torna su</a></li>
 </ul>
 </div>
-
-
 </body>
 </html>

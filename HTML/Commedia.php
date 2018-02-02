@@ -5,25 +5,25 @@ require_once "./DataWriter.php"
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title> Serie-a-mente </title>
+	<title>Commedia</title>
+	<meta name="title" content="Serie-a-mente commedia">
+	<meta name="description" content="Pagina in cui vengono mostrate tutte le serietv di genere commedia">
+	<meta name="keywords" content="commedia comedy serietv televisione memoria">
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
 	<link type="text/css" rel="stylesheet" href="../CSS/styleprint.css" media="print" />
-
 </head>
 
 <body>
 
 <div id="header">
 	<h1>Serie-a-mente</h1>
-	
 </div>
-
 
 <div id="breadcrumbs">
 	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Commedia </p>
-	<span xml:lang="en">Home</span> >>
+	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
 <div id="hamburger">
@@ -32,10 +32,8 @@ require_once "./DataWriter.php"
 
 <div id="menu">
 <ul>
-
-		<li><a href="Home.php">Home</a></li>
-		<li><a href="news.php">News</a></li>
-		
+	<li><a href="Home.php">Home</a></li>
+	<li><a href="news.php">News</a></li>
 	<?php
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
@@ -54,18 +52,15 @@ require_once "./DataWriter.php"
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
 </div>
 
-
 <div id="smallmenu">
 <ul>
-
-		<li><a href="Home.php">Home</a></li>
-		<li><a href="news.php">News</a></li>
-		
+	<li><a href="Home.php">Home</a></li>
+	<li><a href="news.php">News</a></li>
 	<?php
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
-	<li id="ip"><a href="#header">Torna su</a></li>
+	<li id="up"><a href="#header">Torna su</a></li>
 </ul>
 </div>
 </body>

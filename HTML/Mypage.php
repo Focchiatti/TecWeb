@@ -5,7 +5,10 @@ require_once "./DataWriter.php";
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title> Serie-a-mente </title>
+	<title> Pagina utente </title>
+	<meta name="title" content="Serie-a-mente pagina utente">
+	<meta name="description" content="Pagina che mostra le serietv seguite dall'utente e il relativo voto">
+	<meta name="keywords" content="utente user voti televisione memoria">
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
@@ -30,12 +33,11 @@ require_once "./DataWriter.php";
 
 <div id="menu">
 <ul>
-
-		<li><a href="Home.php">Home</a></li>
-		<li><a href="news.php">News</a></li>
-		<?php
-			DataWriter::LogInButton();
-		?>
+	<li><a href="Home.php">Home</a></li>
+	<li><a href="news.php">News</a></li>
+	<?php
+		DataWriter::LogInButton();
+	?>
 </ul>
 </div>
 
@@ -45,8 +47,8 @@ require_once "./DataWriter.php";
 	$nick= $_SESSION["Name"];
 	$Db=new DBAccess();
     if (isset($_POST['Voti'])){
-    $updated=$Db->AggiornaVoto($_POST['Voti'],$_POST['serie'],$nick);
-    header("location:".$_SERVER['PHP_SELF']);
+	    $updated=$Db->AggiornaVoto($_POST['Voti'],$_POST['serie'],$nick);
+	    header("location:".$_SERVER['PHP_SELF']);
     }
 	$mieserie= $Db->RicercaSerieUtente($nick);
 	if($mieserie!=null){
@@ -67,29 +69,28 @@ require_once "./DataWriter.php";
 			if ($j==""){ 	
 				$j=6;
 				echo "<option selected='selected' value='NULL'>Non votato</option>";
-								for ($i=0; $i<$j; ++$i)
+				for ($i=0; $i<$j; ++$i)
 					echo"<option value='".$i."'>".$i."</option>";
-				}
-				else{
-					echo "<option value='NULL'>Non votato</option>";
-
+			}
+			else{
+				echo "<option value='NULL'>Non votato</option>";
 				for ($i=0; $i<$j; ++$i)
 					echo"<option value='".$i."'>".$i."</option>";
 				echo "<option selected='selected' value='".$j."'>".$j."</option>";
 				for ($i=$j+1; $i<6; ++$i)
 					echo"<option value='".$i."'>".$i."</option>";
-				}
-					echo"
+			}
+			echo"
             </select>
             <input class='submitvoto' type='submit' title='Vota' value='Vota'/>
             </fieldset>
             </form>
-            </div>";
+        </div>";
 	    }
     }
 
 ?>
-<a class="aiuti" href="#header">Torna su</a>
+	<a class="aiuti" href="#header">Torna su</a>
 </div>
 
 <div id="footer">
@@ -98,17 +99,15 @@ require_once "./DataWriter.php";
 
 <div id="smallmenu">
 <ul>
-
-		<li><a href="Home.php">Home</a></li>
-		<li><a href="news.php">News</a></li>
-		
+	<li><a href="Home.php">Home</a></li>
+	<li><a href="news.php">News</a></li>	
 	<?php
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
 	<li id="up"><a href="#header">Torna su</a></li>
+<?php $Db=null?>
 </ul>
 </div>
-
 </body>
 </html>

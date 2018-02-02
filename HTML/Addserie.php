@@ -1,13 +1,15 @@
 <?php
 require_once "./DataWriter.php";
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title> Serie-a-mente </title>
-<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
+	<title>Aggiungi serie</title>
+	<meta name="title" content="Serie-a-mente aggiungi serie">
+	<meta name="description" content="Pagina che permette di aggiungere al database una nuova serie">
+	<meta name="keywords" content="amministrazione nuova serietv televisione memoria">
+	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
 	<link rel="stylesheet" type="text/css"  href="../CSS/styleprint.css" media="print" />
@@ -19,9 +21,8 @@ require_once "./DataWriter.php";
 	<h1>Serie-a-mente</h1>
 </div>
 
-
 <div id="breadcrumbs">
-	<p>Ti trovi in:<span xml:lang="en">Home</span> >> Aggiungi serie</p>
+	<p>Ti trovi in:<span xml:lang="en">Home</span> >> Aggiungi Serie</p>
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 

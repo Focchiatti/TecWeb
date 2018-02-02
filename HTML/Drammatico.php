@@ -5,7 +5,10 @@ require_once "./DataWriter.php"
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title> Serie-a-mente </title>
+	<title> Drammatico </title>
+	<meta name="title" content="Serie-a-mente drammatico">
+	<meta name="description" content="Pagina che mostra tutte le serietv di genere drammatico">
+	<meta name="keywords" content="drammatico drama serietv televisione memoria">
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
@@ -18,12 +21,10 @@ require_once "./DataWriter.php"
 	<h1>Serie-a-mente</h1>
 </div>
 
-
 <div id="breadcrumbs">
 	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Drammatico </p>
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
-
 
 <div id="hamburger">
 	<a href="#smallmenu">&#9776;</a>
@@ -31,10 +32,8 @@ require_once "./DataWriter.php"
 
 <div id="menu">
 <ul>
-
-		<li><a href="Home.php">Home</a></li>
-		<li><a href="news.php">News</a></li>
-		
+	<li><a href="Home.php">Home</a></li>
+	<li><a href="news.php">News</a></li>
 	<?php
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
@@ -43,10 +42,10 @@ require_once "./DataWriter.php"
 </div>
 
 <div id="content">
-     <?php
-     	DataWriter::DBPrintDataAboutGenere("Drammatico");
-     ?>	
-     <a class="aiuti" href="#header">Torna su</a>
+	<?php
+		DataWriter::DBPrintDataAboutGenere("Drammatico");
+	?>	
+	<a class="aiuti" href="#header">Torna su</a>
 </div>
 
 <div id="footer">
@@ -55,10 +54,8 @@ require_once "./DataWriter.php"
 
 <div id="smallmenu">
 <ul>
-
-		<li><a href="Home.php">Home</a></li>
-		<li><a href="news.php">News</a></li>
-		
+	<li><a href="Home.php">Home</a></li>
+	<li><a href="news.php">News</a></li>
 	<?php
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
