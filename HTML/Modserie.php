@@ -48,6 +48,9 @@ require_once "./DBAccess.php";
 	    $_SESSION['CallingPage']="./Home.php";
 	}
 
+	if (!isset($_SESSION["Admin"]) || (isset($_SESSION["Admin"])&&$_SESSION["Admin"]==0)) {
+	header("location:".$_SESSION['CallingPage']);
+	}
 
 	$Db=new DBAccess();
 	if (isset($_POST['Titolo'])&&isset($_POST['Genere'])&&isset($_POST['IData'])&&isset($_POST['Stagioni'])&&isset($_POST['Trama'])){
@@ -74,7 +77,6 @@ require_once "./DBAccess.php";
 		echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
 			<fieldset>
 			<label><strong>Titolo</strong></label>
-			
 			<input type=\"hidden\" title=\"Titolo\" name=\"Titolo\" value=\"".DBAccess::createKey($Titolo)."\"/>
 			<input type=\"text\" title=\"Titolo\" name=\"Titolo\" value=\"".$Titolo."\" disabled=\"disabled\"/>
 			<label> <strong>Genere: </strong></label>

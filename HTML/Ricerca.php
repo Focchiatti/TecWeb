@@ -46,7 +46,7 @@ require_once "./DataWriter.php"
 			<form action=\"Ricerca.php\" method=\"get\">
 			<fieldset>
 			<input type=\"text\" title=\"Ricerca\" name=\"Ricerca\" value=\"".$_GET["Ricerca"]."\"/>
-			<input id=\"submit\" type=\"submit\" value=\"Cerca\"/>
+			<input id=\"submit\" title=\"Cerca\" type=\"submit\" value=\"Cerca\"/>
 			</fieldset>
 			</form>
 			</div>";

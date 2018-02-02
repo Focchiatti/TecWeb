@@ -36,7 +36,10 @@ require_once "./DataWriter.php";
 </ul>
 </div>
 <?php 
+	if(isset($_GET['error']))
+		echo "<p>".$_GET['error']."</p>";
 	session_start();
+
     if(!isset($_SESSION['CallingPage'])){
         $_SESSION['CallingPage']="./Home.php";
     }
@@ -45,17 +48,29 @@ require_once "./DataWriter.php";
     	header("location:".$_SESSION['CallingPage']);
     }
 
-    if(isset($_POST['Titolo'])){
+    if(isset($_POST['Titolo'])&&isset($_POST['Data'])&&isset($_POST['Contenuto'])&&isset($_POST['Serie'])) {
         $Db=new DBAccess();
-        $Db->AggiungiNews($_POST['Titolo'],$_POST['Data'],$_POST['Contenuto'],$_POST['Serie']);
-        header("location:".$_SESSION["CallingPage"]);
+        if($Db->AggiungiNews($_POST['Titolo'],$_POST['Data'],$_POST['Contenuto'],$_POST['Serie'])){
+        	$error="Notizia aggiunta";
+        	unset($_POST['Titolo']);
+        	unset($_POST['Data']);
+        	unset($_POST['Contenuto']);
+        	unset($_POST['Serie']);
+        	header("location: ./Addnews.php?error=".$error);
+        }
+        else {
+        	$error="Campi mal compilati";
+        	unset($_POST['Titolo']);
+        	unset($_POST['Data']);
+        	unset($_POST['Contenuto']);
+        	unset($_POST['Serie']);
+        	header("location: ./Addnews.php?error=".$error);
+        }
     }
 	else{
 		echo "
 		<div id=\"content\">
 			<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">";
-			if(isset($_GET['error']))
-				echo "<p>Campi mal compilati</p>";
             $Db=new DBAccess();
             $Series=$Db->Get_Serie();
 			echo "
@@ -65,7 +80,7 @@ require_once "./DataWriter.php";
                 <label><strong>Data</strong></label>
 				<input type=\"text\" title=\"Data\" name=\"Data\"/>
                 <label><strong>Contenuto</strong></label>
-				<input type=\"text\" title=\"Contenuto\" name=\"Contenuto\"/>
+                <textarea id='inputbox' title=\"Contenuto\" name=\"Contenuto\" rows=\"15\" cols=\"10\"></textarea>
                 <label><strong>Serie</strong></label>
 				<select name=\"Serie\" title=\"Serie\">";
 	            foreach($Series as $serie){
@@ -100,6 +115,7 @@ require_once "./DataWriter.php";
 		$_SESSION["UltimaRicerca"]=null;
 	?>
 	<li id="up"><a href="#header">Torna su</a></li>
+	<?php $Db=null ?>
 </ul>
 </div>
 

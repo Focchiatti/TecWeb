@@ -57,7 +57,7 @@ if(isset($_POST['Titolo'])){
 	$error=DataWriter::UploadFile($_FILES['userfile'],strtolower($Titolo));
 	if($error==""&&!($Db->AggiungiSerie($Titolo,$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama']))){
 		
-		$error="Campi mal Compilati";
+		$error="Campi mal compilati";
 		unlink ( "./../Img/".$Titolo.".jpg");
         unset($_POST['Titolo']);
         unset($_POST['Genere']);
@@ -133,6 +133,7 @@ echo "<a class=\"aiuti\" href=\"#header\">Torna su</a>
 		$_SESSION["UltimaRicerca"]=null;
 	?>
 	<li id="up"><a href="#header">Torna su</a></li>
+	<?php $Db=null;?>
 </ul>
 </div>
 </body>
