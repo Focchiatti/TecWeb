@@ -5,10 +5,10 @@ require_once "./DataWriter.php";
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title> Login </title>
-	<meta name="title" content="Serie-a-mente login">
-	<meta name="description" content="Pagina di login">
-	<meta name="keywords" content="login serietv televisione memoria">
+	<title> Registrazione </title>
+	<meta name="title" content="Serie-a-mente registrazione">
+	<meta name="description" content="Pagina di registrazione">
+	<meta name="keywords" content="registrazione serietv televisione memoria">
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
@@ -22,7 +22,7 @@ require_once "./DataWriter.php";
 </div>
 
 <div id="breadcrumbs">
-	<p>Ti trovi in: <span xml:lang="en">Login</span></p>
+	<p>Ti trovi in: <span xml:lang="en">Registrazione</span></p>
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
@@ -36,41 +36,57 @@ require_once "./DataWriter.php";
 	<li><a href="news.php">News</a></li>
 </ul>
 </div>
-	<?php 
+<?php 
+
 	session_start();
-	if(!isset($_POST["Name"])){
+	if(!isset($_POST['Name'])) {
 		echo 
 		"<div id=\"content\">
 			<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">";
 			if(isset($_GET['error']))
-				echo "<p>Username o password sbagliati</p>";
+				echo "<p>".$_GET['error']."</p>";
 			echo "<fieldset>
 				<label><strong>Username</strong></label>
 				<input type=\"text\" title=\"Username\" name=\"Name\" />
 				<label><strong>Password</strong></label>
 				<input type=\"password\" title=\"Password\" name=\"Password\"/>
-				<input id=\"submit\" type=\"submit\" title=\"Login\" value=\"Login\"/>
+				<input id=\"submit\" type=\"submit\" title=\"Registrati\" value=\"Registrati\"/>
 				</fieldset>
 			</form>";
-			if(!isset($_SESSION['CallingPage'])){
+			if(!isset($_SESSION['CallingPage'])) {
 				$_SESSION['CallingPage']="./Home.php";
 			}
 			echo 
-				"<div class=\"registra\"><a href=\"Registrazione.php\">Oppure registrati</a></div>
-				<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
+				"<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
 				<a class=\"aiuti\" href=\"#header\">Torna su</a>
 		</div>";
 	}
-	else{
+	else {
 		$Db=new DBAccess();
-		if($Db->LogInUtente($_POST['Name'],$_POST['Password'])){
-			header("location:".$_SESSION['CallingPage']);
+		$utenti=$Db->ReadUtenti();
+		$name=strtolower($_POST['Name']);
+		$utenti=array_map('strtolower',$utenti);
+		if(!in_array($name,$utenti )) {
+			if($Db->RegistraUtente($_POST['Name'],$_POST['Password'])) {
+				unset($_POST['Name']);
+        		unset($_POST['Password']);
+				header("location: ./RegistrazioneEffettuata.php");
+			}
+			else{
+				$error="Compilare tutti i campi";
+				unset($_POST['Name']);
+        		unset($_POST['Password']);
+				header("location: ./Registrazione.php?error=".$error);
+			}
 		}
-		else 
-			header("location:./Login.php?error");
-	}
-	?>
+		else {
+			$error="Username già presente";
+			unset($_POST['Name']);
+        	unset($_POST['Password']);
+			header("location: ./Registrazione.php?error=".$error);
 
+	}} 
+?>
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
@@ -81,6 +97,7 @@ require_once "./DataWriter.php";
 	<li><a href="Home.php">Home</a></li>
 	<li><a href="news.php">News</a></li>
 	<li id="up"><a href="#header">Torna su</a></li>
+
 </ul>
 </div>
 </body>

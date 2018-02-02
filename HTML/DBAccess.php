@@ -129,6 +129,19 @@ class DBAccess
 		}
 		return false;    	
 	}
+
+	public function ReadUtenti(){
+		$query=$this->connessione->prepare("SELECT NickName FROM Utente");
+		$query->execute();
+		return $query->fetchAll(PDO::FETCH_COLUMN);
+	}
+
+	public function RegistraUtente($User,$Password){
+		if (isset($User)&&$User!=""&&isset($Password)&&$Password!=""){
+		$runnable=$this->connessione->prepare("INSERT INTO Utente(NickName,Password) VALUES ('".$User."','".$Password."')");
+		return $runnable->execute();
+		}  	
+	}
 	
     public function AggiungiSerie($Titolo,$Genere,$IData,$FData,$Stagioni,$Trama)
 	{

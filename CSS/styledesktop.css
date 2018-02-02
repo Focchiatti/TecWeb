@@ -328,7 +328,7 @@ input[type=text], input[type=password] {
 	border: 1px solid #ccc;
 	color: #EDF2F7;
 	font-weight: bold;
-    padding: 1em;
+    padding: 0.7em;
     background-color: #4D4D4D;
     float: left;
 }
@@ -451,4 +451,12 @@ input[type=text], input[type=password] {
 	overflow: hidden;
 	padding-bottom: 0;
 	margin: 0;
+}
+
+.registra a{
+	color: #4D4D4D;
+}
+
+.link{
+	color: #4D4D4D;
 }
