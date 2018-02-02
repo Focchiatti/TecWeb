@@ -48,15 +48,13 @@ require_once "./DBAccess.php";
 	    $_SESSION['CallingPage']="./Home.php";
 	}
 
-	if (!isset($_SESSION["Admin"]) || (isset($_SESSION["Admin"])&&$_SESSION["Admin"]==0)) {
-		header("location:".$_SESSION['CallingPage']);
-	}
 
 	$Db=new DBAccess();
 	if (isset($_POST['Titolo'])&&isset($_POST['Genere'])&&isset($_POST['IData'])&&isset($_POST['Stagioni'])&&isset($_POST['Trama'])){
-		if(!isset($_POST['FData']))
-		$_POST['FData']="";
-		$result=$Db->AggiornaSerie($_POST['Titolo'],$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama']);
+		$DataF="";
+		if(isset($_POST['FData']))
+		$DataF=$_POST['FData'];
+		$result=$Db->AggiornaSerie($_POST['Titolo'],$_POST['Genere'],$_POST['IData'],$DataF,$_POST['Stagioni'],$_POST['Trama']);
 		if ($result==false) 
 			header("location: ./Modserie.php?Titolo=".$_POST['Titolo']."&error=Campi%20mal%20compilati");
 		else 
@@ -65,7 +63,6 @@ require_once "./DBAccess.php";
 	else{
 		$serie=$Db->RicercaSpecifica($_GET['Titolo']);
 		if($serie){
-			$Key=strtolower($serie[0]["Titolo"]);
 			$Titolo=DBAccess::RetrieveData($serie[0]["Titolo"]);
 			$Genere=$serie[0]["Genere"];
 			$Trama=$serie[0]["Trama"];
@@ -77,7 +74,9 @@ require_once "./DBAccess.php";
 		echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
 			<fieldset>
 			<label><strong>Titolo</strong></label>
-			<input type=\"text\" title=\"Titolo\" name=\"Titolo\" value=\"".$Titolo."\" readonly=\"readonly\"/>
+			
+			<input type=\"hidden\" title=\"Titolo\" name=\"Titolo\" value=\"".DBAccess::createKey($Titolo)."\"/>
+			<input type=\"text\" title=\"Titolo\" name=\"Titolo\" value=\"".$Titolo."\" disabled=\"disabled\"/>
 			<label> <strong>Genere: </strong></label>
 			<select id='selectgenere' name='Genere' title='Genere'>";
 			if ($Genere=="Thriller")
@@ -104,25 +103,22 @@ require_once "./DBAccess.php";
 				echo "<option value=\"Poliziesco\" selected='selected'>Poliziesco</option>";
 			else 
 				echo" <option value=\"Poliziesco\">Poliziesco</option>";
-	        echo"
-	        </select>
-	        <label><strong>Data d'inizio (AAAA-MM-GG)</strong></label>
-			<input type=\"text\" title=\"Data di inizio\" name=\"IData\" value=\"".$DataI."\"/>
-	        <label><strong>Data di fine (opzionale AAAA-MM-GG)</strong></label>
-			<input type=\"text\" title=\"Data di fine\" name=\"FData\" value=\"".$DataF."\"/>
-	        <label><strong>Numero Stagioni</strong></label>
-			<input type=\"text\" title=\"Numero di stagioni\" name=\"Stagioni\" value=\"".$Stag."\"/>
-	        <label><strong>Trama</strong></label>
-			<textarea id='inputbox' title=\"Trama\" name=\"Trama\" rows=\"15\" cols=\"10\" >".$Trama."</textarea>
-			<input type=\"submit\" title=\"Submit\" value=\"Submit\" id=\"submit\"/>
-			</fieldset>
-			</form>";
+	        echo
+	        	"</select>
+		        <label><strong>Data d'inizio (AAAA-MM-GG)</strong></label>
+				<input type=\"text\" title=\"Data di inizio\" name=\"IData\" value=\"".$DataI."\"/>
+		        <label><strong>Data di fine (opzionale AAAA-MM-GG)</strong></label>
+				<input type=\"text\" title=\"Data di fine\" name=\"FData\" value=\"".$DataF."\"/>
+		        <label><strong>Numero Stagioni</strong></label>
+				<input type=\"text\" title=\"Numero di stagioni\" name=\"Stagioni\" value=\"".$Stag."\"/>
+		        <label><strong>Trama</strong></label>
+				<textarea id='inputbox' title=\"Trama\" name=\"Trama\" rows=\"15\" cols=\"10\" >".$Trama."</textarea>
+				<input type=\"submit\" title=\"Submit\" value=\"Submit\" id=\"submit\"/>
+				</fieldset>
+				</form>";
 		echo "
 		<div class=\"container\">
-			<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
-		</div>";
-
-			echo"<a class=\"aiuti\" href=\"#header\">Torna su</a>
+			<a href=\"./Serie.php?name=".DBAccess::createKey($Titolo)."\" class=\"cancelbtn\">Back</a>
 	</div>";
 	}
 ?>

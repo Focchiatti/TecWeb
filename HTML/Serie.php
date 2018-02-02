@@ -80,13 +80,22 @@ require_once "./DBAccess.php";
 	    $Text="Aggiungi alle mie serie";
 	}
 
+	if (isset($_SESSION["Admin"]) && $_SESSION["Admin"]==1) {
+	        echo "<a class=\"back\" href=\"Modserie.php?Titolo=".DBAccess::createKey($Titolo)."\">Modifica serie</a>";
+	}
+	$Text="Rimuovi dalle mie serie";
+	$check=false;
+	if(isset($_SESSION["Name"])&&$Db->RicercaSerieUtenteNonSeguita($_SESSION['Name'],$Titolo)){
+	    $check=true;
+	    $Text="Aggiungi alle mie serie";
+	}
 	if(isset($_SESSION["Name"])&& !$_SESSION["Admin"] ){
-	    echo
-	    "<form method = \"post\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $Key . "\" >
-		    <fieldset>
-			<input class='submitserie' title='Submit' type='submit' value='".$Text."'/>
-			<input type='hidden' name='Act' />
-			</fieldset>
+	    echo"
+	    <form method = \"post\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $Key . "\" >
+	    <fieldset>
+		<input class='submitserie' title='Submit' type='submit' value='".$Text."'/>
+		<input type='hidden' name='Act' />
+		</fieldset>
 		</form>";
 
 		if (isset($_POST['Act'])&&$check) {

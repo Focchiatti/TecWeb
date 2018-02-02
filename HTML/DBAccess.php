@@ -155,30 +155,32 @@ class DBAccess
 		}
 		else return false;
 	}
-	//NB query non runna se valori non sono cambiati
+
 	public function AggiornaSerie($Titolo,$Genere,$IData,$FData,$Stagioni,$Trama){
 		$dataInizio = explode('-',$IData);
-		$dataFine = explode('-',$FData);
 		$approved=false;
 		$null=false;
 		if(!isset($FData)||$FData==""){
-			$query="UPDATE SerieTV 
-			SET Genere='".$Genere."', DataInizio='".$IData."', DataFine=NULL, Stagioni='".$Stagioni."', Trama='".$Trama."'
-			WHERE Titolo='".$Titolo."' ";
 			$approved=true;
 			$null=true;
 		}
-		else if(checkdate($dataFine[1],$dataFine[2],$dataFine[0]))
-			$approved=true;
+		else {
+			$dataFine = explode('-',$FData);
+			if(checkdate($dataFine[1],$dataFine[2],$dataFine[0]))
+				$approved=true;
+		}
 		if($approved&&isset($Titolo)&&$Titolo!=""&&isset($Genere)&&$Genere!=""&&isset($IData)&&
 		checkdate($dataInizio[1],$dataInizio[2],$dataInizio[0])&&isset($Stagioni)&&$Stagioni!=""&&isset($Trama)&&$Trama!=""){
-			if(!$null){
+			
 				$query="UPDATE SerieTV 
-				SET Genere='".$Genere."', DataInizio='".$IData."', DataFine='".$FData."', Stagioni='".$Stagioni."', Trama='".$Trama."'
-				WHERE Titolo='".$Titolo."' ";
+				SET Genere=?, DataInizio=?, DataFine=?, Stagioni=?, Trama=?
+				WHERE Titolo LIKE ?";
+			$runnable=$this->connessione->prepare($query);
+			if(!$null){
+    		return $runnable->execute(array($Genere,$IData,$FData,$Stagioni,$Trama,$Titolo));
 			}
-            $runnable=$this->connessione->prepare($query);
-    		return $runnable->execute();
+			else
+				return $runnable->execute(array($Genere,$IData,NULL,$Stagioni,$Trama,$Titolo));
 		}
 		else return false;
 	}
