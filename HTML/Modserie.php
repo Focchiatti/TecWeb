@@ -7,12 +7,12 @@ require_once "./DBAccess.php";
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title> Modifica serie </title>
-	<meta name="title" content="Serie-a-mente modifica serie">
-	<meta name="description" content="Pagina di amministrazione che permette di modificare i campi dati di una serietv">
-	<meta name="keywords" content="modifica amministrazione serietv televisione memoria">
+	<meta name="title" content="Serie-a-mente modifica serie"/>
+	<meta name="description" content="Pagina di amministrazione che permette di modificare i campi dati di una serietv"/>
+	<meta name="keywords" content="modifica amministrazione serietv televisione memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
-	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
-	only screen and (max-device-width:480px)" />
+	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
+	only screen and (max-device-width:565px)" />
 	<link rel="stylesheet" type="text/css"  href="../CSS/styleprint.css" media="print" />
 </head>
 
@@ -121,6 +121,7 @@ require_once "./DBAccess.php";
 		echo "
 		<div class=\"container\">
 			<a href=\"./Serie.php?name=".DBAccess::createKey($Titolo)."\" class=\"cancelbtn\">Back</a>
+	</div>
 	</div>";
 	}
 ?>
@@ -128,6 +129,7 @@ require_once "./DBAccess.php";
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 </div>
 
 <div id="smallmenu">

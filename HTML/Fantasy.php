@@ -6,12 +6,12 @@ require_once "./DataWriter.php"
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title> Fantasy </title>
-	<meta name="title" content="Serie-a-mente fantasy">
-	<meta name="description" content="Pagina che mostra tutte le serietv di genere fantasy">
-	<meta name="keywords" content="fantasy fantastico serietv televisione memoria">
+	<meta name="title" content="Serie-a-mente fantasy"/>
+	<meta name="description" content="Pagina che mostra tutte le serietv di genere fantasy"/>
+	<meta name="keywords" content="fantasy fantastico serietv televisione memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
-	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
-	only screen and (max-device-width:480px)" />
+	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
+	only screen and (max-device-width:565px)" />
 	<link type="text/css" rel="stylesheet" href="../CSS/styleprint.css" media="print" />
 </head>
 
@@ -50,6 +50,8 @@ require_once "./DataWriter.php"
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
+	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 </div>
 
 <div id="smallmenu">

@@ -89,7 +89,7 @@ class DataWriter
 			echo 
 			"<li><a href=\"Login.php\">Le mie serie</a></li>
 			<li class=\"login\">
-			<a href=\"Login.php\"> Login </a>
+			<a href=\"Login.php\"> Login o Registrati</a>
 			</li>
 			";
 		}

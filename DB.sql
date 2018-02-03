@@ -67,7 +67,7 @@ insert into `Utente`(`NickName`,`Password`)values
 DROP TABLE IF EXISTS `Valutazione`;
  
 CREATE TABLE `Valutazione`(
-        `Titoloserie` varchar(30) NOT NULL,
+        `Titoloserie` varchar(100) NOT NULL,
     `Voto` smallint,
     `NickName` varchar(30),
     PRIMARY KEY (`Titoloserie`,`NickName`),

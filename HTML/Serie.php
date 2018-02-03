@@ -7,12 +7,12 @@ require_once "./DBAccess.php";
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Serie</title>
-	<meta name="title" content="Serie-a-mente serie specifica">
-	<meta name="description" content="Pagina che mostra la serietv in dettaglio">
-	<meta name="keywords" content="fantasy fantastico serietv televisione memoria">
+	<meta name="title" content="Serie-a-mente serie specifica"/>
+	<meta name="description" content="Pagina che mostra la serietv in dettaglio"/>
+	<meta name="keywords" content="fantasy fantastico serietv televisione memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
-	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:480px),
-	only screen and (max-device-width:480px)" />
+	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
+	only screen and (max-device-width:565px)" />
 	<link type="text/css" rel="stylesheet" href="../CSS/styleprint.css" media="print" />
 </head>
 
@@ -61,7 +61,7 @@ require_once "./DBAccess.php";
 		<h3>Genere ".$Genere."</h3>
 		<h4>".$Stag." Stagioni,  ".$DataI." - ".$DataF."</h4>
 		<p id=\"trama\">
-		<img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt=Immagine di copertina di '".$Titolo."' id='Copertina'/>
+		<img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt=\"Immagine di copertina di '".$Titolo."'\" id='Copertina'/>
 		".$Trama."</p>";
 
 	if(isset($_SESSION["UltimaRicerca"])){
@@ -83,7 +83,7 @@ require_once "./DBAccess.php";
 	    echo"
 	    <form method = \"post\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $Key . "\" >
 	    <fieldset>
-		<input class='submitserie' title='Submit' type='submit' value='".$Text."'/>
+		<input type='submit' class='submitserie' title='Submit' value='".$Text."'/>
 		<input type='hidden' name='Act' />
 		</fieldset>
 		</form>";
@@ -103,6 +103,8 @@ require_once "./DBAccess.php";
 
 	<div id=\"footer\">
 		<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang=\"en\">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
+		<a href=\"http://validator.w3.org/check?uri=referer\"> <img src=\"http://www.w3.org/Icons/valid-xhtml10\" alt=\"Valid XHTML 1.0 Strict\" height=\"31\" width=\"88\" /></a>
+		<a href=\"http://jigsaw.w3.org/css-validator/check/referer\"><img style=\"border:0;width:88px;height:31px\" src=\"http://jigsaw.w3.org/css-validator/images/vcss-blue\" alt=\"Valid CSS\" /></a>
 	</div>
 
 	<div id=\"smallmenu\">
