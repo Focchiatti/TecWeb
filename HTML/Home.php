@@ -12,6 +12,10 @@ require_once "./DataWriter.php"
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />
+	<link rel="stylesheet" type="text/css"  href="../CSS/stylephone.css" media="handheld, screen and (max-width:320px),
+	only screen and (max-device-width:320px)" />
+
+
 	<link rel="stylesheet" type="text/css"  href="../CSS/styleprint.css" media="print" />
 </head>
 
