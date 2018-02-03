@@ -46,10 +46,10 @@ require_once "./DataWriter.php";
 			if(isset($_GET['error']))
 				echo "<p>".$_GET['error']."</p>";
 			echo "<fieldset>
-				<label><strong>Username</strong></label>
-				<input type=\"text\" title=\"Username\" name=\"Name\" />
-				<label><strong>Password</strong></label>
-				<input type=\"password\" title=\"Password\" name=\"Password\"/>
+				<label for=\"name\"><strong>Username</strong></label>
+				<input type=\"text\" title=\"Username\" id=\"name\" name=\"Name\" />
+				<label for=\"password\"><strong>Password</strong></label> 
+				<input type=\"password\" title=\"Password\" id=\"password\" name=\"Password\"/>
 				<input type=\"submit\" id=\"submit\" title=\"Registrati\" value=\"Registrati\"/>
 				</fieldset>
 			</form>";

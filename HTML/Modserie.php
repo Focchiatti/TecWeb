@@ -76,10 +76,10 @@ require_once "./DBAccess.php";
 
 		echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
 			<fieldset>
-			<label><strong>Titolo</strong></label>
-			<input type=\"hidden\" title=\"Titolo\" name=\"Titolo\" value=\"".DBAccess::createKey($Titolo)."\"/>
+			<label for=\"titolo\"><strong>Titolo</strong></label>
+			<input type=\"hidden\" title=\"Titolo\" id=\"titolo\" name=\"Titolo\" value=\"".DBAccess::createKey($Titolo)."\"/>
 			<input type=\"text\" title=\"Titolo\" name=\"Titolo\" value=\"".$Titolo."\" disabled=\"disabled\"/>
-			<label> <strong>Genere: </strong></label>
+			<label for=\"selectgenere\"> <strong>Genere: </strong></label>
 			<select id='selectgenere' name='Genere' title='Genere'>";
 			if ($Genere=="Thriller")
 				echo "<option value=\"Thriller\" selected='selected'>Thriller</option>";
@@ -107,13 +107,13 @@ require_once "./DBAccess.php";
 				echo" <option value=\"Poliziesco\">Poliziesco</option>";
 	        echo
 	        	"</select>
-		        <label><strong>Data d'inizio (AAAA-MM-GG)</strong></label>
-				<input type=\"text\" title=\"Data di inizio\" name=\"IData\" value=\"".$DataI."\"/>
-		        <label><strong>Data di fine (opzionale AAAA-MM-GG)</strong></label>
-				<input type=\"text\" title=\"Data di fine\" name=\"FData\" value=\"".$DataF."\"/>
-		        <label><strong>Numero Stagioni</strong></label>
-				<input type=\"text\" title=\"Numero di stagioni\" name=\"Stagioni\" value=\"".$Stag."\"/>
-		        <label><strong>Trama</strong></label>
+		        <label for=\"datainizio\"><strong>Data d'inizio (AAAA-MM-GG)</strong></label>
+				<input type=\"text\" title=\"Data di inizio\" id=\"datainizio\" name=\"IData\" value=\"".$DataI."\"/>
+		        <label for=\"datafine\"><strong>Data di fine (opzionale AAAA-MM-GG)</strong></label>
+				<input type=\"text\" title=\"Data di fine\" id=\"datafine\" name=\"FData\" value=\"".$DataF."\"/>
+		        <label for=\"stag\"><strong>Numero Stagioni</strong></label>
+				<input type=\"text\" title=\"Numero di stagioni\" id=\"stag\" name=\"Stagioni\" value=\"".$Stag."\"/>
+		        <label for=\"inputbox\"><strong>Trama</strong></label>
 				<textarea id='inputbox' title=\"Trama\" name=\"Trama\" rows=\"15\" cols=\"10\" >".$Trama."</textarea>
 				<input type=\"submit\" title=\"Submit\" value=\"Submit\" id=\"submit\"/>
 				</fieldset>

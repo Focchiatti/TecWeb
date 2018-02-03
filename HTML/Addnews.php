@@ -75,14 +75,14 @@ require_once "./DataWriter.php";
             $Series=$Db->Get_Serie();
 			echo "
 			<fieldset>
-				<label><strong>Titolo</strong></label>
-				<input type=\"text\" title=\"Titolo\" name=\"Titolo\"/>
-                <label><strong>Data</strong></label>
-				<input type=\"text\" title=\"Data\" name=\"Data\"/>
-                <label><strong>Contenuto</strong></label>
+				<label for=\"titolo\"><strong>Titolo</strong></label>
+				<input type=\"text\" title=\"Titolo\" id=\"titolo\" name=\"Titolo\"/>
+                <label for=\"data\"><strong>Data</strong></label>
+				<input type=\"text\" title=\"Data\" id=\"data\" name=\"Data\"/>
+                <label for=\"inputbox\"><strong>Contenuto</strong></label>
                 <textarea id='inputbox' title=\"Contenuto\" name=\"Contenuto\" rows=\"15\" cols=\"10\"></textarea>
-                <label><strong>Serie</strong></label>
-				<select name=\"Serie\" title=\"Serie\">";
+                <label for=\"serie\"><strong>Serie</strong></label>
+				<select name=\"Serie\" title=\"Serie\" id=\"serie\">";
 	            foreach($Series as $serie){
 	                echo"<option value='".$serie[0]."'> ".DBAccess::RetrieveData($serie[0])."</option>";
 	            }

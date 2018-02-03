@@ -85,9 +85,9 @@ if(isset($_POST['Titolo'])){
 }
 echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
 		<fieldset>
-		<label><strong>Titolo</strong></label>
-		<input type=\"text\" title=\"Titolo\" name=\"Titolo\"/>
-		<label> <strong>Genere: </strong></label>
+		<label for=\"titolo\"><strong>Titolo</strong></label>
+		<input type=\"text\" title=\"Titolo\" id=\"titolo\" name=\"Titolo\"/>
+		<label for=\"selectgenere\"> <strong>Genere: </strong></label>
 		<select id='selectgenere' name='Genere' title='Genere'>
             <option value=\"Thriller\">Thriller</option>
             <option value=\"Drammatico\">Drammatico</option>
@@ -96,16 +96,16 @@ echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"containe
             <option value=\"Fantascienza\">Fantascienza</option>
             <option value=\"Poliziesco\">Poliziesco</option>
             </select>
-        <label><strong>Data d'inizio (AAAA-MM-GG)</strong></label>
-		<input type=\"text\" title=\"Data di inizio\" name=\"IData\"/>
-        <label><strong>Data di fine (opzionale AAAA-MM-GG)</strong></label>
-		<input type=\"text\" title=\"Data di fine\" name=\"FData\" value=\"\"/>
-        <label><strong>Numero Stagioni</strong></label>
-		<input type=\"text\" title=\"Numero di stagioni\" name=\"Stagioni\"/>
-        <label><strong>Trama</strong></label>
+        <label for=\"datai\"><strong>Data d'inizio (AAAA-MM-GG)</strong></label>
+		<input type=\"text\" title=\"Data di inizio\" id=\"datai\" name=\"IData\"/>
+        <label for=\"dataf\"><strong>Data di fine (opzionale AAAA-MM-GG)</strong></label>
+		<input type=\"text\" title=\"Data di fine\" id=\"dataf\" name=\"FData\" value=\"\"/>
+        <label for=\"stag\"><strong>Numero Stagioni</strong></label>
+		<input type=\"text\" title=\"Numero di stagioni\" id=\"stag\" name=\"Stagioni\"/>
+        <label for=\"inputbox\"><strong>Trama</strong></label>
 		<textarea id='inputbox' title=\"Trama\" name=\"Trama\" rows=\"15\" cols=\"10\"></textarea>
-		<label><strong>Immagine della serie</strong></label>
-		<input type='file' title=\"Immagine della serie\" name='userfile'/>
+		<label for=\"img\"><strong>Immagine della serie</strong></label>
+		<input type='file' title=\"Immagine della serie\" id=\"img\" name='userfile'/>
 		<input type=\"submit\" title=\"Submit\" value=\"Submit\" id=\"submit\"/>
 		</fieldset>
 	</form>";

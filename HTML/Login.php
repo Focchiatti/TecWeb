@@ -45,10 +45,10 @@ require_once "./DataWriter.php";
 			if(isset($_GET['error']))
 				echo "<p>Username o password sbagliati</p>";
 			echo "<fieldset>
-				<label><strong>Username</strong></label>
-				<input type=\"text\" title=\"Username\" name=\"Name\" />
-				<label><strong>Password</strong></label>
-				<input type=\"password\" title=\"Password\" name=\"Password\"/>
+				<label for=\"user\"><strong>Username</strong></label>
+				<input type=\"text\" title=\"Username\" id=\"user\" name=\"Name\" />
+				<label for=\"pwd\"><strong>Password</strong></label>
+				<input type=\"password\" title=\"Password\" id=\"pwd\" name=\"Password\"/>
 				<input type=\"submit\" id=\"submit\" title=\"Login\" value=\"Login\"/>
 				</fieldset>
 			</form>";
