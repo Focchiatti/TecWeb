@@ -8,7 +8,7 @@ require_once "./DataWriter.php";
 	<title> Pagina utente </title>
 	<meta name="title" content="Serie-a-mente pagina utente"/>
 	<meta name="description" content="Pagina che mostra le serietv seguite dall'utente e il relativo voto"/>
-	<meta name="keywords" content="utente user voti televisione memoria"/>
+	<meta name="keywords" content="utente, user, voti, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />

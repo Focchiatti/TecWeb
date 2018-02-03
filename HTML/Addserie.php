@@ -8,7 +8,7 @@ require_once "./DataWriter.php";
 	<title>Aggiungi serie</title>
 	<meta name="title" content="Serie-a-mente aggiungi serie"/>
 	<meta name="description" content="Pagina che permette di aggiungere al database una nuova serie"/>
-	<meta name="keywords" content="amministrazione nuova serietv televisione memoria"/>
+	<meta name="keywords" content="amministrazione, nuova, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />

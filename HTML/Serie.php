@@ -9,7 +9,7 @@ require_once "./DBAccess.php";
 	<title>Serie</title>
 	<meta name="title" content="Serie-a-mente serie specifica"/>
 	<meta name="description" content="Pagina che mostra la serietv in dettaglio"/>
-	<meta name="keywords" content="fantasy fantastico serietv televisione memoria"/>
+	<meta name="keywords" content="fantasy, fantastico, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />

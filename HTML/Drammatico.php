@@ -8,7 +8,7 @@ require_once "./DataWriter.php"
 	<title> Drammatico </title>
 	<meta name="title" content="Serie-a-mente drammatico"/>
 	<meta name="description" content="Pagina che mostra tutte le serietv di genere drammatico"/>
-	<meta name="keywords" content="drammatico drama serietv televisione memoria"/>
+	<meta name="keywords" content="drammatico, drama, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />

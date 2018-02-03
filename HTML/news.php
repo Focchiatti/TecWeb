@@ -17,7 +17,7 @@ else
 	<title>Notizie</title>
 	<meta name="title" content="Serie-a-mente notizie"/>
 	<meta name="description" content="Pagina che mostra in ordine cronologico le notizie riguardanti le serietv"/>
-	<meta name="keywords" content="notizie news televisione memoria"/>
+	<meta name="keywords" content="notizie, news, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />

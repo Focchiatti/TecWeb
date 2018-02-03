@@ -9,7 +9,7 @@ require_once "./DBAccess.php";
 	<title> Modifica serie </title>
 	<meta name="title" content="Serie-a-mente modifica serie"/>
 	<meta name="description" content="Pagina di amministrazione che permette di modificare i campi dati di una serietv"/>
-	<meta name="keywords" content="modifica amministrazione serietv televisione memoria"/>
+	<meta name="keywords" content="modifica, amministrazione, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />

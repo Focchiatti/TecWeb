@@ -5,7 +5,7 @@
 	<title> Registrazione Effettuata </title>
 	<meta name="title" content="Serie-a-mente registrazione effettuata"/>
 	<meta name="description" content="Pagina di conferma registrazione"/>
-	<meta name="keywords" content="registrazione serietv televisione memoria"/>
+	<meta name="keywords" content="registrazione, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />
