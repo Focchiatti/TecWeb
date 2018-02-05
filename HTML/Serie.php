@@ -89,7 +89,7 @@ require_once "./DBAccess.php";
 		</form>";
 
 		if (isset($_POST['Act'])&&$check) {
-		    $Db->AggiungiMieSerie($Key, $_SESSION["Name"]);
+		    $Db->AggiungiMieSerie($serie[0]["Titolo"], $_SESSION["Name"]);
 		    header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $Key );
 		}
 		else if(isset($_POST['Act'])){
@@ -119,6 +119,7 @@ require_once "./DBAccess.php";
 	$Db=null;
 	echo "
 	</ul>
+    
 	</div>
 	</body>
 	</html>";

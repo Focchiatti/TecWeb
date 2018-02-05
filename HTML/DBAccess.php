@@ -5,7 +5,7 @@ class DBAccess
 	const HOST_DB="localhost";
 	const USERNAME="root";
 	const PASSWORD="";
-	const DATABASE_NAME="vmarcon";
+	const DATABASE_NAME="tecweb";
 	public $connessione;
 	
 	function __construct() {

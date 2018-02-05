@@ -23,7 +23,7 @@ require_once "./DBAccess.php";
 </div>
 
 <div id="breadcrumbs">
-	<p>Ti trovi in:<span xml:lang="en">Home</span> >> Modifica Serie</p>
+	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Modifica Serie</p>
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 

@@ -22,7 +22,7 @@ require_once "./DataWriter.php";
 </div>
 
 <div id="breadcrumbs">
-	<p>Ti trovi in:<span xml:lang="en">Home</span> >> Aggiungi Notizie</p>
+	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Aggiungi Notizie</p>
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
@@ -37,7 +37,7 @@ require_once "./DataWriter.php";
 </div>
 <?php 
 	if(isset($_GET['error']))
-		echo "<p>".$_GET['error']."</p>";
+		echo "<div id=\"errore\"><p>".$_GET['error']."</p></div>";
 	session_start();
 
     if(!isset($_SESSION['CallingPage'])){
@@ -52,40 +52,39 @@ require_once "./DataWriter.php";
         $Db=new DBAccess();
         if($Db->AggiungiNews($_POST['Titolo'],$_POST['Data'],$_POST['Contenuto'],$_POST['Serie'])){
         	$error="Notizia aggiunta";
-        	unset($_POST['Titolo']);
-        	unset($_POST['Data']);
-        	unset($_POST['Contenuto']);
-        	unset($_POST['Serie']);
         	header("location: ./Addnews.php?error=".$error);
+            unset($_POST['Titolo']);
+            unset($_POST['Data']);
+            unset($_POST['Contenuto']);
+            unset($_POST['Serie']);
         }
         else {
-        	$error="Campi mal compilati";
-        	unset($_POST['Titolo']);
-        	unset($_POST['Data']);
-        	unset($_POST['Contenuto']);
-        	unset($_POST['Serie']);
+            if ($_POST['Titolo']=="") $error="Errore: titolo assente";
+            else if ($_POST['Data']=="") $error="Errore: data assente";
+            else if ($_POST['Contenuto']=="") $error="Errore: contenuto assente";
+            else $error="Errore: La data non è nel formato corretto, AA-MM-GG";
         	header("location: ./Addnews.php?error=".$error);
         }
-    }
+    }   
 	else{
 		echo "
 		<div id=\"content\">
 			<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">";
             $Db=new DBAccess();
             $Series=$Db->Get_Serie();
-			echo "
+            echo "
 			<fieldset>
 				<label for=\"titolo\"><strong>Titolo</strong></label>
 				<input type=\"text\" title=\"Titolo\" id=\"titolo\" name=\"Titolo\"/>
-                <label for=\"data\"><strong>Data</strong></label>
+                <label for=\"data\"><strong>Data (AA-MM-GG)</strong></label>
 				<input type=\"text\" title=\"Data\" id=\"data\" name=\"Data\"/>
                 <label for=\"inputbox\"><strong>Contenuto</strong></label>
                 <textarea id='inputbox' title=\"Contenuto\" name=\"Contenuto\" rows=\"15\" cols=\"10\"></textarea>
                 <label for=\"serie\"><strong>Serie</strong></label>
 				<select name=\"Serie\" title=\"Serie\" id=\"serie\">";
 	            foreach($Series as $serie){
-	                echo"<option value='".$serie[0]."'> ".DBAccess::RetrieveData($serie[0])."</option>";
-	            }
+                    echo"<option value='".$serie[0]."'> ".DBAccess::RetrieveData($serie[0])."</option>";
+                }
 				echo"</select>
 				<input type=\"submit\" title=\"Submit\" value=\"Submit\" id=\"submit\"/>
 			</fieldset>
@@ -98,6 +97,8 @@ require_once "./DataWriter.php";
 				<a class=\"aiuti\" href=\"#header\">Torna su</a>
 		</div>";
 	}
+
+    
 ?>
 
 

@@ -22,7 +22,7 @@ require_once "./DataWriter.php";
 </div>
 
 <div id="breadcrumbs">
-	<p>Ti trovi in:<span xml:lang="en">Home</span> >> Aggiungi Serie</p>
+	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Aggiungi Serie</p>
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
@@ -34,13 +34,11 @@ require_once "./DataWriter.php";
 <ul>
 	<li><a href="Home.php">Home</a></li>
 </ul>
-</div>
-
-<div id="content">	
+</div>	
 <?php 
 
 if(isset($_GET['error']))
-	echo "<p>".$_GET['error']."</p>";
+	echo "<div id=\"errore\"><p>".$_GET['error']."</p></div>";
 session_start();
 
 if(!isset($_SESSION['CallingPage'])){
@@ -56,25 +54,18 @@ if(isset($_POST['Titolo'])){
 	$Titolo=DBAccess::createKey($_POST['Titolo']);
 	$error=DataWriter::UploadFile($_FILES['userfile'],strtolower($Titolo));
 	if($error==""&&!($Db->AggiungiSerie($Titolo,$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama']))){
-		
 		$error="Campi mal compilati";
 		unlink ( "./../Img/".$Titolo.".jpg");
-        unset($_POST['Titolo']);
-        unset($_POST['Genere']);
-        unset($_POST['IData']);
-        unset($_POST['FData']);
-        unset($_POST['Stagioni']);
-        unset($_POST['Trama']);
 		header("location:./Addserie.php?error=".$error);
     }
-
 	else{
-        unset($_POST['Titolo']);
-        unset($_POST['Genere']);
-        unset($_POST['IData']);
-        unset($_POST['FData']);
-        unset($_POST['Stagioni']);
-        unset($_POST['Trama']);
+        if ($_POST['Titolo']=="") $error="Errore: titolo assente";
+        else if ($_POST['IData']=="") $error="Errore: data d'inizio assente";
+        else if ($_POST['Stagioni']=="") $error="Errore: numero stagioni assente";
+        else if ($_POST['Trama']=="") $error="Errore: trama assente";
+        else if ($_POST['IData']!="") $error="La data d'inizio non è nel formato corretto, AA-MM-GG";
+        else if ($_POST['FData']!="") $error="La data di fine non è nel formato corretto, AA-MM-GG";
+        
 		if($error!="")
         header("location:./Addserie.php?error=".$error);
         else{
@@ -82,8 +73,14 @@ if(isset($_POST['Titolo'])){
         	header("location:./Addserie.php?error=".$error);
         }
 	}
+    unset($_POST['Titolo']);
+    unset($_POST['Genere']);
+    unset($_POST['IData']);
+    unset($_POST['FData']);
+    unset($_POST['Stagioni']);
+    unset($_POST['Trama']);
 }
-echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
+echo "<div id=\"content\"><form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
 		<fieldset>
 		<label for=\"titolo\"><strong>Titolo</strong></label>
 		<input type=\"text\" title=\"Titolo\" id=\"titolo\" name=\"Titolo\"/>

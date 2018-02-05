@@ -104,12 +104,12 @@ class DataWriter
             }
 			else if (basename($_SERVER['PHP_SELF'])== 'Mypage.php'){
 			echo "
-			<li><p>Le serie di:".$_SESSION["Name"]."</p></li>
+			<li><p>Le serie di: ".$_SESSION["Name"]."</p></li>
 			<li class=\"login\"><a href=\"Logout.php\">Logout</a></li>";
 			}
 			else {
 				echo "
-			<li><a href= \"Mypage.php\">Le serie di:".$_SESSION["Name"]."</a></li>
+			<li><a href= \"Mypage.php\">Le serie di: ".$_SESSION["Name"]."</a></li>
 			<li class=\"login\"><a href=\"Logout.php\">Logout</a></li>";
 			}
 		}
