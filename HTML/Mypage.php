@@ -27,12 +27,11 @@ require_once "./DataWriter.php";
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
-<div id="hamburger">
-	<a href="#smallmenu">&#9776;</a>
-</div> 
 
 <div id="menu">
-<ul>
+	<label id="hamburger" for="nav-trigger">&#9776;</label>		
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<ul class="nav-item">
 	<li><a href="Home.php">Home</a></li>
 	<li><a href="news.php">News</a></li>
 	<?php
@@ -99,17 +98,5 @@ require_once "./DataWriter.php";
 	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 </div>
 
-<div id="smallmenu">
-<ul>
-	<li><a href="Home.php">Home</a></li>
-	<li><a href="news.php">News</a></li>	
-	<?php
-		DataWriter::LogInButton();
-		$_SESSION["UltimaRicerca"]=null;
-	?>
-	<li id="up"><a href="#header">Torna su</a></li>
-<?php $Db=null?>
-</ul>
-</div>
 </body>
 </html>

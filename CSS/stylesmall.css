@@ -17,34 +17,39 @@ html{
 	width: auto;
 }
 
-#menu {display: none}
+.nav-trigger ~ .nav-item{
+	display: none;
 
-#smallmenu{
-	display: inline-block;
+}
+
+.nav-trigger:checked ~ .nav-item{
+	display:block;
+	
+}
+#menu{
 	height: auto;
 	float: none;
 	width: 100%;
-	border-top: 1px solid #DDD;
 	background-color: #4D4D4D;
-	margin-bottom: 28em;
+
 }
 
-#smallmenu .login{
+#menu .login{
 	display: block;
 	float: none;
 }
 
-#smallmenu li{
+#menu li{
 	float: none;
 }
 
-#smallmenu li a {
+#menu li a {
 	padding: 0.3em;
 	color:#EDF2F7;
 	display: block;
 }
 
-#smallmenu li p {
+#menu li p {
 	padding: 0.3em;
 	color: #EDF2F7;
 	display: block;
@@ -61,7 +66,7 @@ html{
 	float:right;
 }
 
-#smallmenu ul{
+#menu ul{
 	list-style-type: none;
     margin: 0;
     padding: 0;
@@ -69,7 +74,7 @@ html{
     text-align: center;
 }
 
-#smallmenu a:active{
+#menu a:active{
 	background-color: #9C9C9C;
 }
 
@@ -78,7 +83,6 @@ html{
 	width: auto;
 	height: auto;
 	background-color: #4D4D4D;
-	border-bottom: 1px solid #DDD;
 	color: #EDF2F7;
 	padding-left: 0.3em;
 	font-weight: bold;
@@ -86,6 +90,7 @@ html{
 }
 
 #hamburger a {
+
 	color: #EDF2F7;
 	text-decoration:none;
 }

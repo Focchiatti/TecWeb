@@ -12,6 +12,10 @@ html, body {
     font-size: 100%;
     min-height: 100%;
 }
+.nav-trigger
+{
+	display: none;
+}
 
 html{
 	border-left: 1px solid #DDD;
@@ -86,9 +90,6 @@ html{
     background-color: #9C9C9C;
 }
 
-#smallmenu {
-	display: none;
-}
 
 #up {
 	display: none;
@@ -461,12 +462,4 @@ input[type=text], input[type=password] {
 
 .link{
 	color: #4D4D4D;
-}
-
-#errore{
-    text-align: center;
-}
-
-a:visited{
-    color: #A50600;
 }

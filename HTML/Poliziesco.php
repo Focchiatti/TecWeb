@@ -26,12 +26,10 @@ require_once "./DataWriter.php"
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
-<div id="hamburger">
-	<a href="#smallmenu">&#9776;</a>
-</div> 
-
 <div id="menu">
-<ul>
+	<label id="hamburger" for="nav-trigger">&#9776;</label>		
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<ul class="nav-item">
 	<li><a href="Home.php">Home</a></li>
 	<li><a href="news.php">News</a></li>
 	<?php

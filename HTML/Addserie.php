@@ -22,23 +22,31 @@ require_once "./DataWriter.php";
 </div>
 
 <div id="breadcrumbs">
-	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Aggiungi Serie</p>
+	<p>Ti trovi in:<span xml:lang="en">Home</span> >> Aggiungi Serie</p>
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
-<div id="hamburger">
-	<a href="#smallmenu">&#9776;</a>
-</div> 
+
 
 <div id="menu">
-<ul>
+
+	<label id="hamburger" for="nav-trigger">&#9776;</label>		
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<ul class="nav-item">
 	<li><a href="Home.php">Home</a></li>
+		<li><a href="news.php">News</a></li>
+	<?php
+		DataWriter::LogInButton();
+		$_SESSION["UltimaRicerca"]=null;
+	?>
 </ul>
-</div>	
+</div>
+
+<div id="content">	
 <?php 
 
 if(isset($_GET['error']))
-	echo "<div id=\"errore\"><p>".$_GET['error']."</p></div>";
+	echo "<p>".$_GET['error']."</p>";
 session_start();
 
 if(!isset($_SESSION['CallingPage'])){
@@ -54,18 +62,25 @@ if(isset($_POST['Titolo'])){
 	$Titolo=DBAccess::createKey($_POST['Titolo']);
 	$error=DataWriter::UploadFile($_FILES['userfile'],strtolower($Titolo));
 	if($error==""&&!($Db->AggiungiSerie($Titolo,$_POST['Genere'],$_POST['IData'],$_POST['FData'],$_POST['Stagioni'],$_POST['Trama']))){
+		
 		$error="Campi mal compilati";
 		unlink ( "./../Img/".$Titolo.".jpg");
+        unset($_POST['Titolo']);
+        unset($_POST['Genere']);
+        unset($_POST['IData']);
+        unset($_POST['FData']);
+        unset($_POST['Stagioni']);
+        unset($_POST['Trama']);
 		header("location:./Addserie.php?error=".$error);
     }
+
 	else{
-        if ($_POST['Titolo']=="") $error="Errore: titolo assente";
-        else if ($_POST['IData']=="") $error="Errore: data d'inizio assente";
-        else if ($_POST['Stagioni']=="") $error="Errore: numero stagioni assente";
-        else if ($_POST['Trama']=="") $error="Errore: trama assente";
-        else if ($_POST['IData']!="") $error="La data d'inizio non è nel formato corretto, AA-MM-GG";
-        else if ($_POST['FData']!="") $error="La data di fine non è nel formato corretto, AA-MM-GG";
-        
+        unset($_POST['Titolo']);
+        unset($_POST['Genere']);
+        unset($_POST['IData']);
+        unset($_POST['FData']);
+        unset($_POST['Stagioni']);
+        unset($_POST['Trama']);
 		if($error!="")
         header("location:./Addserie.php?error=".$error);
         else{
@@ -73,14 +88,8 @@ if(isset($_POST['Titolo'])){
         	header("location:./Addserie.php?error=".$error);
         }
 	}
-    unset($_POST['Titolo']);
-    unset($_POST['Genere']);
-    unset($_POST['IData']);
-    unset($_POST['FData']);
-    unset($_POST['Stagioni']);
-    unset($_POST['Trama']);
 }
-echo "<div id=\"content\"><form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
+echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\" enctype='multipart/form-data'>
 		<fieldset>
 		<label for=\"titolo\"><strong>Titolo</strong></label>
 		<input type=\"text\" title=\"Titolo\" id=\"titolo\" name=\"Titolo\"/>
@@ -121,19 +130,8 @@ echo "<a class=\"aiuti\" href=\"#header\">Torna su</a>
 	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
 	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 </div>
-
-<div id="smallmenu">
-<ul>
-	<li><a href="Home.php">Home</a></li>
-	<li><a href="news.php">News</a></li>
-		
-	<?php
-		DataWriter::LogInButton();
-		$_SESSION["UltimaRicerca"]=null;
-	?>
-	<li id="up"><a href="#header">Torna su</a></li>
-	<?php $Db=null;?>
-</ul>
-</div>
+<?php
+ $Db=null;
+?>
 </body>
 </html>
