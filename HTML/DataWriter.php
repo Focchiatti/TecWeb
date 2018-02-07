@@ -95,10 +95,28 @@ class DataWriter
 		}
 		else{
             if($_SESSION["Admin"]==1){
-            echo "
-            <li><a href=\"Addserie.php\">Aggiungi serie</a></li>
-            <li><a href=\"Addnews.php\">Aggiungi notizie</a></li>
-
+            	if(basename($_SERVER['PHP_SELF'])== 'Addserie.php'){
+		           	echo "
+		            <li><p>Aggiungi serie</p></li>
+		            <li><a href=\"Addnews.php\">Aggiungi notizie</a></li>
+		            ";
+	        	}
+	        	else if(basename($_SERVER['PHP_SELF'])== 'Addnews.php'){
+		           	echo "
+		            <li><a href=\"Addserie.php\">Aggiungi serie</a></li>
+		            <li><p>Aggiungi notizie</p></li>
+		            ";
+	        	}
+	        	else
+	        	{
+	        		echo "
+		            <li><a href=\"Addserie.php\">Aggiungi serie</a></li>
+		            <li><a href=\"Addnews.php\">Aggiungi notizie</a></li>
+		            ";
+		            
+	        	}
+            echo
+            "
             <li class=\"login\"><a href=\"Logout.php\">Logout</a></li>";
 
             }

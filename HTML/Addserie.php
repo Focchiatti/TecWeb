@@ -47,7 +47,6 @@ require_once "./DataWriter.php";
 
 if(isset($_GET['error']))
 	echo "<p>".$_GET['error']."</p>";
-session_start();
 
 if(!isset($_SESSION['CallingPage'])){
     $_SESSION['CallingPage']="./Home.php";
