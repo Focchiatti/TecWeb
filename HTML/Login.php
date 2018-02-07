@@ -40,11 +40,11 @@ require_once "./DataWriter.php";
 	session_start();
 	if(!isset($_POST["Name"])){
 		echo 
-		"<div id=\"content\">
-			<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">";
+		"<div id=\"content\">";
 			if(isset($_GET['error']))
-				echo "<p>Username o password sbagliati</p>";
-			echo "<fieldset>
+				echo "<div id=\"errore\"> <p>Username o password sbagliati</p></div>";
+			echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">
+				<fieldset>
 				<label for=\"user\"><strong>Username</strong></label>
 				<input type=\"text\" title=\"Username\" id=\"user\" name=\"Name\" />
 				<label for=\"pwd\"><strong>Password</strong></label>

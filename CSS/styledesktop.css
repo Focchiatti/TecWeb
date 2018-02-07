@@ -472,6 +472,6 @@ input[type=text], input[type=password] {
 	color: #000000;
 } 
  
-#errore{ 
+#errore p{ 
     text-align: center; 
 } 

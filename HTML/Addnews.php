@@ -22,7 +22,7 @@ require_once "./DataWriter.php";
 </div>
 
 <div id="breadcrumbs">
-	<p>Ti trovi in:<span xml:lang="en">Home</span> >> Aggiungi Notizie</p>
+	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Aggiungi Notizie</p>
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
@@ -40,8 +40,6 @@ require_once "./DataWriter.php";
 </ul>
 </div>
 <?php 
-	if(isset($_GET['error']))
-		echo "<p>".$_GET['error']."</p>";
 
     if(!isset($_SESSION['CallingPage'])){
         $_SESSION['CallingPage']="./Home.php";
@@ -54,7 +52,7 @@ require_once "./DataWriter.php";
     if(isset($_POST['Titolo'])&&isset($_POST['Data'])&&isset($_POST['Contenuto'])&&isset($_POST['Serie'])) {
         $Db=new DBAccess();
         if($Db->AggiungiNews($_POST['Titolo'],$_POST['Data'],$_POST['Contenuto'],$_POST['Serie'])){
-        	$error="Notizia aggiunta";
+        	$error=DBAccess::createKey("Notizia aggiunta");
         	unset($_POST['Titolo']);
         	unset($_POST['Data']);
         	unset($_POST['Contenuto']);
@@ -62,7 +60,10 @@ require_once "./DataWriter.php";
         	header("location: ./Addnews.php?error=".$error);
         }
         else {
-        	$error="Campi mal compilati";
+        	if ($_POST['Titolo']=="") $error=DBAccess::createKey("Errore: titolo assente"); 
+            else if ($_POST['Data']=="") $error=DBAccess::createKey("Errore: data assente"); 
+            else if ($_POST['Contenuto']=="") $error=DBAccess::createKey("Errore: contenuto assente"); 
+            else $error=DBAccess::createKey("Errore: La data non è nel formato corretto, AAAA-MM-GG"); 
         	unset($_POST['Titolo']);
         	unset($_POST['Data']);
         	unset($_POST['Contenuto']);
@@ -72,15 +73,17 @@ require_once "./DataWriter.php";
     }
 	else{
 		echo "
-		<div id=\"content\">
-			<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">";
+		<div id=\"content\">";
+		if(isset($_GET['error']))
+		echo "<div id=\"errore\"><p>".DBAccess::RetrieveData($_GET['error'])."</p></div>"; 
+			echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">";
             $Db=new DBAccess();
             $Series=$Db->Get_Serie();
 			echo "
 			<fieldset>
 				<label for=\"titolo\"><strong>Titolo</strong></label>
 				<input type=\"text\" title=\"Titolo\" id=\"titolo\" name=\"Titolo\"/>
-                <label for=\"data\"><strong>Data</strong></label>
+                <label for=\"data\"><strong>Data  (AAAA-MM-GG)</strong></label>
 				<input type=\"text\" title=\"Data\" id=\"data\" name=\"Data\"/>
                 <label for=\"inputbox\"><strong>Contenuto</strong></label>
                 <textarea id='inputbox' title=\"Contenuto\" name=\"Contenuto\" rows=\"15\" cols=\"10\"></textarea>

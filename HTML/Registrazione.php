@@ -43,11 +43,11 @@ require_once "./DataWriter.php";
 	session_start();
 	if(!isset($_POST['Name'])) {
 		echo 
-		"<div id=\"content\">
-			<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">";
+		"<div id=\"content\">";
 			if(isset($_GET['error']))
-				echo "<p>".$_GET['error']."</p>";
-			echo "<fieldset>
+				echo "<div id=\"errore\"> <p>".DBAccess::RetrieveData($_GET['error'])."</p></div>";
+			echo "<form method=\"post\" action=\"".$_SERVER['PHP_SELF']."\" class=\"container\">
+				<fieldset>
 				<label for=\"name\"><strong>Username</strong></label>
 				<input type=\"text\" title=\"Username\" id=\"name\" name=\"Name\" />
 				<label for=\"password\"><strong>Password</strong></label> 
@@ -68,21 +68,21 @@ require_once "./DataWriter.php";
 		$utenti=$Db->ReadUtenti();
 		$name=strtolower($_POST['Name']);
 		$utenti=array_map('strtolower',$utenti);
-		if(!in_array($name,$utenti )) {
+		if(!in_array($name,$utenti)) {
 			if($Db->RegistraUtente($_POST['Name'],$_POST['Password'])) {
 				unset($_POST['Name']);
         		unset($_POST['Password']);
 				header("location: ./RegistrazioneEffettuata.php");
 			}
 			else{
-				$error="Compilare tutti i campi";
+				$error=DBAccess::createKey("Compilare tutti i campi");
 				unset($_POST['Name']);
         		unset($_POST['Password']);
 				header("location: ./Registrazione.php?error=".$error);
 			}
 		}
 		else {
-			$error="Username già presente";
+			$error=DBAccess::createKey("Username già presente");
 			unset($_POST['Name']);
         	unset($_POST['Password']);
 			header("location: ./Registrazione.php?error=".$error);

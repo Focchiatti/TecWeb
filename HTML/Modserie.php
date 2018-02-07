@@ -23,7 +23,7 @@ require_once "./DBAccess.php";
 </div>
 
 <div id="breadcrumbs">
-	<p>Ti trovi in:<span xml:lang="en">Home</span> >> Modifica Serie</p>
+	<p>Ti trovi in: <span xml:lang="en">Home</span> >> Modifica Serie</p>
 	<a class="aiuti" href="#content">Salta la navigazione</a>
 </div>
 
@@ -121,6 +121,7 @@ require_once "./DBAccess.php";
 		<div class=\"container\">
 			<a href=\"./Serie.php?name=".DBAccess::createKey($Titolo)."\" class=\"cancelbtn\">Back</a>
 	</div>
+		<a class=\"aiuti\" href=\"#header\">Torna su</a>
 	</div>";
 	}
 ?>
