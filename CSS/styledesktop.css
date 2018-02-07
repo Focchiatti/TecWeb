@@ -28,7 +28,7 @@ html{
 }
 
 #header h1{
-	color: #4D4D4D;
+	color: #000000;
 	font-size: 4em;
 	font-weight: bold;
 	padding:0.5em;
@@ -39,7 +39,7 @@ html{
 	border-top: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
 	width: auto;
-	color: #4D4D4D;
+	color: #000000;
 	font-weight: bold;
 	padding-left: 0.5em;
 }
@@ -101,7 +101,7 @@ html{
 #content {	
 	display: inline-block;
 	float:right;
-	color: #4D4D4D;
+	color: #000000;
 	width:100%;
 	text-align:center;
 	margin-bottom: 10%;
@@ -133,7 +133,7 @@ html{
 }
 
 .Serie h2{
-	color: #4D4D4D;
+	color: #000000;
 	font-weight: bold;
 	padding:1em 0.5em;
 }
@@ -144,13 +144,16 @@ html{
 	display: block;
 }
 .Serie a{
-	color: #4D4D4D;
+	color: #000000;
 	text-align: center;
 	display: block;
 }
 
 #ListaSerie{
 	padding:0.3em;
+}
+#ListaSerie a:visited{
+	color:#4D4D4D;
 }
 
 #ListaSerie p{
@@ -162,13 +165,13 @@ html{
 	margin-bottom:0.7em;
 }
 .ELSerie a{
-	color: #4D4D4D;
+	color: #000000;
 	display: inline;
 }
 
 .ELSerie p{
 	display: inline;
-	color: #4D4D4D;
+	color: #000000;
 }
 
 #RisultatoRicerca{
@@ -180,9 +183,11 @@ html{
 }
 
 #RisultatoRicerca a{
+	color: #000000;
+}
+#RisultatoRicerca a:visited{
 	color: #4D4D4D;
 }
-
 .notizia h2{
 	padding: 0.5em 1.5em 0.5em 1.5em;
 }
@@ -201,7 +206,7 @@ html{
 	padding: 1em;
 }
 .lemieserie a {
-	color: #4D4D4D;
+	color: #000000;
 	display: inline;
 }
 
@@ -368,14 +373,14 @@ input[type=text], input[type=password] {
 }
 
 #pageNavigation a{
-	color:#4D4D4D;
+	color:#000000;
 }
 
 #pageNavigation a:visited{
 	float:left;
 	padding:0.5em;
 	margin-left:0.5em;
-	color:#A50600;
+	color:#4D4D4D;
 }
 
 .ImgSerie {
@@ -391,7 +396,8 @@ input[type=text], input[type=password] {
 }
 
 .back  {
-	display: inline-block;
+	display:inline-block;
+	min-width: 8em;
 	width: 20%;
 	margin: auto;
 	clear:both;
@@ -459,9 +465,13 @@ input[type=text], input[type=password] {
 }
 
 .registra a{
-	color: #4D4D4D;
+	color: #000000;
 }
 
 .link{
-	color: #4D4D4D;
-}
+	color: #000000;
+} 
+ 
+#errore{ 
+    text-align: center; 
+} 

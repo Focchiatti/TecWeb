@@ -47,7 +47,7 @@ require_once "./DBAccess.php";
 	<div id=\"menu\">
 		<label id=\"hamburger\" for=\"nav-trigger\">&#9776;</label>		
 <input type=\"checkbox\" id=\"nav-trigger\" class=\"nav-trigger\" />
-<ul class="nav-item">
+<ul class=\"nav-item\">
 		<li><a href=\"Home.php\">Home</a></li>
 		<li><a href=\"news.php\">News</a></li>";
 		DataWriter::LogInButton();
