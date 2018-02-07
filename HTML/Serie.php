@@ -92,8 +92,8 @@ require_once "./DBAccess.php";
 		    header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $Key );
 		}
 		else if(isset($_POST['Act'])){
-		    $Db->RimuoviSerieSeguita($_GET['name'], $_SESSION["Name"]);
-		    header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $_GET['name'] );
+		    $Db->RimuoviSerieSeguita($Titolo, $_SESSION["Name"]);
+		    header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $Key );
 		}
 	}
 	echo 
