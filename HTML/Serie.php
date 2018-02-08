@@ -35,7 +35,7 @@ require_once "./DBAccess.php";
 		if($DataF=="")
 			$DataF="In Corso";
 		$Stag=$serie[0]["Stagioni"];
-		$Voto=$serie[0]["Valutazione"];
+        $Voto=$serie[0]["Valutazione"];
 	}
 	else header("location:./Home.php");
 	echo "

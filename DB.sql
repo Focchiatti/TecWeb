@@ -59,7 +59,7 @@ insert into `Utente`(`NickName`,`Password`)values
 ('DavideSe','786239'),
 ('NicolaT1','678987'),
 ('LorenzoMi','976923'),
-('utente','utente');
+('user','user');
  insert into `Utente`(`NickName`,`Password`,`Admin`)values
  ('admin','admin',1);
 /*Table structure for table `Valutazione` */
