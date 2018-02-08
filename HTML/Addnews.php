@@ -40,10 +40,7 @@ require_once "./DataWriter.php";
 </ul>
 </div>
 <?php 
-
-    if(!isset($_SESSION['CallingPage'])){
         $_SESSION['CallingPage']="./Home.php";
-    }
 
 	if (!isset($_SESSION["Admin"]) || (isset($_SESSION["Admin"])&&$_SESSION["Admin"]==0))  {
     	header("location:".$_SESSION['CallingPage']);
@@ -53,10 +50,6 @@ require_once "./DataWriter.php";
         $Db=new DBAccess();
         if($Db->AggiungiNews($_POST['Titolo'],$_POST['Data'],$_POST['Contenuto'],$_POST['Serie'])){
         	$error=DBAccess::createKey("Notizia aggiunta");
-        	unset($_POST['Titolo']);
-        	unset($_POST['Data']);
-        	unset($_POST['Contenuto']);
-        	unset($_POST['Serie']);
         	header("location: ./Addnews.php?error=".$error);
         }
         else {
@@ -64,12 +57,12 @@ require_once "./DataWriter.php";
             else if ($_POST['Data']=="") $error=DBAccess::createKey("Errore: data assente"); 
             else if ($_POST['Contenuto']=="") $error=DBAccess::createKey("Errore: contenuto assente"); 
             else $error=DBAccess::createKey("Errore: La data non è nel formato corretto, AAAA-MM-GG"); 
-        	unset($_POST['Titolo']);
-        	unset($_POST['Data']);
-        	unset($_POST['Contenuto']);
-        	unset($_POST['Serie']);
         	header("location: ./Addnews.php?error=".$error);
         }
+        unset($_POST['Titolo']);
+        unset($_POST['Data']);
+        unset($_POST['Contenuto']);
+        unset($_POST['Serie']);
     }
 	else{
 		echo "

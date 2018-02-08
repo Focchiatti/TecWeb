@@ -35,6 +35,7 @@ require_once "./DBAccess.php";
 		if($DataF=="")
 			$DataF="In Corso";
 		$Stag=$serie[0]["Stagioni"];
+        $Voto=$serie[0]["Valutazione"];
 	}
 	else header("location:./Home.php");
 	echo "
@@ -57,7 +58,7 @@ require_once "./DBAccess.php";
 
 	<div id=\"content\" class=\"Serie\">
 		<h2>".$Titolo."</h2>
-		<h3>Genere ".$Genere."</h3>
+		<h3>Genere: ".$Genere.", Valutazione: ".$Voto."/5</h3> 
 		<h4>".$Stag." Stagioni,  ".$DataI." - ".$DataF."</h4>
 		<p id=\"trama\">
 		<img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt=\"Immagine di copertina di '".$Titolo."'\" id='Copertina'/>

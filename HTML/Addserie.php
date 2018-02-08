@@ -42,11 +42,10 @@ require_once "./DataWriter.php";
 </ul>
 </div>
 
-<?php 
+<?php
 
-if(!isset($_SESSION['CallingPage'])){
     $_SESSION['CallingPage']="./Home.php";
-}
+
 
 if (!isset($_SESSION["Admin"]) || (isset($_SESSION["Admin"])&&$_SESSION["Admin"]==0)) {
 	header("location:".$_SESSION['CallingPage']);
@@ -65,28 +64,23 @@ if(isset($_POST['Titolo'])){
         else if ($_POST['IData']!="") $error=DBAccess::createKey("La data d'inizio non è nel formato corretto, AAAA-MM-GG"); 
         else if ($_POST['FData']!="") $error=DBAccess::createKey("La data di fine non è nel formato corretto, AAAA-MM-GG"); 
 		unlink ( "./../Img/".$Titolo.".jpg");
-        unset($_POST['Titolo']);
-        unset($_POST['Genere']);
-        unset($_POST['IData']);
-        unset($_POST['FData']);
-        unset($_POST['Stagioni']);
-        unset($_POST['Trama']);
 		header("location:./Addserie.php?error=".$error);
     }
 
 	else{
-        unset($_POST['Titolo']);
-        unset($_POST['Genere']);
-        unset($_POST['IData']);
-        unset($_POST['FData']);
-        unset($_POST['Stagioni']);
-        unset($_POST['Trama']);
 		if($error!="")
         header("location:./Addserie.php?error=".$error);
         else{
         	$error=DBAccess::createKey("Serie aggiunta");
         	header("location:./Addserie.php?error=".$error);
         }
+        unset($_POST['Titolo']);
+        unset($_POST['Genere']);
+        unset($_POST['IData']);
+        unset($_POST['FData']);
+        unset($_POST['Stagioni']);
+        unset($_POST['Trama']);
+        
 	}
 }
 echo "<div id=\"content\">";
