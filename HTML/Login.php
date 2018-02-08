@@ -55,6 +55,11 @@ require_once "./DataWriter.php";
 			if(!isset($_SESSION['CallingPage'])){
 				$_SESSION['CallingPage']="./Home.php";
 			}
+			else if(isset($_SESSION['ThisPage'])&&$_SESSION['ThisPage']!="./Login.php")
+			{
+				$_SESSION['CallingPage']=$_SESSION['ThisPage'];
+				$_SESSION['ThisPage']="./Login.php";
+			}
 			echo 
 				"<div class=\"registra\"><a href=\"Registrazione.php\">Oppure registrati</a></div>
 				<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
@@ -74,8 +79,8 @@ require_once "./DataWriter.php";
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
-	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
+	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict"/></a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 </div>
 
 </body>

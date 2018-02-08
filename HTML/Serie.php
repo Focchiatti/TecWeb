@@ -35,6 +35,7 @@ require_once "./DBAccess.php";
 		if($DataF=="")
 			$DataF="In Corso";
 		$Stag=$serie[0]["Stagioni"];
+		$Voto=$serie[0]["Valutazione"];
 	}
 	else header("location:./Home.php");
 	echo "
@@ -57,7 +58,7 @@ require_once "./DBAccess.php";
 
 	<div id=\"content\" class=\"Serie\">
 		<h2>".$Titolo."</h2>
-		<h3>Genere ".$Genere."</h3>
+		<h3>Genere: ".$Genere.", Valutazione: ".$Voto."/5</h3> 
 		<h4>".$Stag." Stagioni,  ".$DataI." - ".$DataF."</h4>
 		<p id=\"trama\">
 		<img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt=\"Immagine di copertina di '".$Titolo."'\" id='Copertina'/>
@@ -82,7 +83,7 @@ require_once "./DBAccess.php";
 	    echo"
 	    <form method = \"post\" action=\"" . $_SERVER['PHP_SELF'] . "?name=" . $Key . "\" >
 	    <fieldset>
-		<input type='submit' class='submitserie' title='Submit' value='".$Text."'/>
+		<input type='submit' class='submitvoto' title='Submit' value='".$Text."'/>
 		<input type='hidden' name='Act' />
 		</fieldset>
 		</form>";
@@ -102,8 +103,8 @@ require_once "./DBAccess.php";
 
 	<div id=\"footer\">
 		<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang=\"en\">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
-		<a href=\"http://validator.w3.org/check?uri=referer\"> <img src=\"http://www.w3.org/Icons/valid-xhtml10\" alt=\"Valid XHTML 1.0 Strict\" height=\"31\" width=\"88\" /></a>
-		<a href=\"http://jigsaw.w3.org/css-validator/check/referer\"><img style=\"border:0;width:88px;height:31px\" src=\"http://jigsaw.w3.org/css-validator/images/vcss-blue\" alt=\"Valid CSS\" /></a>
+		<a href=\"http://validator.w3.org/check?uri=referer\"> <img src=\"http://www.w3.org/Icons/valid-xhtml10\" alt=\"Valid XHTML 1.0 Strict\"/></a>
+		<a href=\"http://jigsaw.w3.org/css-validator/check/referer\"><img src=\"http://jigsaw.w3.org/css-validator/images/vcss-blue\" alt=\"Valid CSS\" /></a>
 	</div>
 		";
 	

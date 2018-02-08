@@ -144,7 +144,7 @@ html{
 	display: block;
 }
 .Serie a{
-	color: #000000;
+	color: #0000CC;
 	text-align: center;
 	display: block;
 }
@@ -165,7 +165,7 @@ html{
 	margin-bottom:0.7em;
 }
 .ELSerie a{
-	color: #000000;
+	color: #0000CC;
 	display: inline;
 }
 
@@ -183,7 +183,7 @@ html{
 }
 
 #RisultatoRicerca a{
-	color: #000000;
+	color: #0000CC;
 }
 #RisultatoRicerca a:visited{
 	color: #4D4D4D;
@@ -206,12 +206,19 @@ html{
 	padding: 1em;
 }
 .lemieserie a {
-	color: #000000;
+	color: #0000CC;
 	display: inline;
 }
 
 .lemieserie p {
 	display: inline;
+}
+.lemieserie select {
+	display: inline;
+	width:auto;
+	margin:auto;
+	float:none;
+
 }
 
 #barraricerca{
@@ -231,6 +238,10 @@ html{
 	width:100%;
 }
 
+#footer img{
+	width: 10%;
+	height: 5%;
+}
 
 .Genere{
 	text-align:center;
@@ -320,16 +331,22 @@ label{
 	text-align: center;
 }
 
-input[type=text], input[type=password] {
+input[type=text],input[type=file], input[type=password],select,textarea {
 	width: 80%;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
     margin-top: 0.5em;
+    margin-left:10%;
     clear: both;
-    display: inline-block;
+    float:left;
+    display:block;
     border: 1px solid #ccc;
 }
-
+input[type=file]
+{
+	width: 30%;
+	margin-left: 35%;
+}
 
 .cancelbtn {
 	margin-top:1em;
@@ -373,7 +390,7 @@ input[type=text], input[type=password] {
 }
 
 #pageNavigation a{
-	color:#000000;
+	color:#0000CC;
 }
 
 #pageNavigation a:visited{
@@ -408,9 +425,11 @@ input[type=text], input[type=password] {
 }
 
 #submit {
-	display: block;
+	display: inline-block;
 	clear: both;
-	margin-left: 46%;
+	float:left;
+	width: 10%;
+	margin-left:45%;
 	border: 1px solid #ccc;
 	color: #EDF2F7;
 	font-weight: bold;
@@ -437,23 +456,9 @@ input[type=text], input[type=password] {
 	background-color: #A5C5E9;
 }
 
-.submitserie {
-	display: inline;
-	border: 1px solid #ccc;
-	color: #EDF2F7;
-	font-weight: bold;
-    padding: 1em;
-    background-color: #4D4D4D;
-    margin-top: 0.5em;
-}
-
-.submitserie:hover{	
-	background-color: #A5C5E9;
-}
 
 #selectgenere {
 	display: block;
-	margin:auto;
 }
 
 .aiuti {
@@ -465,13 +470,21 @@ input[type=text], input[type=password] {
 }
 
 .registra a{
-	color: #000000;
+	color: #0000CC;
 }
 
 .link{
-	color: #000000;
+	color: #0000CC;
 } 
  
 #errore p{ 
     text-align: center; 
 } 
+
+fieldset {
+	text-align: center;
+}
+textarea {
+    resize: none;
+}
+

@@ -40,7 +40,7 @@ class DataWriter
 				<tr>
 					<th scope=\"row\"> <a href=\"Serie.php?name=".$serie['Titolo']."\">".DBAccess::RetrieveData($serie['Titolo'])." </a></th>
 					<td> <a href=\"".$serie['Genere'].".php\">".$serie['Genere']."  </a></td>
-					<td> ".$serie['Valutazione']."</td>
+					<td>".$serie['Valutazione']."/5</td>
 				</tr>
 				</tbody>";
 			}
@@ -82,9 +82,19 @@ class DataWriter
 	}
 
 	public static function LogInButton(){
-		if (!isset($_SESSION)){
-		session_start();}
-			$_SESSION["CallingPage"]=$_SERVER['REQUEST_URI'];
+		if (!isset($_SESSION))
+		{
+		session_start();
+		}
+			if(isset($_SESSION["ThisPage"])&&(!isset($_SESSION["CallingPage"])||isset($_SESSION["CallingPage"])&&($_SESSION["ThisPage"]!=$_SERVER['REQUEST_URI'])))
+			{
+				$_SESSION["CallingPage"]=$_SESSION["ThisPage"];
+			}
+			else if(!isset($_SESSION['ThisPage']))
+			{
+				$_SESSION["CallingPage"]="./Home.php";
+			}
+			$_SESSION["ThisPage"]=$_SERVER['REQUEST_URI'];
 		if(!isset($_SESSION["Name"]) || session_id()==''){
 			echo 
 			"<li><a href=\"Login.php\">Le mie serie</a></li>

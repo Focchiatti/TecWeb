@@ -55,11 +55,15 @@ require_once "./DataWriter.php";
 				<input type=\"submit\" id=\"submit\" title=\"Registrati\" value=\"Registrati\"/>
 				</fieldset>
 			</form>";
-			if(!isset($_SESSION['CallingPage'])) {
+			if(!isset($_SESSION['CallingPage'])){
 				$_SESSION['CallingPage']="./Home.php";
 			}
+			else
+			{
+				$_SESSION['ThisPage']=$_SESSION['CallingPage'];
+			}
 			echo 
-				"<a href=\"".$_SESSION["CallingPage"]."\" class=\"cancelbtn\">Back</a>
+				"<a href=\"./Login.php\" class=\"cancelbtn\">Back</a>
 				<a class=\"aiuti\" href=\"#header\">Torna su</a>
 		</div>";
 	}
@@ -92,8 +96,8 @@ require_once "./DataWriter.php";
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
-	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
+	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" /></a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 </div>
 </body>
 </html>

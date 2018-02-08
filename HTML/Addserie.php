@@ -106,7 +106,7 @@ echo "<div id=\"content\">";
             <option value=\"Poliziesco\">Poliziesco</option>
             </select>
         <label for=\"datai\"><strong>Data d'inizio (AAAA-MM-GG)</strong></label>
-		<input type=\"text\" title=\"Data di inizio\" id=\"datai\" name=\"IData\"/>
+		<input type=\"text\" title=\"Data di inizio\" id=\"datai\" name=\"IData\" value=\"".date("Y-m-d")."\"/>
         <label for=\"dataf\"><strong>Data di fine (opzionale AAAA-MM-GG)</strong></label>
 		<input type=\"text\" title=\"Data di fine\" id=\"dataf\" name=\"FData\" value=\"\"/>
         <label for=\"stag\"><strong>Numero Stagioni</strong></label>
@@ -130,8 +130,8 @@ echo "<a class=\"aiuti\" href=\"#header\">Torna su</a>
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
-	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
+	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict"/></a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 </div>
 <?php
  $Db=null;

@@ -73,7 +73,7 @@ class DBAccess
 	}
 
 	public function RicercaSpecifica($data){
-			$query=$this->connessione->prepare("SELECT Titolo,Genere,Trama,DataInizio,DataFine,Stagioni FROM SerieTV WHERE Titolo LIKE ?");
+			$query=$this->connessione->prepare("SELECT Titolo,Genere,Trama,DataInizio,DataFine,Stagioni,Valutazione FROM SerieTV WHERE Titolo LIKE ?");
 			$query->execute(array(DBAccess::createKey($data)));
 			return $query->fetchAll();
 	}
