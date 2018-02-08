@@ -429,6 +429,7 @@ input[type=file]
 	clear: both;
 	float:left;
 	width: 10%;
+	min-width: 5em;
 	margin-left:45%;
 	border: 1px solid #ccc;
 	color: #EDF2F7;

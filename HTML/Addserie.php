@@ -2,16 +2,20 @@
 require_once "./DataWriter.php";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php header('Content-Type: application/xhtml+xml');?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Aggiungi serie</title>
 	<meta name="title" content="Serie-a-mente aggiungi serie"/>
+	<meta name="viewport" content="width=device-width"/>
 	<meta name="description" content="Pagina che permette di aggiungere al database una nuova serie"/>
 	<meta name="keywords" content="amministrazione, nuova, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />
+	<link rel="stylesheet" type="text/css"  href="../CSS/stylephone.css" media="handheld, screen and (max-width:480px),
+	only screen and (max-device-width:480px)" />
 	<link rel="stylesheet" type="text/css"  href="../CSS/styleprint.css" media="print" />
 </head>
 
@@ -106,7 +110,7 @@ echo "<div id=\"content\">";
             <option value=\"Poliziesco\">Poliziesco</option>
             </select>
         <label for=\"datai\"><strong>Data d'inizio (AAAA-MM-GG)</strong></label>
-		<input type=\"text\" title=\"Data di inizio\" id=\"datai\" name=\"IData\" value=\"".date("Y-m-d")."\"/>
+		<input type=\"text\" title=\"Data di inizio\" id=\"datai\" name=\"IData\"/>
         <label for=\"dataf\"><strong>Data di fine (opzionale AAAA-MM-GG)</strong></label>
 		<input type=\"text\" title=\"Data di fine\" id=\"dataf\" name=\"FData\" value=\"\"/>
         <label for=\"stag\"><strong>Numero Stagioni</strong></label>

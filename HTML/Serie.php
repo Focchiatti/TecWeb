@@ -3,16 +3,20 @@ require_once "./DataWriter.php";
 require_once "./DBAccess.php";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php header('Content-Type: application/xhtml+xml');?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Serie</title>
 	<meta name="title" content="Serie-a-mente serie specifica"/>
+	<meta name="viewport" content="width=device-width"/>
 	<meta name="description" content="Pagina che mostra la serietv in dettaglio"/>
 	<meta name="keywords" content="fantasy, fantastico, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />
+	<link rel="stylesheet" type="text/css"  href="../CSS/stylephone.css" media="handheld, screen and (max-width:480px),
+	only screen and (max-device-width:480px)" />
 	<link type="text/css" rel="stylesheet" href="../CSS/styleprint.css" media="print" />
 </head>
 
@@ -35,7 +39,7 @@ require_once "./DBAccess.php";
 		if($DataF=="")
 			$DataF="In Corso";
 		$Stag=$serie[0]["Stagioni"];
-        $Voto=$serie[0]["Valutazione"];
+		$Voto=$serie[0]["Valutazione"];
 	}
 	else header("location:./Home.php");
 	echo "
@@ -58,8 +62,10 @@ require_once "./DBAccess.php";
 
 	<div id=\"content\" class=\"Serie\">
 		<h2>".$Titolo."</h2>
-		<h3>Genere: ".$Genere.", Valutazione: ".$Voto."/5</h3> 
-		<h4>".$Stag." Stagioni,  ".$DataI." - ".$DataF."</h4>
+		<h3>Genere: ".$Genere."</h3>
+		<h4>Valutazione: ".$Voto."/5</h4> 
+		<h4>".$Stag." Stagioni</h4> 
+		<h4> ".$DataI." - ".$DataF."</h4>
 		<p id=\"trama\">
 		<img class=\"ImgSerie\" src='../Img/".$Key.".jpg' alt=\"Immagine di copertina di '".$Titolo."'\" id='Copertina'/>
 		".$Trama."</p>";

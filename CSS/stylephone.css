@@ -1,5 +1,125 @@
+
+html{
+	border-left: none;
+	border-right: none;
+}
+#header h1{font-size: 2em;}
+#content {
+	float:none;
+}
+
+#breadcrumbs{
+	width: auto;
+}
+.up {
+	display: list-item;
+	height: inherit;
+}
+
+
 .Genere{
+	width:35%;
+	min-width:0em;
+}
+.Genere a{
+	padding-top:25%;
+	padding-bottom:25%;
+}
+
+.Thriller a:hover{
+	background-image:none;
+	background-size:0;
+}
+
+.Drammatico a:hover{
+	background-image:none ;
+	background-size:0;
+}
+
+.Poliziesco a:hover{
+	background-image:none;
+	background-size:0;
+}
+
+.Commedia a:hover{
+	background-image:none;
+	background-size:0;
+}
+
+.Fantasy a:hover{
+	background-image:none ;
+	background-size:0;
+}
+
+.Fantascienza a:hover{
+	background-image:none ;
+	background-size:0;
+}
+
+
+.lemieserie select{
+	display: block;
 	width: 80%;
-	padding-left: 5%;
-	margin-bottom: 1.5em;
+	margin-left: 10%;
+	float: left;
+	margin-bottom: 1em;
+	text-align-last: center; 
+}
+#img{
+	width: 80%;
+	margin-left: 10%;
+
+}
+#RisultatoRicerca th,td,tr,table {
+	width:100%;
+	display: block;
+	text-align: center;
+}
+
+
+#footer img{
+	width: 20%;
+}
+#submit
+{
+	width: 80%;
+	margin-left: 10%;
+	padding: 0.5em;
+}
+
+.lemieserie a
+{
+	display: block;
+	clear: both;
+}
+.submitvoto{
+	display: block;
+	width:80%;
+	height: auto;	
+	margin-left: 10%;
+	padding: 0.5em;
+}
+.ImgSerie{
+	display: none;
+}
+
+
+.ELSerie a,p{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+#content p{
+	margin: 0;
+	padding: 0 0 0 0.5em;
+	width: 90%;
+}
+
+#breadcrumbs p{
+	text-align: left;
+}
+
+#pageNavigation p{
+	padding: 0;
 }

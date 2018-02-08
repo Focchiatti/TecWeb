@@ -2,16 +2,20 @@
 require_once "./DataWriter.php"
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php header('Content-Type: application/xhtml+xml');?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Commedia</title>
 	<meta name="title" content="Serie-a-mente commedia"/>
+	<meta name="viewport" content="width=device-width"/>
 	<meta name="description" content="Pagina in cui vengono mostrate tutte le serietv di genere commedia"/>
 	<meta name="keywords" content="commedia, comedy, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
 	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
 	only screen and (max-device-width:565px)" />
+	<link rel="stylesheet" type="text/css"  href="../CSS/stylephone.css" media="handheld, screen and (max-width:480px),
+	only screen and (max-device-width:480px)" />
 	<link type="text/css" rel="stylesheet" href="../CSS/styleprint.css" media="print" />
 </head>
 

@@ -1,20 +1,21 @@
 /*PARTE GENERALE*/
 
-html{
-	border-left: none;
-	border-right: none;
+#hamburger {
+	display: block;
+	width: 1em;
+	height: auto;
+	background-color: #4D4D4D;
+	color: #EDF2F7;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	font-weight: bold;
+
 }
 
-#content {
-	float:none;
-	font-size: 3.5em;
+#hamburger span {
+	color: #EDF2F7;
+	text-decoration:none;
 }
-
-#breadcrumbs{
-	width: auto;
-	font-size: 3em;
-}
-
 .nav-trigger ~ .nav-item{
 	height: 0px;
 	overflow: hidden;
@@ -25,13 +26,11 @@ html{
 .nav-trigger:checked ~ .nav-item{
 	height: auto;
 }
-
 #menu{
 	height: auto;
 	float: none;
 	width: 100%;
 	background-color: #4D4D4D;
-	font-size: 300%;
 }
 
 #menu .login{
@@ -54,169 +53,6 @@ html{
 	color: #EDF2F7;
 	display: block;
 }
-
-.up {
-	display: list-item;
-	font-size: inherit;
-	height: inherit;
-}
-
-#menu #login{
-	display: inline-block;
-	float:right;
-}
-
-#menu ul{
-	list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    text-align: center;
-}
-
 #menu a:active{
 	background-color: #9C9C9C;
-}
-
-#hamburger {
-	display: block;
-	width: 1em;
-	height: auto;
-	background-color: #4D4D4D;
-	color: #EDF2F7;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-	font-weight: bold;
-
-}
-
-#hamburger span {
-	color: #EDF2F7;
-	text-decoration:none;
-}
-
-.Genere{
-	width:35%;
-	min-width:0em;
-}
-.Genere a{
-	padding-top:25%;
-	padding-bottom:25%;
-}
-
-.Thriller a:hover{
-	background-image:none;
-	background-size:0;
-}
-
-.Drammatico a:hover{
-	background-image:none ;
-	background-size:0;
-}
-
-.Poliziesco a:hover{
-	background-image:none;
-	background-size:0;
-}
-
-.Commedia a:hover{
-	background-image:none;
-	background-size:0;
-}
-
-.Fantasy a:hover{
-	background-image:none ;
-	background-size:0;
-}
-
-.Fantascienza a:hover{
-	background-image:none ;
-	background-size:0;
-}
-
-
-.lemieserie select{
-	display: block;
-	width: 80%;
-	margin-left: 10%;
-	float: left;
-	font-size: 1em;
-	margin-bottom: 1em;
-	text-align-last: center; 
-}
-#selectgenere{
-	font-size: 100%;
-}
-#img{
-	width: 80%;
-	margin-left: 10%;
-	font-size: 150%;
-}
-#RisultatoRicerca th,td,tr,table {
-	width:100%;
-	display: block;
-	text-align: center;
-}
-
-#footer p{
-	font-size: 150%;	
-}
-
-#footer img{
-	width: 20%;
-}
-#submit
-{
-	width: 80%;
-	margin-left: 10%;
-	padding: 0.5em;
-}
-.cancelbtn{
-	font-size: 1em;
-}
-.lemieserie a
-{
-	display: block;
-	clear: both;
-}
-.submitvoto{
-	display: block;
-	width:80%;
-	height: auto;	
-	margin-left: 10%;
-	padding: 0.5em;
-}
-.ImgSerie{
-	display: none;
-}
-
-#serie{
-	font-size: 100%;
-}
-#notizia{
-	font-size: 100%;
-}
-
-input {
-	font-size: 100%;
-}
-
-.ELSerie a,p{
-	display: block;
-	width: 100%;
-	text-align: center;
-}
-
-#content p{
-	margin: 0;
-	padding: 0 0 0 0.5em;
-	width: 90%;
-}
-
-#breadcrumbs p{
-	text-align: left;
-}
-
-#pageNavigation p{
-	padding: 0;
 }
