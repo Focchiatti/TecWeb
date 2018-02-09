@@ -1,10 +1,9 @@
 <?php
-//Aeph3eidei1ieSho
 class DBAccess
 {
 	const HOST_DB="localhost";
-	const USERNAME="root";
-	const PASSWORD="";
+	const USERNAME="vmarcon";
+	const PASSWORD="Aeph3eidei1ieSho";
 	const DATABASE_NAME="vmarcon";
 	public $connessione;
 	

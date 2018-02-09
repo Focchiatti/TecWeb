@@ -21,6 +21,7 @@
 
 <div id="header">
 	<h1>Serie-a-mente</h1>
+	<h2>Tutto sulle vostre serie televisive preferite</h2>
 </div>
 
 <div id="content">
