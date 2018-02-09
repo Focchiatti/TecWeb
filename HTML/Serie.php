@@ -8,13 +8,13 @@ require_once "./DBAccess.php";
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Serie</title>
-	<meta name="title" content="Serie-a-mente serie specifica"/>
+	<meta name="title" content="serie specifica Serie-a-mente"/>
 	<meta name="viewport" content="width=device-width"/>
 	<meta name="description" content="Pagina che mostra la serietv in dettaglio"/>
 	<meta name="keywords" content="fantasy, fantastico, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
-	<link type="text/css" rel="stylesheet" href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
-	only screen and (max-device-width:565px)" />
+	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:580px),
+	only screen and (max-device-width:580px)" />
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylephone.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
 	<link type="text/css" rel="stylesheet" href="../CSS/styleprint.css" media="print" />
@@ -44,17 +44,16 @@ require_once "./DBAccess.php";
 	else header("location:./Home.php");
 	echo "
 	<div id=\"breadcrumbs\">
-		<p>Ti trovi in: <span xml:lang=\"en\">Home >> ".$Genere." >> ".$Titolo."</span></p>
-		<a class=\"aiuti\" href=\"#content\">Salta la navigazione</a>
+		<p>Ti trovi in: <span xml:lang=\"en\">Home</span> >> ".$Genere." >> ".$Titolo."</p>
+		<a class=\"aiuti\" href=\"#content\">Vai al contenuto</a>
 	</div>
-
 
 	<div id=\"menu\">
 		<label id=\"hamburger\" for=\"nav-trigger\">&#9776;</label>		
-<input type=\"checkbox\" id=\"nav-trigger\" class=\"nav-trigger\" />
-<ul class=\"nav-item\">
-		<li><a href=\"Home.php\">Home</a></li>
-		<li><a href=\"news.php\">News</a></li>";
+	<input type=\"checkbox\" id=\"nav-trigger\" class=\"nav-trigger\" />
+	<ul class=\"nav-item\">
+		<li><a href=\"Home.php\"><span xml:lang=\"en\">Home</span></a></li>
+		<li><a href=\"news.php\">Notizie</a></li>";
 		DataWriter::LogInButton();
 		echo 
 	"</ul>
@@ -71,7 +70,7 @@ require_once "./DBAccess.php";
 		".$Trama."</p>";
 
 	if(isset($_SESSION["UltimaRicerca"])){
-		echo "<a class=\"back\" href=\"Ricerca.php?Ricerca=".$_SESSION["UltimaRicerca"]."\">Torna alla ricerca</a><br/>";	
+		echo "<a class=\"back\" href=\"Ricerca.php?Ricerca=".$_SESSION["UltimaRicerca"]."\">Torna alla ricerca</a>";	
 	}
 	echo "<a class=\"back\" href=\"".$Genere.".php\">Vai al genere</a>";
 
@@ -103,18 +102,18 @@ require_once "./DBAccess.php";
 		    header("location:" . $_SERVER['PHP_SELF'] . "?name=" . $Key );
 		}
 	}
+	$Db=null;
 	echo 
-		"<a class=\"aiuti\" href=\"#header\">Torna su</a>
+		"<a class=\"aiuti up\" href=\"#header\">Torna su</a>
 	</div>
 
 	<div id=\"footer\">
 		<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang=\"en\">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
+		<p> Per contattarci scrivere a <a href=\"mailto:serieamente@gmail.com\">serieamente@gmail.com</a></p>
 		<a href=\"http://validator.w3.org/check?uri=referer\"> <img src=\"http://www.w3.org/Icons/valid-xhtml10\" alt=\"Valid XHTML 1.0 Strict\"/></a>
 		<a href=\"http://jigsaw.w3.org/css-validator/check/referer\"><img src=\"http://jigsaw.w3.org/css-validator/images/vcss-blue\" alt=\"Valid CSS\" /></a>
-	</div>
-		";
+	</div>";
 	
-	$Db=null;
 	echo "
 	</body>
 	</html>";

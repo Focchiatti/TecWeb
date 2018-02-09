@@ -93,11 +93,6 @@ html{
     background-color: #9C9C9C;
 }
 
-
-#up {
-	display: none;
-}
-
 #content {	
 	display: inline-block;
 	float:right;
@@ -262,6 +257,7 @@ html{
 	padding-bottom:3.4em;
 	width:100%;
 	color: #EDF2F7;
+	font-weight: bold;
 }
 
 .Thriller a:hover{
@@ -488,4 +484,3 @@ fieldset {
 textarea {
     resize: none;
 }
-

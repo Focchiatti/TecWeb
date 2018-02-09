@@ -16,6 +16,7 @@
 	color: #EDF2F7;
 	text-decoration:none;
 }
+
 .nav-trigger ~ .nav-item{
 	height: 0px;
 	overflow: hidden;
@@ -26,6 +27,7 @@
 .nav-trigger:checked ~ .nav-item{
 	height: auto;
 }
+
 #menu{
 	height: auto;
 	float: none;
@@ -53,6 +55,7 @@
 	color: #EDF2F7;
 	display: block;
 }
+
 #menu a:active{
 	background-color: #9C9C9C;
 }

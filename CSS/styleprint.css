@@ -40,7 +40,6 @@ html{
 	height: 3em;
 	background-color: #FFF;
 	margin-bottom:1em;
-
 }
 
 #menu .login{
@@ -71,16 +70,9 @@ html{
     display: block;
 }
 
-#smallmenu {
+.up {
 	display: none;
 }
-
-.up {
-	font-size: 0px;
-	height: 0px;
-	overflow: hidden;
-}
-
 
 #content {	
 	display: inline-block;
@@ -199,19 +191,16 @@ html{
 	text-align: justify;
 	display: inline-block;
 	padding:0.5em;
-	font-size: 10px;
+	font-size: 10pt;
 }
 
 .Genere{
 	text-align:left;
-
 }
 
 .Genere a{
 	display: block;
 }
-
-
 
 label{
 	width: 80%;
@@ -233,8 +222,7 @@ input[type=text], input[type=password] {
 display: none;
 }
 
-#pageNavigation
-{
+#pageNavigation{
 	display: inline-block;
 	float: none;
 	list-style-type: none;
@@ -243,14 +231,15 @@ display: none;
     overflow: hidden;
     text-align: center;
 }
-#pageNavigation p
-{
+
+#pageNavigation p{
 	list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     text-align: center;
 }
+
 #pageNavigation li{
 	float:left;
 	padding:0.5em;
@@ -275,5 +264,21 @@ display: none;
 }
 
 .aiuti{
-display: none;
+	display: none;
+}
+
+#footer img{
+	display: none;
+}
+
+#nav-trigger {
+	display: none;
+}
+
+.back {
+	display: none;
+}
+
+.Serie a {
+	display: none;
 }

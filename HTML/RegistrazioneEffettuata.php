@@ -5,13 +5,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title> Registrazione Effettuata </title>
-	<meta name="title" content="Serie-a-mente registrazione effettuata"/>
+	<meta name="title" content="registrazione effettuata Serie-a-mente"/>
 	<meta name="viewport" content="width=device-width"/>
 	<meta name="description" content="Pagina di conferma registrazione"/>
 	<meta name="keywords" content="registrazione, serietv, televisione, memoria"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/styledesktop.css" media="handheld, screen" /> 
-	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:565px),
-	only screen and (max-device-width:565px)" />
+	<link rel="stylesheet" type="text/css"  href="../CSS/stylesmall.css" media="handheld, screen and (max-width:580px),
+	only screen and (max-device-width:580px)" />
 	<link rel="stylesheet" type="text/css"  href="../CSS/stylephone.css" media="handheld, screen and (max-width:480px),
 	only screen and (max-device-width:480px)" />
 	<link rel="stylesheet" type="text/css"  href="../CSS/styleprint.css" media="print" />
@@ -25,13 +25,14 @@
 
 <div id="content">
 	<h2>Registrazione effettuata</h2>
-	<a class="link" href="Home.php">Torna alla home</a>
+	<a class="link" href="Home.php">Torna alla <span xml:lang="en">home</span></a>
 	<h3>oppure</h3>
-	<a class="link" href="Login.php">Fai il login</a>
+	<a class="link" href="Login.php">Fai il <span xml:lang="en">login</span></a>
 </div>
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
+	<p> Per contattarci scrivere a <a href="mailto:serieamente@gmail.com">serieamente@gmail.com</a></p>
 	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict"/></a>
 	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 </div>
