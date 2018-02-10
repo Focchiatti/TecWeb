@@ -17,7 +17,7 @@
 				\hline
 				\textbf{Componenti} & Marco Focchiatti \\ & Tommaso Loss \\ & Valentina Marcon \\  
 				\textbf{Referente} & Valentina Marcon \\ 
-				\textbf{Mail} & valentina.marcon3@studenti.unipd.it \\
+				\textbf{Mail} & valentina.marcon.3@studenti.unipd.it \\
 			\end{tabularx}
 			\vspace{0.7cm}
 			\textbf{Indirizzo del sito:}
@@ -26,7 +26,7 @@
 				\multicolumn{2}{c}{\textbf{Dati Login}}\\ 
 				\hline
 				\textbf{Amministratore} & admin - admin \\
-				\textbf{Utente} & user-user
+				\textbf{Utente} & user - user
 			\end{tabularx}
 		\vspace{2cm}
 		\textit{Anno Accademico 2017-2018}
@@ -36,27 +36,27 @@
 	\tableofcontents
 	\newpage
 	\section{Abstract}
-	Lo scopo del progetto è la realizzazione di un sito che svolga la duplice funzione di contenitore di informazioni, generali e particolari, riguardo alle serie televisive e di gestire un basilare sistema di votazione da parte degli utenti. In questo modo si facilita la scelta da parte di un utente riguardo a una nuova serie da seguire e si garantisce la possibilità di rimanere aggiornati rispetto alle serie seguite. \\
+	Lo scopo del progetto è la realizzazione di un sito che svolga la duplice funzione di contenitore di informazioni, generali e particolari, riguardo alle serie televisive e di gestione di un basilare sistema di votazione da parte degli utenti. In questo modo si facilita la scelta da parte di un utente riguardo a una nuova serie da seguire e si garantisce la possibilità di rimanere aggiornati rispetto alle serie seguite. \\
 	L'interazione è prevista solamente fra le classi di utenza e il sito a causa dell'ampio e variegato target al quale si fa riferimento. L'utente infatti può aggiungere o rimuovere serie alla sua collezione virtuale, e votarle. L'amministratore gestisce le serie presenti nel sito, e le notizie riportate. \\
-	Proprio a causa della varietà di utenza prevista è stato data priorità all'usabilità e all'accessibilità, utilizzando XHTML strict, in modo da garantire l'utilizzo del sito a prescindere dal contesto, rispettando lo standard del W3C.
+	Proprio a causa della varietà di utenza prevista è stata data priorità all'usabilità e all'accessibilità, utilizzando XHTML strict 1.0, in modo da garantire l'utilizzo del sito a prescindere dal contesto, rispettando lo standard del W3C.
 	\newpage
 	\section{Utenti Destinatari}
-	Il sito si rivolge al pubblico, variegato come età e cultura, delle serie televisive. Sia come utenti veri e proprio che come utilizzatori occasionali interessati a informazione più o meno approfondite, riguardo l'argomento. Solo gli utenti iscritti possono votare le serie ma non è necessario il login per vedere l'indice di gradimento di una serie. Considerando che i destinatari sono molto eterogenei abbiamo deciso di non consentire interazione fra utenti, sotto forma di commenti alle serie, in quanto necessiterebbe di un notevole lavoro di moderazione.
+	Il sito si rivolge al pubblico, variegato come età e cultura, delle serie televisive, sia come utenti veri e propri che come utilizzatori occasionali interessati a informazioni più o meno approfondite riguardo l'argomento. Solo gli utenti iscritti possono votare le serie ma non è necessario il login per vedere l'indice di gradimento di una serie. Considerando che i destinatari sono molto eterogenei abbiamo deciso di non consentire interazione fra utenti, sotto forma di commenti alle serie, in quanto necessiterebbe di un notevole lavoro di moderazione.
 	\newpage
 	
 	
 	\section{Accessibilità} \label{Utenti destinatari}
 	\subsection{Separazione fra comportamento, presentazione e struttura}
-	Per mantenere al separazione fra comportamento, presentazione e struttura, fondamentale per l'accessibilità del sito, abbiamo sfruttato XHTML strict, php e CSS. In particolare, le pagine sono generate dinamicamente a partire da script php, che gestiscono la comunicazione con il database. I documenti XHTML strict fanno riferimento a fogli di stile esterni CSS per la presentazione.\\\
-	Non dipendendo da Javascript, il sito rimane accessibile a un bacino di utenti molto elevato, allo stesso livello, rinunciando ad una grafica più accattivante, che per l'obiettivo che si pone il sito, è secondaria. \'E fondamentale invece allagare il più possibile il bacino di utenza.
+	Per mantenere la separazione fra comportamento, presentazione e struttura, fondamentale per l'accessibilità del sito, abbiamo sfruttato XHTML strict, PHP e CSS. In particolare, le pagine sono generate dinamicamente a partire da script PHP, che gestiscono la comunicazione con il database. I documenti XHTML strict fanno riferimento a fogli di stile esterni CSS per la presentazione.\\\
+	Non dipendendo da Javascript, il sito rimane accessibile a un bacino di utenti molto elevato, allo stesso livello, seppur rinunciando ad una grafica più accattivante, che per l'obiettivo che si pone il sito è secondaria. \'E fondamentale invece allargare il più possibile il bacino di utenza.
 	Infine abbiamo validato il codice in modo da avere la certezza di aderire agli standard W3C.
 	\subsection{Tag per l'accessibilità}
 	Ogni pagina è corredata dai relativi \textit{meta tag}, che descrivono gli elementi salienti del suo contenuto. \\
-	Considerato l'elevato contenuto di termini inglesi è stato aggiunto l'attributo \textit{xml:lang="eng"}, dove necessario. \'E importante che l'ipotetico amministratore del sito corredi le aggiunte con gli adeguati tag linguistici, per preservare la corretta fruizione da parte di utenti utilizzanti screen-reader. Proprio per facilitare la lettura da parte di questi ultimi, si è fatto ricorso a immagini puramente accessorie, corredate da opportuni attributi alt descrittivi. \\
+	Considerato l'elevato contenuto di termini inglesi è stato aggiunto l'attributo \textit{xml:lang="en"}, dove necessario. \'E importante che l'ipotetico amministratore del sito corredi le aggiunte con gli adeguati tag linguistici, per preservare la corretta fruizione da parte di utenti utilizzanti screen-reader. Proprio per facilitare la lettura da parte di questi ultimi, si è fatto ricorso a immagini puramente accessorie, corredate da opportuni attributi \textit{alt} descrittivi. \\
 	Infine ogni form per l'input è descritto da una \textit{label} e inserito in un \textit{fieldset}.
 	\subsection{Scelta dei colori}
 	Abbiamo utilizzato colori semplici con un contrasto elevato, 
-	%quale sito per verificare il contrasto?% 
+	verificato attraverso il sito \textbf{WebAIM}\footnote{\url{https://webaim.org/resources/contrastchecker/}},
 	per permettere la fruizione a utenti con problemi alla vista. In più, colori seriosi si abbinano al carattere di utilità pratica del sito.
 	Queste scelte sono state verificate tramite \textbf{Coblis}\footnote{\url{http://www.color-blindness.com/coblis-color-blindness-simulator/}}, un sito che permette di visualizzare la pagina come verrebbe vista da un utente con varie tipologie di daltonismo.\\
 	\begin{minipage}{0.5\textwidth}
@@ -121,7 +121,7 @@
 	Qui di seguito, sono elencati tutti i documenti che producono file \path{html} e le loro funzioni:
 	\subsection{Pagine raggiungibili da tutti gli utenti}
 	\begin{itemize}
-		\item \path{Home.php}: Pagina che rappresenta la Homepage del sito, mostra la barra di ricerca serie generica, e le 6 categorie nelle quali sono suddivise. %Abbiamo deciso di rendere non espandibile questa suddivisione, perché è raro ne si sviluppino di nuove.%
+		\item \path{Home.php}: Pagina che rappresenta la Homepage del sito, mostra la barra di ricerca serie generica, e le 6 categorie nelle quali sono suddivise. Abbiamo deciso di rendere non espandibile questa suddivisione, perché è raro ne si sviluppino di nuove.
 		Inoltre ciascuna serie ha una e una sola categoria principale, per evitare di confondere l'utente rispetto alla loro collocazione nel sito;
 		\item \path{news.php}: Pagina che raccoglie le notizie riguardo alle serie presenti nel sito, viene aggiornata dall'amministratore a sua discrezione;
 		\item \path{Drammatico/Fantasy/Poliziesco/Thriller/Commedia/Fantascienza.php}: Pagine che contengono la lista delle serie appartenenti al genere in questione, con riferimento alla pagina specifica della serie, e la loro valutazione media;
@@ -129,13 +129,12 @@
 		\item \path{Serie.php}: Pagina che raccoglie le informazioni generali della serie ricercata o indirizzata;
 		\item \path{Login.php}: Pagina che permette l'accesso a un utente iscritto, tramite la scrittura del nome utente e della password corretti;
 		\item \path{Registrazione.php}: Pagina che permette la registrazione di un nuovo utente, tramite la scelta di un nickname e di una password;
-		\item \path{RegistrazioneEffettuata.%php.html???%
-		}: Pagina che conferma la registrazione all'utente che ha effettuato correttamente la procedura.
+		\item \path{RegistrazioneEffettuata.php}: Pagina che conferma la registrazione all'utente che ha effettuato correttamente la procedura.
 	\end{itemize}
 	\subsection{Pagine raggiungibili dagli utenti registrati}
 	\begin{itemize}
 		\item \path{Serie.php}: Pagina che raccoglie le informazioni generali della serie ricercata o indirizzata, un utente registrato può anche aggiungere la serie alla sua collezione personale, se mancante, oppure rimuoverla, se presente;
-		\item \path{Mypage.php}: Pagina che visualizza le serie scelta dall'utente e permette di valutarle o modificarne la valutazione.
+		\item \path{Mypage.php}: Pagina che visualizza le serie scelte dall'utente e permette di valutarle o modificarne la valutazione.
 	\end{itemize}
 	\subsection{Pagine raggiungibili dagli amministratori}
 	\begin{itemize}
@@ -155,13 +154,13 @@
 	\end{itemize}
 	\newpage
 	\section{Comportamento}
-	Il comportamento del sito, il quale riguarda principalmente l'interazione fra utenti e il database, è sviluppato tramite script php. Abbiamo deciso di non utilizzare Javascript per non distogliere l'attenzione dell'utente occasionale, per ridurre al minimo la durata delle sessioni richieste e per evitare quando possibile problemi di compatibilità.\\
+	Il comportamento del sito, il quale riguarda principalmente l'interazione fra utenti e il database, è sviluppato tramite script PHP. Abbiamo deciso di non utilizzare Javascript per non distogliere l'attenzione dell'utente occasionale, per ridurre al minimo la durata delle sessioni richieste e per evitare quando possibile problemi di compatibilità.\\
 	Sono presenti due file che non producono direttamente una pagina \path{html}, bensì contengono delle funzioni di uso comune che vengono richiamate negli altri file:
 	\begin{itemize}
-		\item \path{DBAccess.php}: In questo file sono presenti le funzioni per dialogare con il database, cioè per gestire la connessione e svolgere le varie query richieste dal sito;
-		\item \path{DataWriter.php}: Questo file racchiude le funzioni generiche e di base per stampare i dati ottenuti da \path{DBAccess.php}.
+		\item \path{DBAccess.php}: In questo file sono presenti le funzioni per dialogare con il database, cioè per gestire la connessione e svolgere le varie query richieste dal sito tutte raccolte nella classe omonima;
+		\item \path{DataWriter.php}: Questo file racchiude le funzioni generiche e di base per stampare i dati ottenuti da \path{DBAccess.php}, anch'esse facenti parte della classe DataWriter.
 	\end{itemize}
-	La maggior parte dei file rimanenti, già trattati precedentemente, contiene elementi in php necessari per la generazione delle pagine \path{html} dinamiche.
+	La maggior parte dei file rimanenti, già trattati precedentemente, contiene elementi in PHP necessari per la generazione delle pagine \path{html} dinamiche.
 	\newpage
 	\section{Gestione dei dati}
 	I dati utili al sito sono memorizzati in un database relazionale, \path{DB.sql}. Esso contiene 4 tabelle:

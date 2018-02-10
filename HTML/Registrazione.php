@@ -33,8 +33,8 @@ require_once "./DataWriter.php";
 
 <div id="menu">
 	<label id="hamburger" for="nav-trigger">&#9776;</label>		
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<ul class="nav-item">
+	<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+	<ul class="nav-item">
 	<li><a href="Home.php">Home</a></li>
 	<li><a href="news.php">Notizie</a></li>
 </ul>
@@ -59,8 +59,7 @@ require_once "./DataWriter.php";
 			if(!isset($_SESSION['CallingPage'])){
 				$_SESSION['CallingPage']="./Home.php";
 			}
-			else
-			{
+			else{
 				$_SESSION['ThisPage']=$_SESSION['CallingPage'];
 			}
 			echo 
@@ -91,8 +90,8 @@ require_once "./DataWriter.php";
 			unset($_POST['Name']);
         	unset($_POST['Password']);
 			header("location: ./Registrazione.php?error=".$error);
-
-	}} 
+		}
+	} 
 	$Db=null;
 ?>
 

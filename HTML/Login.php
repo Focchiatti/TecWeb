@@ -33,13 +33,14 @@ require_once "./DataWriter.php";
 
 <div id="menu">
 	<label id="hamburger" for="nav-trigger">&#9776;</label>		
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<ul class="nav-item">
+	<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+	<ul class="nav-item">
 	<li><a href="Home.php"><span xml:lang="en">Home</span></a></li>
 	<li><a href="news.php">Notizie</a></li>
 </ul>
 </div>
-	<?php 
+
+<?php 
 	session_start();
 	if(!isset($_POST["Name"])){
 		echo 
@@ -58,8 +59,7 @@ require_once "./DataWriter.php";
 			if(!isset($_SESSION['CallingPage'])){
 				$_SESSION['CallingPage']="./Home.php";
 			}
-			else if(isset($_SESSION['ThisPage'])&&$_SESSION['ThisPage']!="./Login.php")
-			{
+			else if(isset($_SESSION['ThisPage'])&&$_SESSION['ThisPage']!="./Login.php"){
 				$_SESSION['CallingPage']=$_SESSION['ThisPage'];
 				$_SESSION['ThisPage']="./Login.php";
 			}
@@ -78,7 +78,7 @@ require_once "./DataWriter.php";
 			header("location:./Login.php?error");
 	}
 	$Db=null;
-	?>
+?>
 
 
 <div id="footer">

@@ -34,25 +34,26 @@ require_once "./DataWriter.php"
 
 <div id="menu">
 	<label id="hamburger" for="nav-trigger">&#9776;</label>		
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<ul class="nav-item">
+	<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+	<ul class="nav-item">
 	<li><p><span xml:lang="en">Home</span></p></li>
 	<li><a href="news.php">Notizie</a></li>
 	<?php
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
-</ul>
+	</ul>
 </div>
 
 <div id="content">
-<div id="barraricerca">
-	<form action="Ricerca.php" method="get">
-	<fieldset>	<input type="text" title="Ricerca" name="Ricerca"/>
-		<input type="submit" id="submit" value="Cerca"/>
-	</fieldset>
-	</form>
-</div>
+	
+	<div id="barraricerca">
+		<form action="Ricerca.php" method="get">
+		<fieldset>	<input type="text" title="Ricerca" name="Ricerca"/>
+			<input type="submit" id="submit" value="Cerca"/>
+		</fieldset>
+		</form>
+	</div>
 
 <h2>Generi</h2>
 	<div class="Genere Thriller">

@@ -35,14 +35,14 @@ require_once "./DataWriter.php";
 
 <div id="menu">
 	<label id="hamburger" for="nav-trigger">&#9776;</label>		
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<ul class="nav-item">
+	<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+	<ul class="nav-item">
 	<li><a href="Home.php"><span xml:lang="en">Home</span></a></li>
 	<li><a href="news.php">Notizie</a></li>
 	<?php
 		DataWriter::LogInButton();
 	?>
-</ul>
+	</ul>
 </div>
 
 <div id="content">
@@ -99,7 +99,7 @@ $Db=null;
 
 <div id="footer">
 	<p>Questo sito è stato creato per il corso di Tecnologie <span xml:lang="en">Web</span>. Non rappresenta in alcun modo le serie televisive rappresentate al suo interno </p>
-		<p> Per contattarci scrivere a <a href="mailto:serieamente@gmail.com">serieamente@gmail.com</a></p>
+	<p> Per contattarci scrivere a <a href="mailto:serieamente@gmail.com">serieamente@gmail.com</a></p>
 	<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" /></a>
 	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 </div>

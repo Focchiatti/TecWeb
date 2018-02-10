@@ -31,20 +31,17 @@ require_once "./DataWriter.php";
 	<a class="aiuti" href="#content">Vai al contenuto</a>
 </div>
 
-
-
 <div id="menu">
-
 	<label id="hamburger" for="nav-trigger">&#9776;</label>		
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<ul class="nav-item">
+	<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+	<ul class="nav-item">
 	<li><a href="Home.php"><span xml:lang="en">Home</span></a></li>
 	<li><a href="news.php">Notizie</a></li>
 	<?php
 		DataWriter::LogInButton();
 		$_SESSION["UltimaRicerca"]=null;
 	?>
-</ul>
+	</ul>
 </div>
 
 <?php 
